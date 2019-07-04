@@ -5,7 +5,7 @@ import './index.css';
 // import AppEx1Component from './App_Ex1_Component';
 // import AppEx2Props from './App_Ex2_Props';
 // import AppEx4State from './App_Ex4_State';
-import HomePage from './HomePage';
+// import HomePage from './HomePage';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

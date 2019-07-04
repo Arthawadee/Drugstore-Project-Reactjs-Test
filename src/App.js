@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "semantic-ui/dist/semantic.min.css";
-import HomePage from "./HomePage";
+import "semantic-ui-css/semantic.min.css";
+// import HomePage from "./HomePage";
 import AddNewPatient from "./AddNewPatient";
 import {
   Menu,

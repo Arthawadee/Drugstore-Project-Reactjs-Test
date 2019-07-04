@@ -14,8 +14,6 @@ import {
   Sidebar
 } from "semantic-ui-react";
 import "./HomePage.css";
-// import DrawerToggleButton from "./DrawerToggleButton";
-// import SideDrawer from "./SideDrawer";
 
 export default class HomePage extends Component {
   handleHideClick = () => this.setState({ visible: false });
