@@ -13,8 +13,8 @@ export default class HomePage extends Component {
   render() {
     var { email, password, visible } = this.state;
     return (
-      <div className = "home" style={style.menu}>
-        <main style={{ marginTop: "64px" , backgroundColor: "#e3fbff" }}>
+      <div className="home" style={style.menu}>
+        <main style={{ marginTop: "64px", backgroundColor: "#e3fbff" }}>
           <div className="pageContent">
             {/* <Header as='h1' icon textAlign='center'>
                         <Icon name='users' circular />
@@ -28,7 +28,7 @@ export default class HomePage extends Component {
                 {/* <div class="sub header">ยินดีต้อนรับสู่</div>
                         <div class="sub header">Drugstore Clinic</div> */}
               </h1>
-              <div>
+              <div style={{ marginBottom: "30px" }}>
                 <h1 class="ui icon header pageHeader">Drugstore Clinic</h1>
               </div>
             </div>

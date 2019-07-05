@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "semantic-ui-css/semantic.min.css";
 import HomePage from "./components/HomePage";
 import AddNewPatient from "./components/AddNewPatient";
+import AddNewDrugstore from "./components/AddNewDrugstore";
 import { Menu, Icon, Segment, Button, Sidebar } from "semantic-ui-react";
 
 import "./scss/style.scss";
@@ -98,8 +99,9 @@ export default class App extends Component {
 
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic style={{ backgroundColor: "#e3fbff" }}>
-              <HomePage />
+              {/* <HomePage /> */}
               {/* <AddNewPatient /> */}
+              <AddNewDrugstore />
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
