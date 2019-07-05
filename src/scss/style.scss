@@ -1,0 +1,256 @@
+// .menuContent{
+//     color: brown;
+//     font-weight: bold;
+// }
+// @font-face {
+//     font-family: 'THSarabunNew';
+//     src: url("fonts/THSarabunNew.ttf") format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'THSarabunNewBd';
+//     src: url("fonts/THSarabunNew Bold.ttf") format("truetype");
+
+// }
+// .loginHeader{
+//     font-family: THSarabunNewBd;
+//     color: #117cba;
+//     font-size: 30px;
+// }
+// .loginForm{
+//     text-align: left;
+//     color: #117cba;
+//     padding-bottom: 20px;
+//     font-family: THSarabunNew;
+//     font-size: 20px;
+// }
+// .forgotPW{
+//     font-family: THSarabunNew;
+//     font-size: 10px;
+// }
+// .submitBtn{
+//     text-align: center;
+// }
+// .pageContent{
+//     padding: 90px,auto;
+//     text-align: center;
+// }
+// .ui.icon.header.pageHeader{
+//     font-family: THSarabunNewBd;
+//     color: #117cba;
+//     font-size: 50px;
+//     line-height: 5px;
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+// }
+// .headline{
+//     text-align: center;
+// }
+
+// .pageContent{
+//     text-align: center;
+//     padding: 20px 50px;
+// }
+// .ui.icon.header.pageHeader{
+//     font-family: THSarabunNewBd;
+//     font-size: 40px;
+// }
+// .AddNewPatientForm{
+//     text-align: left;
+//     color: #117cba;
+//     padding: 20px;
+//     font-family: THSarabunNew;
+//     font-size: 20px;
+//     width: 90%;
+//     margin: auto;
+// }
+// .ui.icon.aligned.header{
+//     font-family: THSarabunNewBd;
+//     color: #117cba;
+//     font-size: 50px;
+//     text-align: left;
+// }
+// .ui{
+//     .blue{
+//         .inverted{
+//                 .menu{
+//                     margin: 0;
+//                 }
+//             }
+//     }
+// }
+// .ui{
+//     .segment{
+//         margin: 0;
+//     }
+// }
+
+@font-face {
+  font-family: "THSarabunNew";
+  src: url("fonts/THSarabunNew.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "THSarabunNewBd";
+  src: url("fonts/THSarabunNew Bold.ttf") format("truetype");
+}
+.Layout {
+  .App {
+    text-align: center;
+  }
+
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
+  }
+
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  .App-link {
+    color: #61dafb;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  // .ui {
+  //   .segment,.menu {
+  //     margin: 0;
+  //   }
+  // }
+
+  .ui.menu,
+  .ui.segment {
+    margin: 0;
+  }
+
+  .ui.menu .item {
+    font-family: "THSarabunNew";
+    font-size: 20px;
+    .headline {
+      font-family: "THSarabunNewBd";
+      font-weight: bolder;
+    }
+  }
+}
+
+.home {
+  .menuContent {
+    color: brown;
+    font-weight: bold;
+  }
+  .loginHeader {
+    font-family: THSarabunNewBd;
+    color: #117cba;
+    font-size: 30px;
+  }
+  .loginForm {
+    text-align: left;
+    color: #117cba;
+    padding-bottom: 20px;
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  .forgotPW {
+    font-family: THSarabunNew;
+    font-size: 10px;
+  }
+  .submitBtn {
+    text-align: center;
+  }
+  .pageContent {
+    padding: 90px, auto;
+    text-align: center;
+  }
+  .ui.icon.header.pageHeader {
+    font-family: THSarabunNewBd;
+    color: #117cba;
+    font-size: 50px;
+    line-height: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .headline {
+    text-align: center;
+  }
+  .ui.form {
+    .field > label {
+      font-family: THSarabunNew;
+      font-size: 20px;
+    }
+  }
+  .ui.input > input {
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  a{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  .ui.blue.button{
+    font-family: THSarabunNew;
+    font-size: 20px;
+    margin: 20px auto;
+  }
+}
+
+.AddNewPatientPage {
+  text-align: center;
+  padding: 20px 50px;
+
+  .ui.icon.header.pageHeader {
+    font-family: THSarabunNewBd;
+    font-size: 40px;
+  }
+  .AddNewPatientForm {
+    text-align: left;
+    color: #117cba;
+    padding: 20px;
+    font-family: THSarabunNew;
+    font-size: 40px;
+    width: 90%;
+    margin: auto;
+    background-color: #98d8e3;
+  }
+  .ui.icon.aligned.header {
+    font-family: THSarabunNewBd;
+    color: #117cba;
+    font-size: 50px;
+    text-align: left;
+  }
+  /* .head.headName {
+    font-family: THSarabunNewBd;
+    color: red;
+    font-size: 50px !important;
+} */
+  .content {
+    text-align: center;
+  }
+  .ui.form {
+    .field > label {
+      font-family: THSarabunNew;
+      font-size: 20px;
+    }
+  }
+  .ui.input > input {
+    font-family: THSarabunNew !important;
+    font-size: 20px !important;
+  }
+}

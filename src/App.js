@@ -1,23 +1,10 @@
 import React, { Component } from "react";
 import "semantic-ui-css/semantic.min.css";
-// import HomePage from "./HomePage";
-import AddNewPatient from "./AddNewPatient";
-import {
-  Menu,
-  Label,
-  Icon,
-  Header,
-  Segment,
-  Form,
-  Button,
-  Input,
-  Divider,
-  FormGroup,
-  Grid,
-  Sidebar,
-  TextArea
-} from "semantic-ui-react";
-import "./AddNewPatient.css";
+import HomePage from "./components/HomePage";
+import AddNewPatient from "./components/AddNewPatient";
+import { Menu, Icon, Segment, Button, Sidebar } from "semantic-ui-react";
+
+import "./scss/style.scss";
 
 export default class App extends Component {
   handleHideClick = () => this.setState({ visible: false });
@@ -25,19 +12,16 @@ export default class App extends Component {
   handleSidebarHide = () => this.setState({ visible: false });
 
   state = {
-    email: "",
-    password: "",
     activeItem: "home",
-    visible: false,
-    address: ""
+    visible: false
   };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
-    var { email, password, visible } = this.state;
+    var { email, password, visible, activeItem } = this.state;
     return (
-      <div>
+      <div className="Layout">
         {/* <HomePage/> */}
         {/* <AddNewPatient/> */}
 
@@ -58,11 +42,26 @@ export default class App extends Component {
           </Menu.Item>
           <Menu.Item style={{ color: "white", fontWeight: "bold" }}>
             {/* <Icon name='add' /> */}
-            <img src="https://cdn1.iconfinder.com/data/icons/medicine-1/512/medicine-512.png" />{" "}
-            DRUGSTORE CLINIC
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/medicine-1/512/medicine-512.png"
+              alt="eror"
+            />{" "}
+            <div className="headline">DRUGSTORE CLINIC</div>
           </Menu.Item>
-          <Menu.Item name="home">หน้าแรก</Menu.Item>
-          <Menu.Item name="ContactUs">ติดต่อเรา</Menu.Item>
+          <Menu.Item
+            name="home"
+            active={activeItem === "home"}
+            onClick={this.handleItemClick}
+          >
+            หน้าแรก
+          </Menu.Item>
+          <Menu.Item
+            name="ContactUs"
+            active={activeItem === "ContactUs"}
+            onClick={this.handleItemClick}
+          >
+            ติดต่อเรา
+          </Menu.Item>
 
           {/* <Menu.Menu position='right'>
                         <Menu.Item
@@ -99,8 +98,8 @@ export default class App extends Component {
 
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic style={{ backgroundColor: "#e3fbff" }}>
-              {/* <HomePage /> */}
-              <AddNewPatient/>
+              <HomePage />
+              {/* <AddNewPatient /> */}
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>

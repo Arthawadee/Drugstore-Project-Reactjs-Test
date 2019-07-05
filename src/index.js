@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
- import App from './App';
+import App from './App';
+import './scss/style.scss'
 // import AppEx1Component from './App_Ex1_Component';
 // import AppEx2Props from './App_Ex2_Props';
 // import AppEx4State from './App_Ex4_State';

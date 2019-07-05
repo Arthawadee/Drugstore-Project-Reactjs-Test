@@ -1,19 +1,6 @@
 import React, { Component } from "react";
-import {
-  Menu,
-  Label,
-  Icon,
-  Header,
-  Segment,
-  Form,
-  Button,
-  Input,
-  Divider,
-  FormGroup,
-  Grid,
-  Sidebar
-} from "semantic-ui-react";
-import "./HomePage.css";
+import { Segment, Form, Button, Divider, Grid } from "semantic-ui-react";
+// import "./HomePage.css";
 
 export default class HomePage extends Component {
   handleHideClick = () => this.setState({ visible: false });
@@ -26,8 +13,8 @@ export default class HomePage extends Component {
   render() {
     var { email, password, visible } = this.state;
     return (
-      <div style={style.menu}>
-        <main style={{ marginTop: "64px" }}>
+      <div className = "home" style={style.menu}>
+        <main style={{ marginTop: "64px" , backgroundColor: "#e3fbff" }}>
           <div className="pageContent">
             {/* <Header as='h1' icon textAlign='center'>
                         <Icon name='users' circular />
@@ -66,6 +53,7 @@ export default class HomePage extends Component {
                         label="Email"
                         type="email"
                         placeholder="Enter Email"
+                        onChange
                       />
                       <Form.Input
                         required

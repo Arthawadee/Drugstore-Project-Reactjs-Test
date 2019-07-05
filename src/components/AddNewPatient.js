@@ -1,20 +1,7 @@
 import React, { Component } from "react";
-import {
-  Menu,
-  Label,
-  Icon,
-  Header,
-  Segment,
-  Form,
-  Button,
-  Input,
-  Divider,
-  FormGroup,
-  Grid,
-  Sidebar,
-  TextArea
-} from "semantic-ui-react";
-import "./AddNewPatient.css";
+import { Form } from "semantic-ui-react";
+// import "./css/AddNewPatient.css";
+// import "./scss/AddNewPatient.scss";
 
 export default class AddNewPatient extends Component {
   constructor(props) {
@@ -24,27 +11,34 @@ export default class AddNewPatient extends Component {
       password: "",
       activeItem: "home",
       visible: false,
+      firstName: "",
+      lastName: "",
+      date: "",
+      ID: "",
+      phoneNumber: "",
+      telNumber: "",
       address: ""
     };
   }
-  handleHideClick = () => this.setState({ visible: false });
-  handleShowClick = () => this.setState({ visible: true });
-  handleSidebarHide = () => this.setState({ visible: false });
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
+  // test = (e,{value}) => {console.log(value);
+  //   //  console.log(id)
+  // }
+
   render() {
-    var { email, password, visible } = this.state;
+    // var { email, password, visible } = this.state;
     return (
-      <div className="pageContent">
+      <div className="AddNewPatientPage">
         {/* <Header as='div' className="head headName">First Header</Header> */}
         {/* <h1 class="ui icon header pageHeader" textAlign="left">
           เพิ่มผู้ป่วยรายใหม่
         </h1> */}
 
-<h2 class="ui icon aligned header">
-    <i aria-hidden="true" class="user plus circular icon"></i>
-    <div class="content">เพิ่มผู้ป่วยรายใหม่</div>
+<h2 className="ui icon aligned header">
+    <i aria-hidden="true" className="user plus circular icon"></i>
+    <div className="content">เพิ่มผู้ป่วยรายใหม่</div>
   </h2>
 
         <div className="AddNewPatientForm">
@@ -64,6 +58,10 @@ export default class AddNewPatient extends Component {
                 label="ชื่อ"
                 type="text"
                 placeholder="กรุณากรอกชื่อ"
+                onChange={(e,{value}) => {
+                  this.setState({firstName: value})
+                  console.log('firstName: '+ this.state.firstName)
+                }}
               />
             </div>
 
@@ -75,40 +73,60 @@ export default class AddNewPatient extends Component {
                 label="นามสกุล"
                 type="text"
                 placeholder="กรุณากรอกนามสกุล"
+                onChange={(e,{value}) => {
+                  this.setState({lastName: value})
+                  console.log('lastName: '+ this.state.lastName)
+                }}
               />
             </div>
 
             <Form.Input
               required
-              icon="user"
+              icon="calendar alternate outline"
+              iconPosition="left"
+              label="วัน/เดือน/ปีเกิด"
+              type="Date"
+              placeholder="กรุณากรอกวัน/เดือน/ปีเกิด"
+              onChange={(e,{value}) => {
+                this.setState({date: value})
+                console.log('date: '+ this.state.date)
+              }}
+            />
+            <Form.Input
+              required
+              icon="id card"
               iconPosition="left"
               label="เลขประจำตัวประชาชน"
               type="text"
               placeholder="กรุณากรอกเลขประจำตัวประชาชน"
+              onChange={(e,{value}) => {
+                this.setState({ID: value})
+                console.log('ID: '+ this.state.ID)
+              }}
             />
             <Form.Input
               required
-              icon="user"
-              iconPosition="left"
-              label="เลขประจำตัวประชาชน"
-              type="text"
-              placeholder="กรุณากรอกเลขประจำตัวประชาชน"
-            />
-            <Form.Input
-              required
-              icon="user"
+              icon="mobile alternate"
               iconPosition="left"
               label="เบอร์โทรศัพท์มือถือ"
               type="text"
               placeholder="กรุณากรอกเบอร์โทรศัพท์มือถือ"
+              onChange={(e,{value}) => {
+                this.setState({phoneNumber: value})
+                console.log('phoneNumber: '+ this.state.phoneNumber)
+              }}
             />
             <Form.Input
               required
-              icon="user"
+              icon="phone"
               iconPosition="left"
               label="เบอร์โทรศัพท์บ้าน"
               type="text"
               placeholder="กรุณากรอกเบอร์โทรศัพท์บ้าน"
+              onChange={(e,{value}) => {
+                this.setState({telNumber: value})
+                console.log('telNumber: '+ this.state.telNumber)
+              }}
             />
             <Form.TextArea
               required
@@ -116,9 +134,10 @@ export default class AddNewPatient extends Component {
               label="ที่อยู่"
               value={this.state.address}
               placeholder="กรุณากรอกที่อยู่"
+              icon="phone"
               onChange={e => {
                 this.setState({ address: e.target.value });
-                // console.log('address: '+ this.state.address)
+                console.log('address: '+ this.state.address)
               }}
             />
           </Form>
