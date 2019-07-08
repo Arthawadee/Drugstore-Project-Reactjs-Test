@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Form, Button, Dropdown, Radio } from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
+
 // import "./css/AddNewPatient.css";
 // import "./scss/AddNewPatient.scss";
 const options = [
@@ -34,11 +35,25 @@ export default class AddNewPatient extends Component {
   render() {
     // var { email, password, visible } = this.state;
     return (
+      // <div>
+      //   <Segment.Group>
+      //     <Responsive as={Segment} basic {...Responsive.onlyMobile}>
+      //       <AddNewPatientSmall />
+      //     </Responsive>
+      //     <Responsive as={Segment} basic {...Responsive.onlyTablet}>
+      //       <AddNewPatientSmall />
+      //     </Responsive>
+      //     <Responsive as={Segment} basic {...Responsive.onlyComputer}>
+      //       <AddNewPatientLarge />
+      //     </Responsive>
+      //   </Segment.Group>
+      // </div>
+
       <div className="AddNewPatientPage">
         {/* <Header as='div' className="head headName">First Header</Header> */}
         {/* <h1 class="ui icon header pageHeader" textAlign="left">
-          เพิ่มผู้ป่วยรายใหม่
-        </h1> */}
+        เพิ่มผู้ป่วยรายใหม่
+      </h1> */}
 
         <h2 className="ui icon aligned header">
           <i aria-hidden="true" className="user plus circular icon" />
@@ -75,32 +90,35 @@ export default class AddNewPatient extends Component {
             </Form.Group>
             <Form.Group widths="equal">
               {/* <Form.Group widths="equal">
-                <Form.Field>
-                  เพศ: <b>{this.state.value}</b>
-                </Form.Field>
-                <Form.Field>
-                  <Radio
-                    label="ชาย"
-                    name="radioGroup"
-                    value="male"
-                    checked={this.state.value === "male"}
-                    onChange={this.handleChange}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <Radio
-                    label="หญิง"
-                    name="radioGroup"
-                    value="female"
-                    checked={this.state.value === "female"}
-                    onChange={this.handleChange}
-                  />
-                </Form.Field>
-                </Form.Group> */}
+              <Form.Field>
+                เพศ: <b>{this.state.value}</b>
+              </Form.Field>
+              <Form.Field>
+                <Radio
+                  label="ชาย"
+                  name="radioGroup"
+                  value="male"
+                  checked={this.state.value === "male"}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              <Form.Field>
+                <Radio
+                  label="หญิง"
+                  name="radioGroup"
+                  value="female"
+                  checked={this.state.value === "female"}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              </Form.Group> */}
 
               <Form.Select
                 required
-                options={options}
+                options={[
+                  { key: "m", text: "ชาย", value: "male" },
+                  { key: "f", text: "หญิง", value: "female" }
+                ]}
                 placeholder="กรุณาเลือกเพศ"
                 label="เพศ"
               />

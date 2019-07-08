@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button, Dropdown, Radio, Header } from "semantic-ui-react";
+import { Form, Header } from "semantic-ui-react";
 
 
 export default class PatientInfo extends Component {

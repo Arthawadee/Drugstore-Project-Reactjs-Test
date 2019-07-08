@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button, Radio, Dropdown, Select,Responsive } from "semantic-ui-react";
+import { Form, Button, Radio, Select } from "semantic-ui-react";
 
 export default class SmokingForm extends Component {
   constructor(props) {

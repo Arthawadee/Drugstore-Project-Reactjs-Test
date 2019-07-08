@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Segment,
-  Form,
-  Button,
-  Divider,
-  Grid,
-  Responsive
-} from "semantic-ui-react";
+import { Segment, Responsive } from "semantic-ui-react";
 import HomePageLarge from "./HomepageLarge";
 import HomepageSmall from "./HomepageSmall";
 // import "./HomePage.css";
@@ -20,7 +13,7 @@ export default class HomePage extends Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
   render() {
-    var { email, password, visible } = this.state;
+    // var { email, password, visible } = this.state;
     return (
       <div style={style.menu}>
         <Segment.Group>
@@ -33,12 +26,6 @@ export default class HomePage extends Component {
           <Responsive as={Segment} basic {...Responsive.onlyComputer}>
             <HomePageLarge />
           </Responsive>
-          <Responsive as={Segment} basic {...Responsive.onlyLargeScreen}>
-            <HomePageLarge />
-          </Responsive>
-          <Responsive as={Segment} basic {...Responsive.onlyWidescreen}>
-            <HomePageLarge />
-          </Responsive>
         </Segment.Group>
       </div>
     );
@@ -49,9 +36,5 @@ const style = {
     backgroundColor: "#D8F6FF",
     color: "#000",
     height: "100%"
-  },
-  menuContent: {
-    color: "white",
-    fontWeight: "bold"
   }
 };

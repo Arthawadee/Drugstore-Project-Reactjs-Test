@@ -28,12 +28,12 @@ export default class App extends Component {
     var { visible, activeItem } = this.state;
     return (
       <div className="Layout">
-        <Menu stackable color="blue" inverted>
+        <Menu color="blue" inverted>
           {/* <Menu.Item >
                     <img src='https://banner2.kisspng.com/20180705/rwq/kisspng-logo-cross-red-hospital-medical-office-5b3db923b667f6.3943560215307717477472.jpg' />
                      Drugstore Clinic
                     </Menu.Item> */}
-          {/* <Menu.Item>
+          <Menu.Item>
             <Button
               primary
               icon
@@ -42,7 +42,7 @@ export default class App extends Component {
             >
               <Icon name="align justify" />
             </Button>
-          </Menu.Item> */}
+          </Menu.Item>
           <Menu.Item style={{ color: "white", fontWeight: "bold" }}>
             {/* <Icon name='add' /> */}
             <img

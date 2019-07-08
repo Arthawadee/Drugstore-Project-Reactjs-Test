@@ -17,13 +17,12 @@ export default class EditPatientData extends Component {
         this.state = {
             firstName: 'มานะ',
             lastName: 'มานี',
-            id: 'dfxcjbmb',
-            color: "blue"
+            id: 'dfxcjbmb'
         };
       }
 
     render() {
-        const { firstName, lastName, id, color } = this.state;
+        const { firstName, lastName, id } = this.state;
         return (
             <div className= 'EditPatientDataPage'>
 
@@ -31,8 +30,6 @@ export default class EditPatientData extends Component {
                     <Header as='h2'>ชื่อ-นามสกุล: {firstName+' '+lastName}</Header>
                     <Header as='h2'>เลขประจำตัวประชาชน: {id}</Header>
                 </div>
-                {/* <TabExampleBasic/> */}
-                {/* <Tab menu={{ color, inverted: true, attached: false, tabular: false }} panes={panes} /> */}
                 <Tab panes={panes} defaultActiveIndex={2} />
             </div>
         )
