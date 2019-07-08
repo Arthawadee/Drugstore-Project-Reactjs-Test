@@ -119,29 +119,6 @@ export default class AddNewPatient extends Component {
                 />
               </Form.Field>
             </Form.Group>
-            {/* <div style={{ width: "50%", display: "inline-block" }}>
-            <Form.Dropdown
-              placeholder='Select Friend'
-              fluid
-              selection
-              options={[]}
-            />
-              />
-            </div>
-            <div style={{ width: "50%", display: "inline-block" }}>
-            <Form.Input
-              required
-              icon="calendar alternate outline"
-              iconPosition="left"
-              label="วัน/เดือน/ปีเกิด"
-              type="Date"
-              placeholder="กรุณากรอกวัน/เดือน/ปีเกิด"
-              onChange={(e,{value}) => {
-                this.setState({date: value})
-                console.log('date: '+ this.state.date)
-              }}
-            />
-            </div> */}
             <Form.Input
               required
               icon="id card"

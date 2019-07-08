@@ -10,6 +10,7 @@ $form-color : #98d8e3;
   src: url("fonts/THSarabunNew Bold.ttf") format("truetype");
 }
 .Layout {
+  background-color: #e3fbff;
   .App {
     text-align: center;
   }
@@ -253,4 +254,182 @@ $form-color : #98d8e3;
       // line-height: 10px;
     }
   }
+}
+
+
+
+.AddNewPharmacistPage{
+  text-align: center;
+  padding: 20px 50px;
+
+  .ui.icon.header.pageHeader {
+    font-family: THSarabunNewBd;
+    font-size: 40px;
+  }
+  .AddNewPatientForm {
+    text-align: center;
+    color: #117cba;
+    padding: 20px;
+    font-family: THSarabunNew;
+    font-size: 40px;
+    width: 90%;
+    margin: auto;
+    background-color: $form-color;
+  }
+  .ui.icon.aligned.header {
+    font-family: THSarabunNewBd;
+    color: #117cba;
+    font-size: 50px;
+    text-align: left;
+  }
+  /* .head.headName {
+    font-family: THSarabunNewBd;
+    color: red;
+    font-size: 50px !important;
+} */
+  .content {
+    text-align: center;
+  }
+  .ui.form {
+    .field > label {
+      font-family: THSarabunNew;
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+  .ui.input > input,
+  .ui.blue.button {
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  .ui.blue.button {
+    margin: 30px auto 10px auto;
+    padding: 5px 20px;
+  }
+}
+
+.ContactUsPage {
+  padding: 50px 10%;
+  h1.ui.header {
+    font-family: THSarabunNewBd;
+    font-size: 50px;
+    text-align: center;
+  }
+  .pageContent {
+    margin-top: 40px;
+    background-color: $form-color;
+    padding: 30px;
+    h2.ui.header {
+      font-family: THSarabunNewBd;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .ui.bulleted.list > .item,
+    .ui.list > .item {
+      font-family: THSarabunNew;
+      font-size: 20px;
+      // line-height: 10px;
+    }
+  }
+}
+
+
+.SmokingFormPage{
+  text-align: center;
+  padding: 20px 50px;
+
+  .ui.icon.header.pageHeader {
+    font-family: THSarabunNewBd;
+    font-size: 40px;
+  }
+  .AddNewPatientForm {
+    text-align: center;
+    color: #117cba;
+    padding: 20px;
+    font-family: THSarabunNew;
+    font-size: 40px;
+    width: 90%;
+    margin: auto;
+    background-color: $form-color;
+  }
+  .ui.icon.aligned.header {
+    font-family: THSarabunNewBd;
+    color: #117cba;
+    font-size: 50px;
+    text-align: left;
+  }
+  /* .head.headName {
+    font-family: THSarabunNewBd;
+    color: red;
+    font-size: 50px !important;
+} */
+  .content {
+    text-align: center;
+  }
+  .ui.form {
+    .field > label {
+      font-family: THSarabunNew;
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+  .ui.input > input,
+  .ui.blue.button {
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  .ui.blue.button {
+    margin: 30px auto 10px auto;
+    padding: 5px 20px;
+  }
+}
+
+.ContactUsPage {
+  padding: 50px 10%;
+  h1.ui.header {
+    font-family: THSarabunNewBd;
+    font-size: 50px;
+    text-align: center;
+  }
+  .pageContent {
+    margin-top: 40px;
+    background-color: $form-color;
+    padding: 30px;
+    h2.ui.header {
+      font-family: THSarabunNewBd;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .ui.bulleted.list > .item,
+    .ui.list > .item {
+      font-family: THSarabunNew;
+      font-size: 20px;
+      // line-height: 10px;
+    }
+  }
+}
+
+
+.EditPatientDataPage{
+  padding: 50px;
+  h2.ui.header{
+    font-family: THSarabunNewBd;
+    font-size: 30px;
+  }
+  .ui.tabular.menu .active.item{
+    background-color: #056eb0;
+  }
+  .ui.form .field>label,.ui.form .field .ui.input input{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  .ui.form {
+    margin: 20px;
+  }
+}
+.PatientInfo{
+  // h2.ui.header{
+  //   font-family: THSarabunNewBd;
+  //   font-size: 30px;
+  // }
 }

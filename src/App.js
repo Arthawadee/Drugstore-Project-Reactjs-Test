@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import "semantic-ui-css/semantic.min.css";
 import HomePage from "./components/HomePage";
+import { Link, Switch, Route } from "react-router-dom";
 import AddNewPatient from "./components/AddNewPatient";
 import AddNewDrugstore from "./components/AddNewDrugstore";
+import AddNewPharmacist from "./components/AddNewPharmacist";
+import SmokingForm from "./components/SmokingForm";
+import EditPatientData from "./components/EditPatientData";
 import ContactUs from "./components/ContactUs";
 import { Menu, Icon, Segment, Button, Sidebar } from "semantic-ui-react";
 
@@ -21,12 +25,9 @@ export default class App extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
-    var { email, password, visible, activeItem } = this.state;
+    var { visible, activeItem } = this.state;
     return (
       <div className="Layout">
-        {/* <HomePage/> */}
-        {/* <AddNewPatient/> */}
-
         <Menu color="blue" inverted>
           {/* <Menu.Item >
                     <img src='https://banner2.kisspng.com/20180705/rwq/kisspng-logo-cross-red-hospital-medical-office-5b3db923b667f6.3943560215307717477472.jpg' />
@@ -51,6 +52,8 @@ export default class App extends Component {
             <div className="headline">DRUGSTORE CLINIC</div>
           </Menu.Item>
           <Menu.Item
+            as={Link}
+            to="/"
             name="home"
             active={activeItem === "home"}
             onClick={this.handleItemClick}
@@ -58,6 +61,8 @@ export default class App extends Component {
             หน้าแรก
           </Menu.Item>
           <Menu.Item
+            as={Link}
+            to="/contactus"
             name="ContactUs"
             active={activeItem === "ContactUs"}
             onClick={this.handleItemClick}
@@ -73,6 +78,7 @@ export default class App extends Component {
                         />
                     </Menu.Menu> */}
         </Menu>
+
         <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
@@ -84,11 +90,11 @@ export default class App extends Component {
             visible={visible}
             width="thin"
           >
-            <Menu.Item as="a">
+            <Menu.Item as={Link} to="/">
               <Icon name="home" />
               หน้าแรก
             </Menu.Item>
-            <Menu.Item as="a">
+            <Menu.Item as={Link} to="/ContactUs">
               <Icon name="call" />
               ติดต่อเรา
             </Menu.Item>
@@ -99,11 +105,13 @@ export default class App extends Component {
           </Sidebar>
 
           <Sidebar.Pusher dimmed={visible}>
-            <Segment basic style={{ backgroundColor: "#e3fbff" }}>
-              {/* <HomePage /> */}
-              {/* <AddNewPatient /> */}
-              {/* <AddNewDrugstore /> */}
-              <ContactUs/>
+            <Segment basic style={{ backgroundColor: "#e3fbff", minHeight: 500 }}>
+              
+                <Switch>
+                  <Route exact path="/" component={EditPatientData} />
+                  <Route path="/contactus" component={ContactUs} />
+                </Switch>
+              
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
