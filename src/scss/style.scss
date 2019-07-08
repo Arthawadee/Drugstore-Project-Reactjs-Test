@@ -374,13 +374,17 @@ $form-color : #98d8e3;
     }
   }
   .ui.input > input,
-  .ui.blue.button {
+  .ui.blue.button ,.ui.checkbox label{
     font-family: THSarabunNew;
     font-size: 20px;
   }
   .ui.blue.button {
     margin: 30px auto 10px auto;
     padding: 5px 20px;
+  }
+
+  .ui.form .fields>.field{
+    margin: 0;
   }
 }
 
@@ -419,7 +423,7 @@ $form-color : #98d8e3;
   .ui.tabular.menu .active.item{
     background-color: #056eb0;
   }
-  .ui.form .field>label,.ui.form .field .ui.input input{
+  .ui.form .field>label,.ui.form .field .ui.input input,.ui.selection.dropdown,.ui.selection.dropdown .menu>.item {
     font-family: THSarabunNew;
     font-size: 20px;
   }

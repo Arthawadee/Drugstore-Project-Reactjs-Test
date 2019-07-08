@@ -16,7 +16,7 @@ export default class AddNewPatient extends Component {
       visible: false,
       firstName: "",
       lastName: "",
-      date: "",
+      DOB: null,
       ID: "",
       phoneNumber: "",
       telNumber: "",
@@ -113,8 +113,8 @@ export default class AddNewPatient extends Component {
                   type="Date"
                   placeholder="กรุณากรอกวัน/เดือน/ปีเกิด"
                   onChange={(e, { value }) => {
-                    this.setState({ date: value });
-                    console.log("date: " + this.state.date);
+                    this.setState({ DOB: value });
+                    console.log("DOB: " + this.state.DOB);
                   }}
                 />
               </Form.Field>
