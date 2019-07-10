@@ -222,10 +222,6 @@ showSmokingFollowUpA5=()=>{
       <div id='SmokingCessationPlan' style={{display:'none'}}><SmokingCessationPlan /></div>
       <div id='SmokingCessationMedicine' style={{display:'none'}}><SmokingCessationMedicine /></div>
       <div id='SmokingFollowUpA5' style={{display:'none'}}><SmokingFollowUpA5 /></div>
-        
-        
-        
-        
     </Segment>
 
       </div>

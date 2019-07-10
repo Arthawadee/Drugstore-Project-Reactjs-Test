@@ -31,7 +31,6 @@ export default class COPDForm extends Component {
   //   handleChange = (e, { value }) => this.setState({ value });
 
   render() {
-    const { value } = this.state;
     return (
       <div className="COPDFormPage">
         <Image
