@@ -15,11 +15,16 @@ export default class AsthmaForm extends Component {
     return (
       <div className="AsthmaFormPage">
         <Image
-          src="https://www.medacess.com/assets/img/copd%20icon.png"
+          src="https://cdn.impactinit.com/cdn/x/x@dd5bc7d97f/smss52/smsimg30/pv/isignstockcontributors/iss_20539_01593.jpg"
           size="medium"
           circular
         />
-        <Header as="h2" icon textAlign="center">
+        {/* <Image
+          src="https://foxcitiesallergists.com/wp-content/uploads/2018/01/Asthma-Icon.png"
+          size="medium"
+          circular
+        /> */}
+        <Header as="h1" icon textAlign="center">
           <Header.Content>แบบคัดกรองโรคหืด</Header.Content>
         </Header>
 

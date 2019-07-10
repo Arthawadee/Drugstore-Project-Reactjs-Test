@@ -583,7 +583,7 @@ export default class SmokingCessationForm extends Component {
 
         {/* <Button circular content="เพิ่ม" color="blue" /> */}
 
-        <SmokingCessationPlan/>
+        {/* <SmokingCessationPlan/> */}
       </div>
     );
   }

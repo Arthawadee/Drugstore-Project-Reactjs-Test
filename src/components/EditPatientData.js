@@ -36,7 +36,7 @@ export default class EditPatientData extends Component {
                     <Header as='h2'>ชื่อ-นามสกุล: {firstName+' '+lastName}</Header>
                     <Header as='h2'>เลขประจำตัวประชาชน: {id}</Header>
                 </div>
-                <Tab panes={panes} defaultActiveIndex={2} />
+                <Tab panes={panes} defaultActiveIndex={1} />
             </div>
         )
     }

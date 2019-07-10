@@ -6,6 +6,7 @@ export default class SmokingCessationMedicine extends Component {
         return (
             <div className='SmokingCessationMedicinePage'>
                 <Header as='h2'>ยาช่วยเลิกบุหรี่</Header>
+                
             </div>
         )
     }

@@ -360,7 +360,7 @@ $form-color : #98d8e3;
   }
   .ui.icon.aligned.header {
     font-family: THSarabunNewBd;
-    color: #117cba;
+    // color: #117cba;
     font-size: 50px;
     text-align: left;
   }
@@ -469,7 +469,7 @@ $form-color : #98d8e3;
   }
   .ui.center.aligned.header{
     font-family: THSarabunNewBd;
-    font-size: 40px;
+    font-size: 50px;
   }
   .ui.medium.image{
     // border: rgb(0, 62, 143) solid 5px;
@@ -495,7 +495,7 @@ $form-color : #98d8e3;
   }
   .ui.center.aligned.header{
     font-family: THSarabunNewBd;
-    font-size: 40px;
+    font-size: 50px;
   }
   h3.ui.header{
     font-family: THSarabunNewBd;
@@ -534,5 +534,33 @@ $form-color : #98d8e3;
   .ui.form .inline.fields .field>label{
     font-family: THSarabunNew;
     font-size: 20px;
+  }
+}
+.SmokingFollowUpA5Page{
+  .ui.form textarea{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+}
+.AsthmaFormPage{
+  padding-top: 50px;
+  .ui.medium.image{
+    border: rgb(0, 62, 143) solid 5px;
+    margin: auto;
+    width: 200px;
+  }
+  h1.ui.header {
+    font-family: THSarabunNewBd;
+    font-size: 50px;
+    text-align: center;
+  }
+}
+.PatientInfoPage{
+  padding-top: 50px;
+  .ui.icon.header{
+    font-family: THSarabunNewBd;
+    font-size: 50px;
+    // color: #117cba;
+    line-height: 100px;
   }
 }

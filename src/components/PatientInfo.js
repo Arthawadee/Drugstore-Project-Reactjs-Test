@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Header } from "semantic-ui-react";
+import { Form, Header, Icon } from "semantic-ui-react";
 
 
 export default class PatientInfo extends Component {
@@ -18,6 +18,10 @@ export default class PatientInfo extends Component {
     render() {
         return (
             <div className = 'PatientInfoPage'>
+                <Header as='h2' icon textAlign='center'>
+      <Icon name='users' circular />
+      <Header.Content>ข้อมูลทั่วไป</Header.Content>
+    </Header>
                 <Form>
                     <Form.Input
                         required
