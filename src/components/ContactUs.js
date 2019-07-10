@@ -3,8 +3,8 @@ import {
   Responsive,
   Segment
 } from "semantic-ui-react";
-import ContactUsSmall from "./ContactUsSmall";
-import ContactUsLarge from "./ContactUsLarge";
+import ContactUsSmall from "./ContactUs/ContactUsSmall";
+import ContactUsLarge from "./ContactUs/ContactUsLarge";
 
 export default class ContactUs extends Component {
   render() {

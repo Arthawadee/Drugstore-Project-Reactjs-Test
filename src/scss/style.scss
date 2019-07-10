@@ -337,8 +337,13 @@ $form-color : #98d8e3;
 
 .SmokingFormPage{
   text-align: center;
-  padding: 20px 50px;
+  padding: 50px;
 
+  .ui.medium.image{
+    // border: rgb(0, 62, 143) solid 5px;
+    margin: auto;
+    width: 200px;
+  }
   .ui.icon.header.pageHeader {
     font-family: THSarabunNewBd;
     font-size: 40px;
@@ -386,6 +391,16 @@ $form-color : #98d8e3;
 
   .ui.form .fields>.field{
     margin: 0;
+  }
+  .ui.bottom.attached.segment.active.tab{
+    background-color: $form-color;
+  }
+  .ui.steps .step .title{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  .ui.attached.segment{
+    padding-top: 50px;
   }
 }
 
@@ -437,4 +452,82 @@ $form-color : #98d8e3;
   //   font-family: THSarabunNewBd;
   //   font-size: 30px;
   // }
+}
+
+
+
+.StrokeFormPage{
+  padding: 50px;
+  .AddNewPatientForm{
+    color: #117cba;
+    padding: 20px;
+    font-family: THSarabunNew;
+    font-size: 40px;
+    width: 90%;
+    margin: auto;
+    background-color: $form-color;
+  }
+  .ui.center.aligned.header{
+    font-family: THSarabunNewBd;
+    font-size: 40px;
+  }
+  .ui.medium.image{
+    // border: rgb(0, 62, 143) solid 5px;
+    margin: auto;
+    width: 200px;
+  }
+}
+
+.COPDFormPage{
+  padding: 50px;
+  .AddNewPatientForm{
+    padding: 20px;
+    font-family: THSarabunNew;
+    font-size: 40px;
+    width: 90%;
+    margin: auto;
+    background-color: $form-color;
+  }
+  .ui.center.aligned.header{
+    font-family: THSarabunNewBd;
+    font-size: 40px;
+  }
+  h3.ui.header{
+    font-family: THSarabunNewBd;
+    font-size: 30px;
+  }
+  .ui.form .inline.fields>label,.ui.checkbox label{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  .ui.medium.image{
+    // border: rgb(0, 62, 143) solid 5px;
+    margin: auto;
+    width: 200px;
+  }
+}
+.SmokingCessationPlanPage{
+  padding-top: 20px;
+  h2.ui.icon.aligned.header{
+    font-family: THSarabunNew;
+    font-size: 30px;
+    text-align: left;
+    color: black;
+  }
+}
+
+.SmokingCessationFormPage{
+  padding-top: 20px;
+  h2.ui.icon.aligned.header{
+    font-family: THSarabunNew;
+    font-size: 30px;
+    text-align: left;
+    color: black;
+  }
+}
+.SmokingFollowUpPage{
+  .ui.form .inline.fields .field>label{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
 }

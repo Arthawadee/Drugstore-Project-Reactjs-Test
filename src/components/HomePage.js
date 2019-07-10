@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Segment, Responsive } from "semantic-ui-react";
-import HomePageLarge from "./HomepageLarge";
-import HomepageSmall from "./HomepageSmall";
+import HomePageLarge from "./HomePage/HomepageLarge";
+import HomepageSmall from "./HomePage/HomepageSmall";
 // import "./HomePage.css";
 
 export default class HomePage extends Component {
