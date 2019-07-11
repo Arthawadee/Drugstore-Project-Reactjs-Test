@@ -9,10 +9,12 @@ import { BrowserRouter } from 'react-router-dom'
 // import AppEx4State from './App_Ex4_State';
 // import HomePage from './HomePage';
 import * as serviceWorker from './serviceWorker';
+import store from './components/stores/TodoStore';
 
+// console.log(store.todos)
 ReactDOM.render(
     <BrowserRouter>
-    <App />
+    <App store={store} />
     </BrowserRouter>
 , document.getElementById('root'));
 

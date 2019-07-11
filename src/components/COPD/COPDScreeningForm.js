@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Icon, Form, Select, Radio, Image } from "semantic-ui-react";
+import { Form, Select } from "semantic-ui-react";
 
 export default class COPDScreeningForm extends Component {
     constructor(props) {

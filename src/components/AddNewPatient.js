@@ -3,10 +3,10 @@ import { Form, Button } from "semantic-ui-react";
 
 // import "./css/AddNewPatient.css";
 // import "./scss/AddNewPatient.scss";
-const options = [
-  { key: "m", text: "ชาย", value: "male" },
-  { key: "f", text: "หญิง", value: "female" }
-];
+// const options = [
+//   { key: "m", text: "ชาย", value: "male" },
+//   { key: "f", text: "หญิง", value: "female" }
+// ];
 export default class AddNewPatient extends Component {
   constructor(props) {
     super(props);

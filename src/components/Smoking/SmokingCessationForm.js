@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Form, Button, Radio, Select, Input, Tab } from "semantic-ui-react";
-import SmokingCessationPlan from './SmokingCessationPlan';
+import { Form, Radio, Select, Input } from "semantic-ui-react";
+// import SmokingCessationPlan from './SmokingCessationPlan';
 
 export default class SmokingCessationForm extends Component {
   constructor(props) {

@@ -24,7 +24,7 @@ export default class AddNewPharmacist extends Component {
       <div className="AddNewPharmacistPage">
         <h2 className="ui icon aligned header">
           <i aria-hidden="true" className="user plus circular icon" />
-          <div className="content">เพิ่มเสัชกร</div>
+          <div className="content">เพิ่มเภสัชกร</div>
         </h2>
 
         <div className="AddNewPatientForm">

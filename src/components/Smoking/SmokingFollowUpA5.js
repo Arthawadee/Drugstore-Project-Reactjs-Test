@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Form, Radio, Input, Select, TextArea, Label } from "semantic-ui-react";
+import { Header, Form, Input, Select, TextArea, } from "semantic-ui-react";
 
 export default class SmokingFollowUpA5 extends Component {
   constructor(props) {

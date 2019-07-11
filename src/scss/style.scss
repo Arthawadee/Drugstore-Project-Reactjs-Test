@@ -348,6 +348,10 @@ $form-color : #98d8e3;
     font-family: THSarabunNewBd;
     font-size: 40px;
   }
+  .ui.attached.steps{
+    overflow: auto;
+    overflow-y: hidden;
+  }
   .AddNewPatientForm {
     text-align: center;
     color: #117cba;
@@ -432,12 +436,17 @@ $form-color : #98d8e3;
 
 .EditPatientDataPage{
   padding: 50px;
+  .ui.attached.tabular.menu{
+    overflow: auto;
+    overflow-y: hidden;
+  }
   h2.ui.header{
     font-family: THSarabunNewBd;
     font-size: 30px;
   }
   .ui.tabular.menu .active.item{
     background-color: #056eb0;
+    color: white;
   }
   .ui.form .field>label,.ui.form .field .ui.input input,.ui.selection.dropdown,.ui.selection.dropdown .menu>.item {
     font-family: THSarabunNew;
@@ -445,6 +454,9 @@ $form-color : #98d8e3;
   }
   .ui.form {
     margin: 20px;
+  }
+  .header-item{
+    width: 100px;
   }
 }
 .PatientInfo{
@@ -481,10 +493,26 @@ $form-color : #98d8e3;
     font-family: THSarabunNew;
     font-size: 20px;
   }
+  .ui.form .field>.selection.dropdown {
+    min-width: 0;
+  }
 }
 
 .COPDFormPage{
   padding: 50px;
+  
+  .ui.steps{
+    overflow-x: auto;
+    font-family: THSarabunNew;
+    
+  }
+  .ui.steps .step .title{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  .ui.form .field>.selection.dropdown {
+    min-width: 0;
+  }
   .AddNewPatientForm{
     padding: 20px;
     font-family: THSarabunNew;

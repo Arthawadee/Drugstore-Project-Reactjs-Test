@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Tab, Header, Image, Step, Icon, Segment } from "semantic-ui-react";
+import { Header, Image, Step, Icon, Segment } from "semantic-ui-react";
 import FamilyInfo from "./Smoking/FamilyInfo";
 import HealthBehavior from "./Smoking/HealthBehavior";
 import SmokingCessationForm from "./Smoking/SmokingCessationForm";
@@ -7,56 +7,56 @@ import SmokingCessationPlan from "./Smoking/SmokingCessationPlan";
 import SmokingFollowUpA5 from "./Smoking/SmokingFollowUpA5";
 import SmokingCessationMedicine from "./Smoking/SmokingCessationMedicine";
 
-const panes = [
-  {
-    menuItem: "ประวัติครอบครัว",
-    render: () => (
-      <Tab.Pane>
-        <FamilyInfo />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "พฤติกรรมสุขภาพ",
-    render: () => (
-      <Tab.Pane>
-        <HealthBehavior />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "แบบคัดกรองการสูบบุหรี่ (A1-A4)",
-    render: () => (
-      <Tab.Pane>
-        <SmokingCessationForm />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "แผนการเลิกบุหรี่",
-    render: () => (
-      <Tab.Pane>
-        <SmokingCessationPlan />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "ยาช่วยเลิกบุหรี่",
-    render: () => (
-      <Tab.Pane>
-        <SmokingCessationMedicine />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "ติดตามผล (A5)",
-    render: () => (
-      <Tab.Pane>
-        <SmokingFollowUpA5 />
-      </Tab.Pane>
-    )
-  }
-];
+// const panes = [
+//   {
+//     menuItem: "ประวัติครอบครัว",
+//     render: () => (
+//       <Tab.Pane>
+//         <FamilyInfo />
+//       </Tab.Pane>
+//     )
+//   },
+//   {
+//     menuItem: "พฤติกรรมสุขภาพ",
+//     render: () => (
+//       <Tab.Pane>
+//         <HealthBehavior />
+//       </Tab.Pane>
+//     )
+//   },
+//   {
+//     menuItem: "แบบคัดกรองการสูบบุหรี่ (A1-A4)",
+//     render: () => (
+//       <Tab.Pane>
+//         <SmokingCessationForm />
+//       </Tab.Pane>
+//     )
+//   },
+//   {
+//     menuItem: "แผนการเลิกบุหรี่",
+//     render: () => (
+//       <Tab.Pane>
+//         <SmokingCessationPlan />
+//       </Tab.Pane>
+//     )
+//   },
+//   {
+//     menuItem: "ยาช่วยเลิกบุหรี่",
+//     render: () => (
+//       <Tab.Pane>
+//         <SmokingCessationMedicine />
+//       </Tab.Pane>
+//     )
+//   },
+//   {
+//     menuItem: "ติดตามผล (A5)",
+//     render: () => (
+//       <Tab.Pane>
+//         <SmokingFollowUpA5 />
+//       </Tab.Pane>
+//     )
+//   }
+// ];
 
 
 export default class SmokingForm extends Component {
@@ -143,7 +143,7 @@ showSmokingFollowUpA5=()=>{
     console.log(value);
   };
   render() {
-    const { value } = this.state;
+    
     return (
       <div className="SmokingFormPage">
         <Image
@@ -166,7 +166,7 @@ showSmokingFollowUpA5=()=>{
         
         
 
-<Step.Group attached='top' size='mini'>
+<Step.Group attached='top'>
       <Step active={this.state.active1} completed={this.state.step1Complete} onClick={this.showFamilyInfo}>
         <Icon name='close' />
         <Step.Content>

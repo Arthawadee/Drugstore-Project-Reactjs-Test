@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
+import store from './stores/TodoStore';
 
 export default class AddNewDrugstore extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ export default class AddNewDrugstore extends Component {
         <h2 className="ui icon aligned header">
           <i aria-hidden="true" className="home circular icon" />
           <div className="content">เพิ่มร้านยา</div>
+          {/* <div className="content">{store.todos}</div> */}
         </h2>
 
         <div className="AddNewPatientForm">

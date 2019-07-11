@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Icon, Form, Select, Image, Step, Segment } from "semantic-ui-react";
+import { Header, Icon, Image, Step, Segment } from "semantic-ui-react";
 import StrokeScreeningForm from "./Stroke/StrokeScreeningForm";
 import StrokeEducation from './Stroke/StrokeEducation';
 

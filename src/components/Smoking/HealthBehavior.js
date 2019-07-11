@@ -108,7 +108,8 @@ export default class HealthBehavior extends Component {
             type='number'
             label='ปี'
             placeholder='ปี'
-            />
+            /></Form.Group>
+            <Form.Group widths='equal'>
                 <Form.Field
             control={Select}
             required
@@ -145,7 +146,7 @@ export default class HealthBehavior extends Component {
                 this.setState({stopAmount: value})
             }}
             />
-
+</Form.Group>
             <Form.Field
             control={Select}
             required
@@ -164,7 +165,7 @@ export default class HealthBehavior extends Component {
             
             />
             
-          </Form.Group>
+          
 
 
         

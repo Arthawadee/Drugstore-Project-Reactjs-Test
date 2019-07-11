@@ -14,8 +14,11 @@ export default class PatientInfo extends Component {
             UnderlyDisease: '',
             DrugAllergy: ''
         };
+        
       }
     render() {
+        console.log('PatientInfo');
+        console.log(this.props.store.PatientInfo);
         return (
             <div className = 'PatientInfoPage'>
                 <Header as='h2' icon textAlign='center'>
@@ -50,7 +53,7 @@ export default class PatientInfo extends Component {
                         // console.log('BMI: '+ {BMI}))
                         }}
                     />
-                    <Header as = 'h2'>BMI: {eval("this.state.weight / ((this.state.height/100)*(this.state.height/100))")}</Header>
+                    <Header as = 'h2'>BMI: {this.props.store.PatientInfo.BMI} kg/m*m</Header>
                     <Form.Input
                         required
                         icon="heartbeat"

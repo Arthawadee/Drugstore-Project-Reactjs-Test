@@ -5,11 +5,20 @@ import {
 } from "semantic-ui-react";
 import ContactUsSmall from "./ContactUs/ContactUsSmall";
 import ContactUsLarge from "./ContactUs/ContactUsLarge";
+import {observer} from 'mobx-react';
+import store from './stores/TodoStore';
 
-export default class ContactUs extends Component {
+
+
+const TodoView = observer(class ContactUs extends Component {
+  constructor(props){
+    super(props)
+    console.log(store)
+  }
   render() {
     return (
       <div>
+        {/* <h1>{store.filter}</h1> */}
         <Segment.Group>
           <Responsive as={Segment} basic {...Responsive.onlyMobile}>
             <ContactUsSmall />
@@ -30,4 +39,6 @@ export default class ContactUs extends Component {
       </div>
     );
   }
-}
+})
+
+export default TodoView;

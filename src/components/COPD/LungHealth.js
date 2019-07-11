@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Icon, Form, Select, Radio, Image } from "semantic-ui-react";
+import { Form, Select, Radio } from "semantic-ui-react";
 
 export default class LungHealth extends Component {
     constructor(props) {
