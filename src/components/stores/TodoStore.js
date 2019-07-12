@@ -10,7 +10,13 @@ class TodoStore{
                                 HR: 0, RR: 0, BP: 0, UnderlyDisease: '',DrugAllergy: ''}
 
 
-
+    setPatientInfo(weight, height, HR, RR, BP, UnderlyDisease ,DrugAllergy){
+        // this.PatientInfo.weight = weight;
+        // this.PatientInfo.height = height;
+        // this.PatientInfo.weight = weight;
+        this.PatientInfo={weight: weight, height: height, BMI: weight/(height*height/10000), 
+            HR: HR, RR: RR, BP: BP, UnderlyDisease: UnderlyDisease,DrugAllergy: DrugAllergy}
+    }
     
 }
 var store = window.store = new TodoStore()
@@ -18,6 +24,7 @@ var store = window.store = new TodoStore()
 export default store;
 
 autorun(()=>{
-    console.log(store.todos[0]);
-    console.log(store.filter);
+    // console.log(store.todos[0]);
+    // console.log(store.filter);
+    console.log(store.PatientInfo);
 })

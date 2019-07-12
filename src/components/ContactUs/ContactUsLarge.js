@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Image, Header, List } from "semantic-ui-react";
+import { Grid, Image, Header, List, Button } from "semantic-ui-react";
 
 export default class ContactUsLarge extends Component {
   render() {
@@ -97,6 +97,54 @@ export default class ContactUsLarge extends Component {
                 src="https://www.eg.mahidol.ac.th/egmu/images/slides/mapsalaya.jpg"
                 href="https://www.eg.mahidol.ac.th/egmu/images/slides/mapsalaya.jpg"
               />
+            </Grid.Column>
+          </Grid>
+        </div>
+
+        <div className="foot">
+          <div className="social-button">
+            <Button
+              href="https://www.facebook.com/egmahidol/"
+              target="_blank"
+              circular
+              color="facebook"
+              icon="facebook"
+              size="huge"
+            />
+            <Button
+              href="https://www.youtube.com/channel/UCuPpIQBQiPUZMAFua_sYg8Q"
+              target="_blank"
+              circular
+              color="youtube"
+              icon="youtube"
+              size="huge"
+            />
+          </div>
+          <Grid columns={2} relaxed="very">
+            <Grid.Column>
+              {/* <img
+                href='https://www.google.com/maps/place/Electrical+Engineering+Department+Mahidol+University/@13.795808,100.325846,17z/data=!4m5!3m4!1s0x30e2938c6cf33c09:0x9d2c882c5320deed!8m2!3d13.7958076!4d100.325846?hl=en-US'
+                target="_blank"
+                src="https://www.eg.mahidol.ac.th/egmu_eng/images/logos/map-03.jpg"
+                alt="NO IMAGE"
+              /> */}
+              <Image
+                 href='https://goo.gl/maps/N5vTZA64RUqpXKJz6'
+                 target="_blank"
+                 src="https://www.eg.mahidol.ac.th/egmu_eng/images/logos/map-03.jpg"
+                 alt="NO IMAGE"
+              />
+            </Grid.Column>
+
+            <Grid.Column>
+              <List>
+                <List.Item>คณะวิศวกรรมศาสตร์ มหาวิทยาลัยมหิดล</List.Item>
+                <List.Item>25/25 ถ.พุทธมณฑลสาย 4, ศาลายา,</List.Item>
+                <List.Item>พุทธมณฑล, นครปฐม, 73170 </List.Item>
+                <List.Item>Tel: 0 2889 2138 </List.Item>
+                <List.Item>Fax: 0 2441 9731</List.Item>
+                <List.Item>ผู้ดูแลเว็บ: racha.tha@mahidol.edu</List.Item>
+              </List>
             </Grid.Column>
           </Grid>
         </div>

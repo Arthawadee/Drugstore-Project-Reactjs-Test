@@ -26,7 +26,7 @@ export default class EditPatientData extends Component {
             lastName: 'มานี',
             id: 'dfxcjbmb'
         };
-        console.log(store)
+        // console.log(store)
       }
 
     render() {

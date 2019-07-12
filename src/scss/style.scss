@@ -1,4 +1,4 @@
-$form-color : #98d8e3;
+$form-color: #98d8e3;
 @font-face {
   font-family: "THSarabunNew";
   src: url("fonts/THSarabunNew.ttf") format("truetype");
@@ -234,6 +234,26 @@ $form-color : #98d8e3;
 
 .ContactUsPage {
   padding: 50px 10%;
+  img {
+    width: 100%;
+  }
+  .foot {
+    // position: fixed;
+    // left: 0;
+    // bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    font-family: THSarabunNew;
+    font-size: 20px;
+    .social-button{
+      // position: absolute;
+      // right: 0;
+      // top: 0;
+      text-align: right;
+      padding: 0 0 10px 0;
+    }
+  }
   h1.ui.header {
     font-family: THSarabunNewBd;
     font-size: 50px;
@@ -257,9 +277,7 @@ $form-color : #98d8e3;
   }
 }
 
-
-
-.AddNewPharmacistPage{
+.AddNewPharmacistPage {
   text-align: center;
   padding: 20px 50px;
 
@@ -309,37 +327,11 @@ $form-color : #98d8e3;
   }
 }
 
-.ContactUsPage {
-  padding: 50px 10%;
-  h1.ui.header {
-    font-family: THSarabunNewBd;
-    font-size: 50px;
-    text-align: center;
-  }
-  .pageContent {
-    margin-top: 40px;
-    background-color: $form-color;
-    padding: 30px;
-    h2.ui.header {
-      font-family: THSarabunNewBd;
-      font-size: 25px;
-      font-weight: bold;
-    }
-    .ui.bulleted.list > .item,
-    .ui.list > .item {
-      font-family: THSarabunNew;
-      font-size: 20px;
-      // line-height: 10px;
-    }
-  }
-}
-
-
-.SmokingFormPage{
+.SmokingFormPage {
   text-align: center;
   padding: 50px;
 
-  .ui.medium.image{
+  .ui.medium.image {
     // border: rgb(0, 62, 143) solid 5px;
     margin: auto;
     width: 200px;
@@ -348,7 +340,7 @@ $form-color : #98d8e3;
     font-family: THSarabunNewBd;
     font-size: 40px;
   }
-  .ui.attached.steps{
+  .ui.attached.steps {
     overflow: auto;
     overflow-y: hidden;
   }
@@ -384,7 +376,8 @@ $form-color : #98d8e3;
     }
   }
   .ui.input > input,
-  .ui.blue.button ,.ui.checkbox label{
+  .ui.blue.button,
+  .ui.checkbox label {
     font-family: THSarabunNew;
     font-size: 20px;
   }
@@ -393,84 +386,59 @@ $form-color : #98d8e3;
     padding: 5px 20px;
   }
 
-  .ui.form .fields>.field{
+  .ui.form .fields > .field {
     margin: 0;
   }
-  .ui.bottom.attached.segment.active.tab{
+  .ui.bottom.attached.segment.active.tab {
     background-color: $form-color;
   }
-  .ui.steps .step .title{
+  .ui.steps .step .title {
     font-family: THSarabunNew;
     font-size: 20px;
   }
-  .ui.attached.segment{
+  .ui.attached.segment {
     padding-top: 50px;
   }
 }
 
-.ContactUsPage {
-  padding: 50px 10%;
-  h1.ui.header {
-    font-family: THSarabunNewBd;
-    font-size: 50px;
-    text-align: center;
-  }
-  .pageContent {
-    margin-top: 40px;
-    background-color: $form-color;
-    padding: 30px;
-    h2.ui.header {
-      font-family: THSarabunNewBd;
-      font-size: 25px;
-      font-weight: bold;
-    }
-    .ui.bulleted.list > .item,
-    .ui.list > .item {
-      font-family: THSarabunNew;
-      font-size: 20px;
-      // line-height: 10px;
-    }
-  }
-}
-
-
-.EditPatientDataPage{
+.EditPatientDataPage {
   padding: 50px;
-  .ui.attached.tabular.menu{
+  .ui.attached.tabular.menu {
     overflow: auto;
     overflow-y: hidden;
   }
-  h2.ui.header{
+  h2.ui.header {
     font-family: THSarabunNewBd;
     font-size: 30px;
   }
-  .ui.tabular.menu .active.item{
+  .ui.tabular.menu .active.item {
     background-color: #056eb0;
     color: white;
   }
-  .ui.form .field>label,.ui.form .field .ui.input input,.ui.selection.dropdown,.ui.selection.dropdown .menu>.item {
+  .ui.form .field > label,
+  .ui.form .field .ui.input input,
+  .ui.selection.dropdown,
+  .ui.selection.dropdown .menu > .item {
     font-family: THSarabunNew;
     font-size: 20px;
   }
   .ui.form {
     margin: 20px;
   }
-  .header-item{
+  .header-item {
     width: 100px;
   }
 }
-.PatientInfo{
+.PatientInfo {
   // h2.ui.header{
   //   font-family: THSarabunNewBd;
   //   font-size: 30px;
   // }
 }
 
-
-
-.StrokeFormPage{
+.StrokeFormPage {
   padding: 50px;
-  .AddNewPatientForm{
+  .AddNewPatientForm {
     color: #117cba;
     padding: 20px;
     font-family: THSarabunNew;
@@ -479,41 +447,40 @@ $form-color : #98d8e3;
     margin: auto;
     background-color: $form-color;
   }
-  .ui.center.aligned.header{
+  .ui.center.aligned.header {
     font-family: THSarabunNewBd;
     font-size: 50px;
   }
-  .ui.medium.image{
+  .ui.medium.image {
     // border: rgb(0, 62, 143) solid 5px;
     margin: auto;
     width: 200px;
   }
-  
-  .ui.steps .step .title{
+
+  .ui.steps .step .title {
     font-family: THSarabunNew;
     font-size: 20px;
   }
-  .ui.form .field>.selection.dropdown {
+  .ui.form .field > .selection.dropdown {
     min-width: 0;
   }
 }
 
-.COPDFormPage{
+.COPDFormPage {
   padding: 50px;
-  
-  .ui.steps{
+
+  .ui.steps {
     overflow-x: auto;
     font-family: THSarabunNew;
-    
   }
-  .ui.steps .step .title{
+  .ui.steps .step .title {
     font-family: THSarabunNew;
     font-size: 20px;
   }
-  .ui.form .field>.selection.dropdown {
+  .ui.form .field > .selection.dropdown {
     min-width: 0;
   }
-  .AddNewPatientForm{
+  .AddNewPatientForm {
     padding: 20px;
     font-family: THSarabunNew;
     font-size: 40px;
@@ -521,27 +488,31 @@ $form-color : #98d8e3;
     margin: auto;
     background-color: $form-color;
   }
-  .ui.center.aligned.header{
+  .ui.center.aligned.header {
     font-family: THSarabunNewBd;
     font-size: 50px;
   }
-  h3.ui.header{
+  h3.ui.header {
     font-family: THSarabunNewBd;
     font-size: 30px;
   }
-  .ui.form .inline.fields>label,.ui.checkbox label{
+  .ui.form .inline.fields > label,
+  .ui.checkbox label {
     font-family: THSarabunNew;
     font-size: 20px;
   }
-  .ui.medium.image{
+  .ui.medium.image {
     // border: rgb(0, 62, 143) solid 5px;
     margin: auto;
     width: 200px;
   }
 }
-.SmokingCessationPlanPage{
+.SmokingCessationPlanPage {
   padding-top: 20px;
-  h2.ui.icon.aligned.header{
+  .ui.form .field > .selection.dropdown {
+    min-width: 0;
+  }
+  h2.ui.icon.aligned.header {
     font-family: THSarabunNew;
     font-size: 30px;
     text-align: left;
@@ -549,30 +520,41 @@ $form-color : #98d8e3;
   }
 }
 
-.SmokingCessationFormPage{
+.SmokingCessationFormPage {
   padding-top: 20px;
-  h2.ui.icon.aligned.header{
+  .ui.form .field > .selection.dropdown {
+    min-width: 0;
+  }
+  h2.ui.icon.aligned.header {
     font-family: THSarabunNew;
     font-size: 30px;
     text-align: left;
     color: black;
   }
 }
-.SmokingFollowUpPage{
-  .ui.form .inline.fields .field>label{
+.SmokingFollowUpPage {
+  .ui.form .inline.fields .field > label {
     font-family: THSarabunNew;
     font-size: 20px;
   }
 }
-.SmokingFollowUpA5Page{
-  .ui.form textarea{
+.SmokingFollowUpA5Page {
+  .ui.form textarea {
     font-family: THSarabunNew;
     font-size: 20px;
   }
+  .ui.form .field > .selection.dropdown {
+    min-width: 0;
+  }
 }
-.AsthmaFormPage{
+.HealthBehaviorPage {
+  .ui.form .field > .selection.dropdown {
+    min-width: 0;
+  }
+}
+.AsthmaFormPage {
   padding-top: 50px;
-  .ui.medium.image{
+  .ui.medium.image {
     border: rgb(0, 62, 143) solid 5px;
     margin: auto;
     width: 200px;
@@ -583,12 +565,17 @@ $form-color : #98d8e3;
     text-align: center;
   }
 }
-.PatientInfoPage{
+.PatientInfoPage {
   padding-top: 50px;
-  .ui.icon.header{
+  .ui.icon.header {
     font-family: THSarabunNewBd;
     font-size: 50px;
     // color: #117cba;
     line-height: 100px;
+  }
+}
+.FamilyInfoPage {
+  .ui.form .field > .selection.dropdown {
+    min-width: 0;
   }
 }

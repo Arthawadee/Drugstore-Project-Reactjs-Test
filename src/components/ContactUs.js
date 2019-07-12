@@ -29,12 +29,6 @@ const TodoView = observer(class ContactUs extends Component {
           <Responsive as={Segment} basic {...Responsive.onlyComputer}>
             <ContactUsLarge />
           </Responsive>
-          <Responsive as={Segment} basic {...Responsive.onlyLargeScreen}>
-            <ContactUsLarge />
-          </Responsive>
-          <Responsive as={Segment} basic {...Responsive.onlyWidescreen}>
-            <ContactUsLarge />
-          </Responsive>
         </Segment.Group>
       </div>
     );

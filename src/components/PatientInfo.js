@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Form, Header, Icon } from "semantic-ui-react";
+import { Form, Header, Icon, Button } from "semantic-ui-react";
+import {observer} from 'mobx-react';
 
 
-export default class PatientInfo extends Component {
+const PatientInfo = observer(class PatientInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,11 +15,17 @@ export default class PatientInfo extends Component {
             UnderlyDisease: '',
             DrugAllergy: ''
         };
-        
-      }
-    render() {
         console.log('PatientInfo');
         console.log(this.props.store.PatientInfo);
+      }
+
+
+      setPatientInfo = () => {
+        this.props.store.setPatientInfo(this.state.weight, this.state.height, this.state.HR, this.state.RR
+            , this.state.BP, this.state.UnderlyDisease, this.state.DrugAllergy);
+    }
+    render() {
+        
         return (
             <div className = 'PatientInfoPage'>
                 <Header as='h2' icon textAlign='center'>
@@ -115,7 +122,9 @@ export default class PatientInfo extends Component {
                         }}
                     />
                 </Form>
+                <Button onClick={this.setPatientInfo}>send all data</Button>
             </div>
         )
     }
-}
+});
+export default PatientInfo;

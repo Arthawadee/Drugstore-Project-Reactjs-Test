@@ -16,7 +16,7 @@ export default class App extends Component {
 
   constructor(props){
     super(props)
-    console.log(this.props.store.todos)
+    // console.log(this.props.store.todos)
   }
 
 
@@ -55,7 +55,7 @@ export default class App extends Component {
             <img
               src="https://cdn1.iconfinder.com/data/icons/medicine-1/512/medicine-512.png"
               alt="eror"
-            />{" "}
+            />
             <div className="headline">DRUGSTORE CLINIC</div>
           </Menu.Item>
           <Menu.Item
