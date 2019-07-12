@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "semantic-ui-css/semantic.min.css";
-// import HomePage from "./components/HomePage";
+import HomePage from "./components/HomePage";
 import { Link, Switch, Route } from "react-router-dom";
 import AddNewPatient from "./components/AddNewPatient";
 import AddNewDrugstore from "./components/AddNewDrugstore";
@@ -69,12 +69,12 @@ export default class App extends Component {
           </Menu.Item>
           <Menu.Item
             as={Link}
-            to="/contactus"
-            name="ContactUs"
-            active={activeItem === "ContactUs"}
+            to="/screening"
+            name="Screening"
+            active={activeItem === "Screening"}
             onClick={this.handleItemClick}
           >
-            ติดต่อเรา
+            การคัดกรองโรค
           </Menu.Item>
           
           <Menu.Item
@@ -105,6 +105,15 @@ export default class App extends Component {
             onClick={this.handleItemClick}
           >
             เพิ่มเภสัชกร
+          </Menu.Item>
+          <Menu.Item
+            as={Link}
+            to="/contactus"
+            name="ContactUs"
+            active={activeItem === "ContactUs"}
+            onClick={this.handleItemClick}
+          >
+            ติดต่อเรา
           </Menu.Item>
 
           {/* <Menu.Menu position='right'>
@@ -145,7 +154,8 @@ export default class App extends Component {
             <Segment basic style={{ backgroundColor: "#e3fbff", minHeight: 600 }}>
               
                 <Switch>
-                  <Route exact path="/" component={EditPatientData} />
+                  <Route exact path="/" component={HomePage} />
+                  <Route path="/screening" component={EditPatientData} />
                   <Route path="/contactus" component={ContactUs} />
                   <Route path="/AddNewDrugstore" component={AddNewDrugstore} />
                   <Route path="/AddNewPatient" component={AddNewPatient} />

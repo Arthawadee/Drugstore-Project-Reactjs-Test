@@ -24,6 +24,9 @@ const PatientInfo = observer(class PatientInfo extends Component {
         this.props.store.setPatientInfo(this.state.weight, this.state.height, this.state.HR, this.state.RR
             , this.state.BP, this.state.UnderlyDisease, this.state.DrugAllergy);
     }
+
+
+    
     render() {
         
         return (
