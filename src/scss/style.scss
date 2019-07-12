@@ -64,11 +64,21 @@ $form-color: #98d8e3;
     }
   }
 }
-
+.ui.modal>.actions{
+  text-align: center;
+}
 .home {
   .menuContent {
     color: brown;
     font-weight: bold;
+  }
+  a{
+    cursor: pointer;
+  }
+  a:hover{
+    color: red;
+    font-weight: bold;
+    text-decoration-line: underline;
   }
   h2.loginHeader{
     font-family: THSarabunNewBd;

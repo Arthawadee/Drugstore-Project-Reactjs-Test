@@ -1,15 +1,29 @@
 import React, { Component } from "react";
-import { Segment, Form, Button, Divider, Grid, Header } from "semantic-ui-react";
+import {
+  Segment,
+  Form,
+  Button,
+  Divider,
+  Grid,
+  Header,
+  Modal
+} from "semantic-ui-react";
 
 export default class HomepageLarge extends Component {
   constructor(props) {
     super(props);
     this.state = {
       type: "input",
-      score: "null"
+      score: "null",
+      openModal: false
     };
     this.showHide = this.showHide.bind(this);
   }
+  closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
+    this.setState({ closeOnEscape, closeOnDimmerClick, openModal: true });
+  };
+  close = () => this.setState({ openModal: false });
+
   showHide(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -34,10 +48,14 @@ export default class HomepageLarge extends Component {
                 <div class="sub header">ยินดีต้อนรับสู่</div>
                         <div class="sub header">Drugstore Clinic</div>
               </h1> */}
-              <Header as='h1' className="ui icon header pageHeader">ยินดีต้อนรับสู่</Header>
+              <Header as="h1" className="ui icon header pageHeader">
+                ยินดีต้อนรับสู่
+              </Header>
               <div style={{ marginBottom: "30px" }}>
                 {/* <h1 class="ui icon header pageHeader">Drugstore Clinic</h1> */}
-                <Header as='h1' className="ui icon header pageHeader">Drugstore Clinic</Header>
+                <Header as="h1" className="ui icon header pageHeader">
+                  Drugstore Clinic
+                </Header>
               </div>
             </div>
 
@@ -45,10 +63,10 @@ export default class HomepageLarge extends Component {
               <Grid.Column>
                 <Segment
                   inverted
-                  style={{ backgroundColor: "#98d8e3",textAlign:"center" }}
+                  style={{ backgroundColor: "#98d8e3", textAlign: "center" }}
                 >
                   <Form>
-                    <h2 className="loginHeader" style={{textAlign:"center"}}>
+                    <h2 className="loginHeader" style={{ textAlign: "center" }}>
                       กรุณาลงชื่อเข้าสู่ระบบ
                     </h2>
                     <Divider />
@@ -60,8 +78,8 @@ export default class HomepageLarge extends Component {
                         label="Email"
                         type="email"
                         placeholder="Enter Email"
-                        onChange={(e,{value}) => {
-                          console.log('email: ',value)
+                        onChange={(e, { value }) => {
+                          console.log("email: ", value);
                         }}
                       />
                       <Form.Input
@@ -80,13 +98,13 @@ export default class HomepageLarge extends Component {
 
                     {/* <Button className='forgotPW' content='ลืมรหัสผ่าน?' color='blue'/> */}
                   </Form>
-                  <Button color='linkedin' onClick={this.showHide}>
+                  <Button color="linkedin" onClick={this.showHide}>
                     {this.state.type === "input"
                       ? "HidePassword"
                       : "ShowPassword"}
                   </Button>
-                  <div style={{marginTop: '20px',marginBottom: '10px'}}>
-                    <a href="https://www.google.com/search?q=forgot+password&rlz=1C1OKWM_thTH854TH854&oq=forgot&aqs=chrome.2.69i57j0l5.5095j0j7&sourceid=chrome&ie=UTF-8">
+                  <div style={{ marginTop: "20px", marginBottom: "10px" }}>
+                    <a onClick={this.closeConfigShow(true, false)}>
                       ลืมรหัสผ่าน?
                     </a>
                   </div>
@@ -96,6 +114,50 @@ export default class HomepageLarge extends Component {
                 </div>
               </Grid.Column>
             </Grid>
+
+
+
+            <Modal
+              size='mini'
+              open={this.state.openModal}
+              closeOnEscape={this.state.closeOnEscape}
+              closeOnDimmerClick={this.state.closeOnDimmerClick}
+              onClose={this.close}
+              closeIcon
+            >
+              <Modal.Header>Forgot Password</Modal.Header>
+              <Modal.Content>
+                {/* <p>Are you sure you want to delete your account</p> */}
+                <Form>
+                  <Form.Input
+                  required
+                  icon="user"
+                  iconPosition="left"
+                  label="ป้อนที่อยู่อีเมลที่คุณใช้ลงชื่อเข้าสู่ระบบ"
+                  type="email"
+                  placeholder="กรุณากรอกอีเมล์"
+                  onChange={(e, { value }) => {
+                    console.log("email: ", value);
+                  }}
+                  />
+                </Form>
+              </Modal.Content>
+              <Modal.Actions>
+                {/* <Button onClick={this.close} negative>
+                  No
+                </Button> */}
+                <Button
+                  onClick={this.close}
+                  color='blue'
+                  labelPosition="right"
+                  icon="checkmark"
+                  content="Send"
+                />
+              </Modal.Actions>
+            </Modal>
+
+
+
           </div>
         </main>
       </div>
