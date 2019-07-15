@@ -8,12 +8,13 @@ import {
   Header,
   Modal
 } from "semantic-ui-react";
+import ModalExampleMultiple from "./ModalExampleMultiple";
 
 export default class HomepageLarge extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: "input",
+      type: "password",
       score: "null",
       openModal: false
     };
@@ -104,9 +105,10 @@ export default class HomepageLarge extends Component {
                       : "ShowPassword"}
                   </Button>
                   <div style={{ marginTop: "20px", marginBottom: "10px" }}>
-                    <a onClick={this.closeConfigShow(true, false)}>
+                    <ModalExampleMultiple />
+                    {/* <a onClick={this.closeConfigShow(true, false)}>
                       ลืมรหัสผ่าน?
-                    </a>
+                    </a> */}
                   </div>
                 </Segment>
                 <div className="submitBtn">
@@ -115,9 +117,7 @@ export default class HomepageLarge extends Component {
               </Grid.Column>
             </Grid>
 
-
-
-            <Modal
+            {/* <Modal
               size='mini'
               open={this.state.openModal}
               closeOnEscape={this.state.closeOnEscape}
@@ -127,7 +127,6 @@ export default class HomepageLarge extends Component {
             >
               <Modal.Header>Forgot Password</Modal.Header>
               <Modal.Content>
-                {/* <p>Are you sure you want to delete your account</p> */}
                 <Form>
                   <Form.Input
                   required
@@ -143,9 +142,6 @@ export default class HomepageLarge extends Component {
                 </Form>
               </Modal.Content>
               <Modal.Actions>
-                {/* <Button onClick={this.close} negative>
-                  No
-                </Button> */}
                 <Button
                   onClick={this.close}
                   color='blue'
@@ -155,9 +151,7 @@ export default class HomepageLarge extends Component {
                 />
               </Modal.Actions>
             </Modal>
-
-
-
+ */}
           </div>
         </main>
       </div>

@@ -20,8 +20,11 @@ export default class ContactUsLarge extends Component {
 
                 <List.Item>หมายเลขโทรศัพท์ 0-2889-2138 </List.Item>
                 <List.Item>โทรสาร 0-2441-9731</List.Item>
-                <List.Item as="a" href="https://www.eg.mahidol.ac.th">
+                {/* <List.Item as="a" href="https://www.eg.mahidol.ac.th">
                   เว็บไซต์ : https://www.eg.mahidol.ac.th
+                </List.Item> */}
+                <List.Item as="span">
+                  เว็บไซต์ : <a href="https://www.eg.mahidol.ac.th">https://www.eg.mahidol.ac.th</a>
                 </List.Item>
               </List>
 

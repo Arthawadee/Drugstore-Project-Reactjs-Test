@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
+import TopButton from "./TopButton";
 
 // import "./css/AddNewPatient.css";
 // import "./scss/AddNewPatient.scss";
@@ -189,6 +190,7 @@ export default class AddNewPatient extends Component {
 
           <Button circular content="เพิ่ม" color="blue" />
         </div>
+        <TopButton />
       </div>
     );
   }

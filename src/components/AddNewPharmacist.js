@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
+import TopButton from "./TopButton";
 
 export default class AddNewPharmacist extends Component {
   constructor(props) {
@@ -98,6 +99,7 @@ export default class AddNewPharmacist extends Component {
 
           <Button circular content="เพิ่ม" color="blue" />
         </div>
+        <TopButton />
       </div>
     );
   }
