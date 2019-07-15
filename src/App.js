@@ -9,10 +9,11 @@ import AddNewPharmacist from "./components/AddNewPharmacist";
 import EditPatientData from "./components/EditPatientData";
 import ContactUs from "./components/ContactUs";
 import { Menu, Icon, Segment, Sidebar } from "semantic-ui-react";
+import { withCookies, Cookies } from 'react-cookie';
 
 import "./scss/style.scss";
 
-export default class App extends Component {
+class App extends Component {
 
   constructor(props){
     super(props)
@@ -30,7 +31,9 @@ export default class App extends Component {
   };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
+  componentDidMount(){
+    console.log(this.props)
+  }
   render() {
     var { visible, activeItem } = this.state;
     return (
@@ -169,3 +172,7 @@ export default class App extends Component {
     );
   }
 }
+
+
+
+export default withCookies(App);

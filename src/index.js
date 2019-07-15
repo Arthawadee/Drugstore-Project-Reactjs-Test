@@ -1,22 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 // import './index.css';
-import App from './App';
-import './scss/style.scss'
-import { BrowserRouter } from 'react-router-dom'
+import App from "./App";
+import "./scss/style.scss";
+import { BrowserRouter } from "react-router-dom";
 // import AppEx1Component from './App_Ex1_Component';
 // import AppEx2Props from './App_Ex2_Props';
 // import AppEx4State from './App_Ex4_State';
 // import HomePage from './HomePage';
-import * as serviceWorker from './serviceWorker';
-import store from './components/stores/TodoStore';
+import * as serviceWorker from "./serviceWorker";
+import store from "./components/stores/TodoStore";
+import { CookiesProvider } from "react-cookie";
 
 // console.log(store.todos)
 ReactDOM.render(
+  <CookiesProvider>
     <BrowserRouter>
-    <App store={store} />
+      <App store={store} />
     </BrowserRouter>
-, document.getElementById('root'));
+  </CookiesProvider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

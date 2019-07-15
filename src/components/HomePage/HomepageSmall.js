@@ -8,7 +8,8 @@ import {
   Header
 } from "semantic-ui-react";
 import ModalExampleMultiple from "./ModalExampleMultiple";
-
+import {Cookies} from "react-cookie";
+const cookies = new Cookies();
 export default class HomepageSmall extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +21,11 @@ export default class HomepageSmall extends Component {
     };
     this.showHide = this.showHide.bind(this);
   }
+
+  componentDidMount(){
+    console.log('props',cookies)
+  }
+
   showHide(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -31,8 +37,13 @@ export default class HomepageSmall extends Component {
   Login = () => {
     console.log('email: '+this.state.email)
     console.log('password: '+this.state.password)
+    const userData = {
+      email: this.state.email,
+      pasword: this.state.password
+    }
+    cookies.set("userData", userData, {maxAge: 60*60*24, path:'/'});
+    console.log(cookies.get('userData'))
   }
-
 
   render() {
     return (

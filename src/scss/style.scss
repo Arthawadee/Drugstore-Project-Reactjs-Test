@@ -134,6 +134,22 @@ $form-color: #98d8e3;
     font-size: 20px;
     margin: 20px auto;
   }
+  .ui.inverted.segment{
+    margin: auto;
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .ui.inverted.segment{
+      width: 80%;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .ui.inverted.segment{
+      width: 50%;
+    }
+  }
 }
 // body{
 //   font-family: THSarabunNew;
