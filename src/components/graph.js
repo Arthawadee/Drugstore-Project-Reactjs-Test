@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Header } from "semantic-ui-react";
-import { Bar } from "react-chartjs-2";
+import { Bar, Pie, Line } from "react-chartjs-2";
 
 export default class graph extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // highestRate: '',
       chartData: {
         labels: [
           "Smoking",
@@ -16,7 +17,7 @@ export default class graph extends Component {
         datasets: [
           {
             label: "Population",
-            data: [617594, 181045, 153060, 106519, 105162, 95072],
+            data: [617594, 181045, 153060, 106519],
             backgroundColor: [
               "rgba(255, 99, 132, 0.6)",
               "rgba(54, 162, 235, 0.6)",
@@ -31,6 +32,13 @@ export default class graph extends Component {
       }
     };
   }
+
+  componentDidMount(){
+    var data = this.state.chartData.datasets[0].data;
+    var max  = data.indexOf(Math.max.apply(null, data));
+    //  console.log('the highestRate is '+ max)
+    this.setState({highestRate : this.state.chartData.labels[max]})
+  }
   render() {
     return (
       <div className="GraphPage">
@@ -40,9 +48,48 @@ export default class graph extends Component {
           data={this.state.chartData}
           options={{
             responsive: true,
+            maintainAspectRatio: true,
             title: {
               display: true,
-              text: "Largest Cities In " + this.props.location,
+              text: "The highest rate is " + this.state.highestRate,
+              fontSize: 25
+            },
+            legend: {
+              display: true,
+              position: "top"
+            }
+          }}
+        />
+
+
+
+<Pie
+          data={this.state.chartData}
+          options={{
+            responsive: true,
+            maintainAspectRatio: true,
+            title: {
+              display: true,
+              text: "The highest rate is " + this.state.highestRate,
+              fontSize: 25
+            },
+            legend: {
+              display: true,
+              position: "top"
+            }
+          }}
+        />
+
+
+
+<Line
+          data={this.state.chartData}
+          options={{
+            responsive: true,
+            maintainAspectRatio: true,
+            title: {
+              display: true,
+              text: "The highest rate is " + this.state.highestRate,
               fontSize: 25
             },
             legend: {
