@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Button, Icon, Modal, Form } from "semantic-ui-react";
 
 class NestedModal extends Component {
-  constructor(props){
-    super(props)
-    // this.state = { Modal2: false };
-  }
+  // constructor(props){
+  //   super(props)
+  //   // this.state = { Modal2: false };
+  // }
   state = { open: false };
 
   openModal2 = () => this.setState({ openModal2: true });

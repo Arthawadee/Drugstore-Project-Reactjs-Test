@@ -4,7 +4,6 @@ import {
   Form,
   Button,
   Divider,
-  Grid,
   Header
 } from "semantic-ui-react";
 import ModalExampleMultiple from "./ModalExampleMultiple";

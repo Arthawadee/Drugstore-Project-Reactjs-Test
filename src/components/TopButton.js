@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import { Icon, Button } from "semantic-ui-react";
 
 export default class TopButton extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   componentDidMount() {
     window.addEventListener("scroll", this.handeleScroll);
   }

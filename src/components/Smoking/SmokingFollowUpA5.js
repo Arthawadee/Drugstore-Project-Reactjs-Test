@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Form, Input, Select, TextArea, } from "semantic-ui-react";
+import { Header, Form, Input, Select, TextArea,Button } from "semantic-ui-react";
 
 export default class SmokingFollowUpA5 extends Component {
   constructor(props) {
@@ -18,25 +18,34 @@ export default class SmokingFollowUpA5 extends Component {
       value5: "",
       disable5: true,
       value5Advice: '',
-      value6: "",
+      value6: '',
       disable6: true,
-      value6Advice: '',
       followUpDate: ''
     };
+    // console.log(this.props.store)
+    // console.log(this.state.followUpDate)
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
-    // console.log(nextProps)
-    console.log(nextState);
-    return true;
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log("shouldComponentUpdate");
+  //   // console.log(nextProps)
+  //   console.log(nextState);
+  //   return true;
+  // }
+
+  setSmokingFollowUpA5 = () => {
+    this.props.store.setSmokingFollowUpA5(this.state.amount, this.state.value1, this.state.disable1, 
+      this.state.value1Other, this.state.value3, this.state.disable3, this.state.value3Advice, 
+      this.state.value4, this.state.disable4, this.state.value4Advice, this.state.value5, this.state.disable5, 
+      this.state.value5Advice, this.state.value6,  this.state.disable6, 
+      this.state.value6, this.state.followUpDate);
   }
 
   render() {
     return (
       <div className="SmokingFollowUpA5Page">
         <Header as="h2">
-          ติดตามผลครั้งที่ {this.state.amount} (A5-{this.state.amount})
+          ติดตามผลครั้งที่ {this.props.store.SmokingFollowUpA5.amount} (A5-{this.props.store.SmokingFollowUpA5.amount})
         </Header>
 
         <Form>
@@ -237,11 +246,14 @@ export default class SmokingFollowUpA5 extends Component {
           
             <Form.Field
               control={TextArea}
-              value={this.state.value6Advice}
+              value={this.state.value6}
               label="6.คำแนะนำอื่นๆ เช่น การเสริมแรง การให้กำลังใจผู้ป่วย"
               placeholder="คำแนะนำ"
               onChange={(e, { value }) => {
-                this.setState({ value6Advice: value });
+                this.setState({ value6: value });
+                // console.log(this.state.value6)
+                // console.log(typeof(this.state.value6))
+                // console.log(this.state.value6.length)
               }}
             />
             
@@ -253,9 +265,11 @@ export default class SmokingFollowUpA5 extends Component {
               placeholder="วันที่"
               onChange={(e, { value }) => {
                 this.setState({ followUpDate: value });
+                console.log(this.state.followUpDate)
               }}
             />
         </Form>
+        <Button onClick={this.setSmokingFollowUpA5}>บันทึก</Button>
       </div>
     );
   }

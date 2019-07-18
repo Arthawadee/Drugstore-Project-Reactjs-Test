@@ -8,17 +8,18 @@ import AddNewPharmacist from "./components/AddNewPharmacist";
 // import SmokingForm from "./components/SmokingForm";
 import EditPatientData from "./components/EditPatientData";
 import ContactUs from "./components/ContactUs";
+import Graph from './components/graph'
 import { Menu, Icon, Segment, Sidebar } from "semantic-ui-react";
-import { withCookies, Cookies } from 'react-cookie';
+import { withCookies } from 'react-cookie';
 
 import "./scss/style.scss";
 
 class App extends Component {
 
-  constructor(props){
-    super(props)
-    // console.log(this.props.store.todos)
-  }
+  // constructor(props){
+  //   super(props)
+  //   // console.log(this.props.store.todos)
+  // }
 
 
   handleHideClick = () => this.setState({ visible: false });
@@ -118,6 +119,15 @@ class App extends Component {
           >
             ติดต่อเรา
           </Menu.Item>
+          <Menu.Item
+            as={Link}
+            to="/graph"
+            name="Graph"
+            active={activeItem === "Graph"}
+            onClick={this.handleItemClick}
+          >
+            สถิติ
+          </Menu.Item>
 
           {/* <Menu.Menu position='right'>
                         <Menu.Item
@@ -163,6 +173,7 @@ class App extends Component {
                   <Route path="/AddNewDrugstore" component={AddNewDrugstore} />
                   <Route path="/AddNewPatient" component={AddNewPatient} />
                   <Route path="/AddNewPharmacist" component={AddNewPharmacist} />
+                  <Route path="/graph" component={Graph} />
                 </Switch>
               
             </Segment>

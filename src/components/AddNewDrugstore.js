@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
-import store from './stores/TodoStore';
+// import store from './stores/TodoStore';
 import TopButton from "./TopButton";
 
 export default class AddNewDrugstore extends Component {

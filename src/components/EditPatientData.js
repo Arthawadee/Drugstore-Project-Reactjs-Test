@@ -40,7 +40,7 @@ export default class EditPatientData extends Component {
                     {/* <Header as='h2'>ชื่อ-นามสกุล: {firstName+' '+lastName}</Header> */}
                     <Header as='h2'>เลขประจำตัวประชาชน: {store.patient.id}</Header>
                 </div>
-                <Tab panes={panes} defaultActiveIndex={1} />
+                <Tab panes={panes} defaultActiveIndex={0} />
             </div>
         )
     }

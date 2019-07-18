@@ -134,19 +134,19 @@ $form-color: #98d8e3;
     font-size: 20px;
     margin: 20px auto;
   }
-  .ui.inverted.segment{
+  .ui.inverted.segment {
     margin: auto;
     width: 100%;
   }
   @media only screen and (min-width: 600px) {
     /* For tablets: */
-    .ui.inverted.segment{
+    .ui.inverted.segment {
       width: 80%;
     }
   }
   @media only screen and (min-width: 768px) {
     /* For desktop: */
-    .ui.inverted.segment{
+    .ui.inverted.segment {
       width: 50%;
     }
   }
@@ -281,6 +281,25 @@ $form-color: #98d8e3;
 
 .ContactUsPage {
   padding: 50px 10%;
+  height: 100%;
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  .row:after {
+    display: inline-block;
+  }
+  @media only screen and (min-width: 600px) {
+    .col-s-12 {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .col-3 {
+      width: 50%;
+    }
+  }
   img {
     width: 100%;
   }
@@ -322,6 +341,9 @@ $form-color: #98d8e3;
       // line-height: 10px;
     }
   }
+}
+.GraphPage {
+  font-family: THSarabunNew;
 }
 
 .AddNewPharmacistPage {
@@ -377,6 +399,11 @@ $form-color: #98d8e3;
 .SmokingFormPage {
   text-align: center;
   padding: 50px;
+
+  // .ui.ordered.steps .step:before{
+  //   font-family: THSarabunNewBd;
+  //   font-size: 30px;
+  // }
 
   .ui.medium.image {
     // border: rgb(0, 62, 143) solid 5px;

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Form, Radio, Select, Input } from "semantic-ui-react";
+import { Form, Radio, Select, Input, Button } from "semantic-ui-react";
+import { observer } from "mobx-react";
 // import SmokingCessationPlan from './SmokingCessationPlan';
 
-export default class SmokingCessationForm extends Component {
+const SmokingCessationForm = observer( class SmokingCessationForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,14 +29,26 @@ export default class SmokingCessationForm extends Component {
       item14: 0,
       item14Other: ""
     };
+    console.log(this.props.store)
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
-    // console.log(nextProps)
-    console.log(nextState);
-    return true;
+  setSmokingCessationForm = () =>{
+    this.props.store.setSmokingCessationForm(
+      this.state.item1, this.state.disable1_1, this.state.item2, this.state.disable2_1, 
+      this.state.disable2_2, this.state.item2Select, this.state.item2Other, this.state.item3, 
+      this.state.item4, this.state.item5, this.state.item6, this.state.item7, this.state.item8,
+      this.state.item9, this.state.item10, this.state.item11, this.state.item12, this.state.item13, 
+      this.state.item14, this.state.item14Other
+    )
   }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log("shouldComponentUpdate");
+  //   // console.log(nextProps)
+  //   console.log(nextState);
+  //   return true;
+  // }
+  
   render() {
     const { value } = this.state;
     return (
@@ -518,6 +531,8 @@ export default class SmokingCessationForm extends Component {
             onChange={(e, { value }) => {
               // console.log("13. " + value);
               this.setState({ item13: value });
+              console.log(this.state.item13)
+              // console.log(typeof(this.state.item13))
             }}
           />
           <Form.Group widths="equal">
@@ -581,10 +596,11 @@ export default class SmokingCessationForm extends Component {
           </Form.Group>
         </Form>
 
-        {/* <Button circular content="เพิ่ม" color="blue" /> */}
+        <Button circular content="เพิ่ม" color="blue" onClick={this.setSmokingCessationForm}/>
 
         {/* <SmokingCessationPlan/> */}
       </div>
     );
   }
-}
+})
+export default SmokingCessationForm

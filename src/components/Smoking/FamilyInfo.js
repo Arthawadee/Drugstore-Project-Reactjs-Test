@@ -1,7 +1,20 @@
 import React, { Component } from 'react'
-import { Header, Form,Select } from 'semantic-ui-react';
+import { Header, Form,Select,Button } from 'semantic-ui-react';
+import {observer} from 'mobx-react';
 
-export default class FamilyInfo extends Component {
+const FamilyInfo = observer (class FamilyInfo extends Component {
+    constructor(props) {
+        super(props)
+        this.state={
+            value1: [],
+            value2: []
+        }
+        console.log(this.props.store)
+    }
+
+    setFamilyInfo = () =>{
+        this.props.store.setFamilyInfo(this.state.value1, this.state.value2);
+    }
     render() {
         return (
             <div className = 'FamilyInfoPage'>
@@ -15,14 +28,18 @@ export default class FamilyInfo extends Component {
                     label='ประวัติเจ็บป่วยในครอบครัว (พ่อ แม่ และพี่ น้องสายตรง)'
                     placeholder='ประวัติเจ็บป่วยในครอบครัว (พ่อ แม่ และพี่ น้องสายตรง)'
                     options={[
-                        { key: 1, text: "โรคเบาหวาน", value: 1, score: 1 },
-                        { key: 2, text: "โรคความดันโลหิตสูง", value: 2, score: 2 },
-                        { key: 3, text: "โรคไขมันในเลือดสูง", value: 3, score: 3 },
-                        { key: 4, text: "โรคกล้ามเนื้อหัวใจขาดเลือด", value: 4, score: 4 },
-                        { key: 5 , text: "อัมพาธ", value: 5, score: 5 },
-                        { key: 6, text: "ไม่มีโรคประจำตัว", value: 6, score: 6 },
-                        { key: 7, text: "ไม่ทราบ", value: 7, score: 7 }
+                        { key: 1, text: "โรคเบาหวาน", value: 1},
+                        { key: 2, text: "โรคความดันโลหิตสูง", value: 2},
+                        { key: 3, text: "โรคไขมันในเลือดสูง", value: 3 },
+                        { key: 4, text: "โรคกล้ามเนื้อหัวใจขาดเลือด", value: 4 },
+                        { key: 5 , text: "อัมพาธ", value: 5},
+                        { key: 6, text: "ไม่มีโรคประจำตัว", value: 6},
+                        { key: 7, text: "ไม่ทราบ", value: 7 }
                       ]}
+                    onChange={(e,{value})=>{
+                        this.setState({value1: value})
+                        console.log(this.state.value1)
+                    }}
                     />
                 </Form>
 
@@ -50,9 +67,15 @@ export default class FamilyInfo extends Component {
                         { key: 12, text: "ไม่มีโรคประจำตัว", value: 12, score: 12 },
                         { key: 13, text: "ไม่ทราบ", value: 13, score: 13 }
                       ]}
+                      onChange={(e,{value})=>{
+                          this.setState({value2: value})
+                          console.log(this.state.value2)
+                      }}
                     />
                 </Form>
+                <Button onClick={this.setFamilyInfo}>บันทึก</Button>
             </div>
         )
     }
-}
+})
+export default FamilyInfo;
