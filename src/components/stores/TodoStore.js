@@ -2,8 +2,8 @@ import { autorun, observable } from "mobx";
 var weight = 60,
   height = 160;
 class TodoStore {
-//   @observable todos = ["buy milk", "buy eggs"];
-//   @observable filter = "por";
+  //   @observable todos = ["buy milk", "buy eggs"];
+  //   @observable filter = "por";
 
   @observable patient = {
     patientFirstname: "มานะ",
@@ -87,6 +87,49 @@ class TodoStore {
     complete6: false
   };
 
+  @observable StrokeScreeningForm = {
+    item1: "",
+    item2: "",
+    item3: "",
+    item4: "",
+    item5: "",
+    item6: "",
+    item7: "",
+    item8: ""
+  };
+
+  @observable StrokeEducation = {
+    value: "",
+    disable: true,
+    valueOther: ""
+  };
+
+  @observable strokeComplete = {
+    complete1: false,
+    complete2: false
+  };
+
+  @observable LungHealth = {
+    value1: "",
+    value2: "",
+    value3: "",
+    value4: "",
+    value5: ""
+  };
+
+  @observable COPDScreeningForm = {
+    value1: "",
+    value2: "",
+    value3: "",
+    value4: "",
+    value5: ""
+  };
+
+  @observable COPDComplete = {
+    complete1: false,
+    complete2: false
+  };
+
   setPatientInfo(weight, height, HR, RR, BP, UnderlyDisease, DrugAllergy) {
     this.PatientInfo = {
       weight: weight,
@@ -102,7 +145,7 @@ class TodoStore {
 
   setFamilyInfo(value1, value2) {
     this.FamilyInfo = { value1: value1, value2: value2 };
-    if (value1.length !== 0 && value2 !== 0) {
+    if (value1.length !== 0 && value2.length !== 0) {
       this.smokingComplete.complete1 = true;
     } else this.smokingComplete.complete1 = false;
   }
@@ -261,6 +304,89 @@ class TodoStore {
       this.smokingComplete.complete6 = true;
     } else this.smokingComplete.complete6 = false;
   }
+
+  setStrokeScreeningForm(
+    item1,
+    item2,
+    item3,
+    item4,
+    item5,
+    item6,
+    item7,
+    item8
+  ) {
+    this.StrokeScreeningForm = {
+      item1: item1,
+      item2: item2,
+      item3: item3,
+      item4: item4,
+      item5: item5,
+      item6: item6,
+      item7: item7,
+      item8: item8
+    };
+    if (
+      item1 !== "" &&
+      item2 !== "" &&
+      item3 !== "" &&
+      item4 !== "" &&
+      item5 !== "" &&
+      item6 !== "" &&
+      item7 !== "" &&
+      item8 !== ""
+    ) {
+      this.strokeComplete.complete1 = true;
+    } else this.strokeComplete.complete1 = false;
+  }
+
+  setStrokeEducation(value, disable, valueOther) {
+    this.StrokeEducation = {
+      value: value,
+      disable: disable,
+      valueOther: valueOther
+    };
+    if (value.length !== 0) {
+      this.strokeComplete.complete2 = true;
+    } else this.strokeComplete.complete2 = false;
+  }
+
+  setLungHealth(value1, value2, value3, value4, value5) {
+    this.LungHealth = {
+      value1: value1,
+      value2: value2,
+      value3: value3,
+      value4: value4,
+      value5: value5
+    };
+    if (
+      value1 !== "" &&
+      value2 !== "" &&
+      value3 !== "" &&
+      value4 !== "" &&
+      value5 !== ""
+    ) {
+      this.COPDComplete.complete1 = true;
+    } else this.COPDComplete.complete1 = false;
+  }
+
+  setCOPDScreeningForm(value1, value2, value3, value4, value5) {
+    this.COPDScreeningForm = {
+      value1: value1,
+      value2: value2,
+      value3: value3,
+      value4: value4,
+      value5: value5
+    };
+    if (
+      value1 !== "" &&
+      value2 !== "" &&
+      value3 !== "" &&
+      value4 !== "" &&
+      value5 !== ""
+    ) {
+      this.COPDComplete.complete2 = true;
+    } else this.COPDComplete.complete2 = false;
+  }
 }
 var store = (window.store = new TodoStore());
 
@@ -269,10 +395,10 @@ export default store;
 autorun(() => {
   // console.log(store.todos[0]);
   // console.log(store.filter);
-  console.log(store.PatientInfo);
+  // console.log(store.PatientInfo);
   console.log(store.FamilyInfo);
-  console.log(store.HealthBehavior);
-  console.log(store.SmokingCessationForm);
-  console.log(store.SmokingCessationPlan);
-  console.log(store.SmokingFollowUpA5);
+  // console.log(store.HealthBehavior);
+  // console.log(store.SmokingCessationForm);
+  // console.log(store.SmokingCessationPlan);
+  // console.log(store.SmokingFollowUpA5);
 });

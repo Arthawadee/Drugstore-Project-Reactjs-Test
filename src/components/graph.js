@@ -9,14 +9,14 @@ export default class graph extends Component {
       // highestRate: '',
       chartData: {
         labels: [
-          "Smoking",
-          "Stroke",
-          "COPD",
-          "Asthma"
+          "สูบบุหรี่ (Smoking)",
+          "โรคหลอดเลือดสมอง (Stroke)",
+          "โรคปอดอุดกั้นเรื้อรัง (COPD)",
+          "โรคหืด (Asthma)"
         ],
         datasets: [
           {
-            label: "Population",
+            label: "จำนวนผู้ป่วย",
             data: [617594, 181045, 153060, 106519],
             backgroundColor: [
               "rgba(255, 99, 132, 0.6)",
@@ -33,17 +33,16 @@ export default class graph extends Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     var data = this.state.chartData.datasets[0].data;
-    var max  = data.indexOf(Math.max.apply(null, data));
+    var max = data.indexOf(Math.max.apply(null, data));
     //  console.log('the highestRate is '+ max)
-    this.setState({highestRate : this.state.chartData.labels[max]})
+    this.setState({ highestRate: this.state.chartData.labels[max] });
   }
   render() {
     return (
       <div className="GraphPage">
         <Header as="h1">GraphPage</Header>
-
         <Bar
           data={this.state.chartData}
           options={{
@@ -60,10 +59,7 @@ export default class graph extends Component {
             }
           }}
         />
-
-
-
-<Pie
+        {/* <Pie
           data={this.state.chartData}
           options={{
             responsive: true,
@@ -78,11 +74,8 @@ export default class graph extends Component {
               position: "top"
             }
           }}
-        />
-
-
-
-<Line
+        /> */}
+        {/* <Line
           data={this.state.chartData}
           options={{
             responsive: true,
@@ -96,7 +89,7 @@ export default class graph extends Component {
               display: true,
               position: "top"
             }
-          }}
+          }} */}
         />
       </div>
     );

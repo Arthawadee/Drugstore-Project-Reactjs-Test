@@ -69,6 +69,7 @@ export default class AddNewPatient extends Component {
                 icon="user"
                 iconPosition="left"
                 label="ชื่อ"
+                
                 type="text"
                 placeholder="กรุณากรอกชื่อ"
                 onChange={(e, { value }) => {
@@ -188,7 +189,9 @@ export default class AddNewPatient extends Component {
             />
           </Form>
 
-          <Button circular content="เพิ่ม" color="blue" />
+          <Button type='submit' circular content="เพิ่ม" color="blue" />
+
+          
         </div>
         <TopButton />
       </div>

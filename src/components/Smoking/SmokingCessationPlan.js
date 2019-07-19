@@ -20,6 +20,10 @@ const SmokingCessationPlan = observer(
       );
     };
 
+    componentDidUpdate(prevProps) {
+      this.setSmokingCessationPlan();
+    }
+
     render() {
       return (
         <div className="SmokingCessationPlanPage">

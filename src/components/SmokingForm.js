@@ -204,8 +204,8 @@ const SmokingForm = observer(
             size="medium"
             circular
           />
-          <Header as="h2" icon textAlign="center">
-            <Header.Content>แบบคัดกรองการสูบบุหรี่</Header.Content>
+          <Header as="h1" textAlign="center">
+            แบบคัดกรองการสูบบุหรี่
           </Header>
           {/* <h2 className="ui icon aligned header">
           <i aria-hidden="true" className="user plus circular icon" />
@@ -217,7 +217,7 @@ const SmokingForm = observer(
           panes={panes}
         /> */}
 
-          <Step.Group ordered attached="top" size='large'>
+          <Step.Group ordered attached="top" size="large">
             <Step
               active={this.state.active1}
               completed={this.state.store.smokingComplete.complete1}
@@ -225,7 +225,9 @@ const SmokingForm = observer(
             >
               <Step.Content>
                 <Step.Title>ประวัติครอบครัว</Step.Title>
-                {/* <Step.Description>Choose your shipping options</Step.Description> */}
+                <Step.Description>
+                  Choose your shipping options
+                </Step.Description>
               </Step.Content>
             </Step>
 
@@ -236,7 +238,9 @@ const SmokingForm = observer(
             >
               <Step.Content>
                 <Step.Title>พฤติกรรมสุขภาพ</Step.Title>
-                {/* <Step.Description>Choose your shipping options</Step.Description> */}
+                <Step.Description>
+                  Choose your shipping options
+                </Step.Description>
               </Step.Content>
             </Step>
 
@@ -247,7 +251,9 @@ const SmokingForm = observer(
             >
               <Step.Content>
                 <Step.Title>แบบคัดกรองการสูบบุหรี่ (A1-A4)</Step.Title>
-                {/* <Step.Description>Choose your shipping options</Step.Description> */}
+                <Step.Description>
+                  Choose your shipping options
+                </Step.Description>
               </Step.Content>
             </Step>
 
@@ -258,7 +264,9 @@ const SmokingForm = observer(
             >
               <Step.Content>
                 <Step.Title>แผนการเลิกบุหรี่</Step.Title>
-                {/* <Step.Description>Choose your shipping options</Step.Description> */}
+                <Step.Description>
+                  Choose your shipping options
+                </Step.Description>
               </Step.Content>
             </Step>
 
@@ -269,7 +277,7 @@ const SmokingForm = observer(
             >
               <Step.Content>
                 <Step.Title>ยาช่วยเลิกบุหรี่</Step.Title>
-                {/* <Step.Description>Enter billing information</Step.Description> */}
+                <Step.Description>Enter billing information</Step.Description>
               </Step.Content>
             </Step>
 
@@ -280,6 +288,9 @@ const SmokingForm = observer(
             >
               <Step.Content>
                 <Step.Title>ติดตามผล (A5)</Step.Title>
+                <Step.Description>
+                  Choose your shipping options
+                </Step.Description>
               </Step.Content>
             </Step>
           </Step.Group>

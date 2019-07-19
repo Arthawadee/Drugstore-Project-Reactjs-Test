@@ -7,18 +7,20 @@ export default class AddNewDrugstore extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
-      activeItem: "home",
-      visible: false,
       DrugStoreName: "",
       licenseNo: "",
-      date: "",
-      ID: "",
-      phoneNumber: "",
       telNumber: "",
       address: ""
     };
+  }
+
+  setAddNewDrugstore = () => {
+    if(this.state.DrugStoreName.length !==0 &&
+      this.state.licenseNo.length !==0 &&
+      this.state.telNumber.length !==0 &&
+      this.state.address.length !==0){
+      alert('AddNewDrugstore: ' + this.state.DrugStoreName)
+    }else console.log('error')
   }
 
   render() {
@@ -85,7 +87,7 @@ export default class AddNewDrugstore extends Component {
             />
           </Form>
 
-          <Button circular content="เพิ่ม" color="blue" />
+          <Button circular content="เพิ่ม" color="blue" onClick={this.setAddNewDrugstore} />
         </div>
         <TopButton />
       </div>

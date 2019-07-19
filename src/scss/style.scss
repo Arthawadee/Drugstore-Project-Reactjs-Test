@@ -397,14 +397,29 @@ $form-color: #98d8e3;
 }
 
 .SmokingFormPage {
-  text-align: center;
+  // text-align: center;
   padding: 50px;
+
+  .ui.steps .step .title~.description{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  // .ui.ordered.steps .step:before{
+  //   font-family: THSarabunNew;
+  //   font-size: 40px;
+  // }
 
   // .ui.ordered.steps .step:before{
   //   font-family: THSarabunNewBd;
   //   font-size: 30px;
   // }
-
+  h1.ui.header{
+    font-family: THSarabunNewBd;
+    font-size: 40px;
+  }
+  h2.ui.header{
+    text-align: center;
+  }
   .ui.medium.image {
     // border: rgb(0, 62, 143) solid 5px;
     margin: auto;
@@ -439,9 +454,9 @@ $form-color: #98d8e3;
     color: red;
     font-size: 50px !important;
 } */
-  .content {
-    text-align: center;
-  }
+  // .content {
+  //   text-align: center;
+  // }
   .ui.form {
     .field > label {
       font-family: THSarabunNew;
@@ -512,6 +527,14 @@ $form-color: #98d8e3;
 
 .StrokeFormPage {
   padding: 50px;
+  .ui.steps .step .title~.description{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  // .ui.ordered.steps .step:before{
+  //   font-family: THSarabunNew;
+  //   font-size: 40px;
+  // }
   .AddNewPatientForm {
     color: #117cba;
     padding: 20px;
@@ -543,6 +566,14 @@ $form-color: #98d8e3;
 .COPDFormPage {
   padding: 50px;
 
+  .ui.steps .step .title~.description{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  // .ui.ordered.steps .step:before{
+  //   font-family: THSarabunNew;
+  //   font-size: 40px;
+  // }
   .ui.steps {
     overflow-x: auto;
     font-family: THSarabunNew;
@@ -624,6 +655,10 @@ $form-color: #98d8e3;
 .HealthBehaviorPage {
   .ui.form .field > .selection.dropdown {
     min-width: 0;
+  }
+  .ui.form .inline.fields>label{
+    font-family: THSarabunNew;
+    font-size: 20px;
   }
 }
 .AsthmaFormPage {

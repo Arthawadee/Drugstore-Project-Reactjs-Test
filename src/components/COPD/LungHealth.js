@@ -1,37 +1,46 @@
-import React, { Component } from 'react';
-import { Form, Select, Radio } from "semantic-ui-react";
+import React, { Component } from "react";
+import { Form, Select, Radio, Button } from "semantic-ui-react";
+import { observer } from "mobx-react";
 
-export default class LungHealth extends Component {
+const LungHealth = observer(
+  class LungHealth extends Component {
     constructor(props) {
-        super(props);
-        this.state = {
-          item1: 0,
-          item2: 0,
-          item3: 0,
-          item4: 0,
-          item5: 0,
-          item6: 0,
-          item7: 0,
-          item8: 0,
-          value1: 0,
-          value2: 0,
-          value3: 0,
-          value4: 0,
-          value5: 0
-        };
-      }
-    
-      shouldComponentUpdate(nextProps, nextState) {
-        console.log("shouldComponentUpdate");
-        // console.log(nextProps)
-        console.log(nextState);
-        return true;
-      }
-    
+      super(props);
+      this.state = {
+        value1: "",
+        value2: "",
+        value3: "",
+        value4: "",
+        value5: ""
+      };
+      console.log(this.props.store);
+    }
+
+    setLungHealth = () => {
+      this.props.store.setLungHealth(
+        this.state.value1,
+        this.state.value2,
+        this.state.value3,
+        this.state.value4,
+        this.state.value5
+      );
+    };
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //   console.log("shouldComponentUpdate");
+    //   // console.log(nextProps)
+    //   console.log(nextState);
+    //   return true;
+    // }
+
+    componentDidUpdate(prevProps) {
+      this.setLungHealth();
+    }
+
     render() {
-        return (
-            <div className='LungHealthPage'>
-                <Form>
+      return (
+        <div className="LungHealthPage">
+          <Form>
             <Form.Group inline required>
               <label>1. อายุ มากกว่าหรือเท่ากับ(>=) 50 ปี</label>
               <Form.Field
@@ -101,43 +110,51 @@ export default class LungHealth extends Component {
                 }}
               />
             </Form.Group>
-            <Form.Group widths='equal'>
-            <Form.Field
-              label="4.ไอมีเสมหะบ่อยๆหรือไม่"
-              control={Select}
-              required
-              clearable
-              value={this.state.value4}
-              options={[
-                { key: 1, text: "มี (1)", value: "1" },
-                { key: 2, text: "ไม่มี (0)", value: "0" }
-              ]}
-              placeholder="ไอมีเสมหะบ่อยๆหรือไม่"
-              onChange={(e, { value }) => {
-                console.log("4.: " + value);
-                this.setState({ value4: value });
-              }}
-            />
+            <Form.Group widths="equal">
+              <Form.Field
+                label="4.ไอมีเสมหะบ่อยๆหรือไม่"
+                control={Select}
+                required
+                clearable
+                value={this.state.value4}
+                options={[
+                  { key: 1, text: "มี (1)", value: "1" },
+                  { key: 2, text: "ไม่มี (0)", value: "0" }
+                ]}
+                placeholder="ไอมีเสมหะบ่อยๆหรือไม่"
+                onChange={(e, { value }) => {
+                  console.log("4.: " + value);
+                  this.setState({ value4: value });
+                }}
+              />
 
-            <Form.Field
-              label="5.มีประวัติสูบบุหรี่มา มากกว่าหรือเท่ากับ(>=) 20 ปี"
-              control={Select}
-              required
-              clearable
-              value={this.state.value5}
-              options={[
-                { key: 1, text: "ใช่ (1)", value: "1" },
-                { key: 2, text: "ไม่ใช่ (0)", value: "0" }
-              ]}
-              placeholder="มีประวัติสูบบุหรี่มา มากกว่าหรือเท่ากับ(>=) 20 ปี"
-              onChange={(e, { value }) => {
-                console.log("5.: " + value);
-                this.setState({ value5: value });
-              }}
-            />
+              <Form.Field
+                label="5.มีประวัติสูบบุหรี่มา มากกว่าหรือเท่ากับ(>=) 20 ปี"
+                control={Select}
+                required
+                clearable
+                value={this.state.value5}
+                options={[
+                  { key: 1, text: "ใช่ (1)", value: "1" },
+                  { key: 2, text: "ไม่ใช่ (0)", value: "0" }
+                ]}
+                placeholder="มีประวัติสูบบุหรี่มา มากกว่าหรือเท่ากับ(>=) 20 ปี"
+                onChange={(e, { value }) => {
+                  console.log("5.: " + value);
+                  this.setState({ value5: value });
+                }}
+              />
             </Form.Group>
           </Form>
-            </div>
-        )
+          <Button
+            circular
+            content="บันทึก"
+            color="blue"
+            onClick={this.setLungHealth}
+          />
+        </div>
+      );
     }
-}
+  }
+);
+export default LungHealth;
