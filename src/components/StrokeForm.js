@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Icon, Image, Step, Segment } from "semantic-ui-react";
+import { Header, Image, Step, Segment } from "semantic-ui-react";
 import StrokeScreeningForm from "./Stroke/StrokeScreeningForm";
 import StrokeEducation from "./Stroke/StrokeEducation";
 import { observer } from "mobx-react";
@@ -54,6 +54,7 @@ const StrokeForm = observer( class StrokeForm extends Component {
             active={this.state.active1}
             onClick={this.showStrokeScreeningForm}
             completed = {this.props.store.strokeComplete.complete1}
+            disabled = {this.props.store.StrokeDisable.disable1}
           >
             <Step.Content>
               <Step.Title>แบบคัดกรองโรคหลอดเลือดสมอง</Step.Title>
@@ -62,7 +63,8 @@ const StrokeForm = observer( class StrokeForm extends Component {
           </Step>
 
           <Step active={this.state.active2} onClick={this.showStrokeEducation}
-            completed = {this.props.store.strokeComplete.complete2}>
+            completed = {this.props.store.strokeComplete.complete2}
+            disabled = {this.props.store.StrokeDisable.disable2}>
             <Step.Content>
               <Step.Title>การให้ความรู้</Step.Title>
               <Step.Description>Choose your shipping options</Step.Description>

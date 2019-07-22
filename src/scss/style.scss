@@ -400,7 +400,7 @@ $form-color: #98d8e3;
   // text-align: center;
   padding: 50px;
 
-  .ui.steps .step .title~.description{
+  .ui.steps .step .title ~ .description {
     font-family: THSarabunNew;
     font-size: 20px;
   }
@@ -413,11 +413,11 @@ $form-color: #98d8e3;
   //   font-family: THSarabunNewBd;
   //   font-size: 30px;
   // }
-  h1.ui.header{
+  h1.ui.header {
     font-family: THSarabunNewBd;
     font-size: 40px;
   }
-  h2.ui.header{
+  h2.ui.header {
     text-align: center;
   }
   .ui.medium.image {
@@ -518,16 +518,10 @@ $form-color: #98d8e3;
     width: 100px;
   }
 }
-.PatientInfo {
-  // h2.ui.header{
-  //   font-family: THSarabunNewBd;
-  //   font-size: 30px;
-  // }
-}
 
 .StrokeFormPage {
   padding: 50px;
-  .ui.steps .step .title~.description{
+  .ui.steps .step .title ~ .description {
     font-family: THSarabunNew;
     font-size: 20px;
   }
@@ -566,7 +560,7 @@ $form-color: #98d8e3;
 .COPDFormPage {
   padding: 50px;
 
-  .ui.steps .step .title~.description{
+  .ui.steps .step .title ~ .description {
     font-family: THSarabunNew;
     font-size: 20px;
   }
@@ -656,7 +650,7 @@ $form-color: #98d8e3;
   .ui.form .field > .selection.dropdown {
     min-width: 0;
   }
-  .ui.form .inline.fields>label{
+  .ui.form .inline.fields > label {
     font-family: THSarabunNew;
     font-size: 20px;
   }
@@ -704,5 +698,124 @@ $form-color: #98d8e3;
     cursor: pointer;
     // padding: 15px;
     border-radius: 4px;
+  }
+}
+ul {
+  padding: 0;
+}
+
+h2 {
+  font-family: THSarabunNewBd;
+  font-size: 30px;
+}
+.ui.modal .scrolling.content {
+  padding: 40px 20px 40px 10px;
+}
+.ui.modal > .content > .image {
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  // padding: 5px;
+}
+.ui.modal > .content > .image:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+.ui.modal > .content > .description {
+  height: 100%;
+}
+.RecommendMedicinePage {
+  .price {
+    font-size: 20px;
+  }
+  .price:hover {
+    color: rgb(2, 90, 172);
+    font-size: 20px;
+    font-weight: bold;
+  }
+  h1 {
+    font-family: THSarabunNewBd;
+    font-size: 50px;
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+  .ui.card {
+    display: inline-block;
+    width: 100%;
+    font-family: THSarabunNew;
+    // border: red 1px solid;
+  }
+  .ui.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+  }
+
+  .ui.card > .content > .header {
+    font-family: THSarabunNew;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .ui.card .meta {
+    // font-family: THSarabunNew;
+    font-size: 20px;
+  }
+
+  .ui.card > .image > img {
+    width: 100%;
+    height: 430px;
+  }
+
+  .ui.card > .content > .description {
+
+    width:100%;
+    overflow: hidden;
+    height: 50px;
+    font-size: 20px;
+    // white-space: nowrap;
+// text-overflow: ellipsis;
+
+
+display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  // max-width: 400px;
+  // height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: 20px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;  
+  text-overflow: ellipsis;
+  }
+
+  .card-cover {
+    // height: 500px;
+    width: 100%;
+    display: inline-block;
+    // background-color: rebeccapurple;
+    padding: 5px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+
+    .ui.card > .image > img {
+      width: 100%;
+      height: 290px;
+    }
+    .card-cover {
+      width: 50%;
+      display: inline-block;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .ui.card > .image > img {
+      width: 100%;
+      height: 290px;
+    }
+    .card-cover {
+      // height: 500px;
+      width: 25%;
+      display: inline-block;
+    }
   }
 }

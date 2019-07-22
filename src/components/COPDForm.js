@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Icon, Image, Step, Segment } from "semantic-ui-react";
+import { Header, Image, Step, Segment } from "semantic-ui-react";
 import LungHealth from "./COPD/LungHealth";
 import COPDScreeningForm from "./COPD/COPDScreeningForm";
 import { observer } from "mobx-react";

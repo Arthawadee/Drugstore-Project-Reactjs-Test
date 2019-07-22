@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Header } from "semantic-ui-react";
-import { Bar, Pie, Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 export default class graph extends Component {
   constructor(props) {

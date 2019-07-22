@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Form, Input, Select, Radio, Button } from "semantic-ui-react";
+import { Header, Form, Input, Select, Button } from "semantic-ui-react";
 import { observer } from "mobx-react";
 
 const HealthBehavior = observer(
