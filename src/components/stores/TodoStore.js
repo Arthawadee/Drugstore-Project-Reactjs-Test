@@ -1,4 +1,4 @@
-import { autorun, observable } from "mobx";
+import { autorun, observable, action } from "mobx";
 // import { observer } from "mobx-react";
 var weight = 60,
   height = 160;
@@ -527,6 +527,13 @@ class TodoStore {
     } 
   }
 
+
+
+  @action showTestValue(value) {
+    console.log('showMobxValue', value)
+  }
+
+
   setSmokingFollowUpA5(
     amount,
     value1,
@@ -682,9 +689,9 @@ autorun(() => {
   // console.log(store.todos[0]);
   // console.log(store.filter);
   // console.log(store.PatientInfo);
-  console.log(store.FamilyInfo);
+  // console.log(store.FamilyInfo);
   // console.log(store.HealthBehavior);
   // console.log(store.SmokingCessationForm);
   // console.log(store.SmokingCessationPlan);
-  // console.log(store.SmokingFollowUpA5);
+  console.log(store.SmokingFollowUpA5);
 });

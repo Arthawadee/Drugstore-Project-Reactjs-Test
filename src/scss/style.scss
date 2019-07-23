@@ -819,3 +819,31 @@ display: block; /* Fallback for non-webkit */
     }
   }
 }
+
+
+
+
+
+
+.AboutUsPage{
+  .pageContent{
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    p{
+      font-family: THSarabunNew;
+    font-size: 20px;
+    text-indent: 50px;
+    }
+  }
+}
+
+
+.OldA5FormPage{
+  .ui.message .header{
+    font-family: THSarabunNewBd;
+    font-size: 30px;
+    text-align: center;
+  }
+}

@@ -9,6 +9,7 @@ import AddNewPharmacist from "./components/AddNewPharmacist";
 import EditPatientData from "./components/EditPatientData";
 import ContactUs from "./components/ContactUs";
 import Graph from './components/graph'
+import AboutUs from './components/AboutUs'
 import { Menu, Icon, Segment, Sidebar } from "semantic-ui-react";
 import { withCookies } from 'react-cookie';
 
@@ -39,7 +40,7 @@ class App extends Component {
     var { visible, activeItem } = this.state;
     return (
       <div className="Layout">
-        <Menu stackable color="blue" inverted>
+        <Menu stackable color="blue" inverted fluid>
           {/* <Menu.Item >
                     <img src='https://banner2.kisspng.com/20180705/rwq/kisspng-logo-cross-red-hospital-medical-office-5b3db923b667f6.3943560215307717477472.jpg' />
                      Drugstore Clinic
@@ -110,6 +111,17 @@ class App extends Component {
           >
             เพิ่มเภสัชกร
           </Menu.Item>
+          
+          <Menu.Item
+            as={Link}
+            to="/graph"
+            name="Graph"
+            active={activeItem === "Graph"}
+            onClick={this.handleItemClick}
+          >
+            สถิติ
+          </Menu.Item>
+
           <Menu.Item
             as={Link}
             to="/contactus"
@@ -119,14 +131,15 @@ class App extends Component {
           >
             ติดต่อเรา
           </Menu.Item>
+
           <Menu.Item
             as={Link}
-            to="/graph"
-            name="Graph"
-            active={activeItem === "Graph"}
+            to="/aboutus"
+            name="AboutUs"
+            active={activeItem === "AboutUs"}
             onClick={this.handleItemClick}
           >
-            สถิติ
+            เกี่ยวกับเรา
           </Menu.Item>
 
           {/* <Menu.Menu position='right'>
@@ -169,11 +182,12 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={HomePage} />
                   <Route path="/screening" component={EditPatientData} />
-                  <Route path="/contactus" component={ContactUs} />
                   <Route path="/AddNewDrugstore" component={AddNewDrugstore} />
                   <Route path="/AddNewPatient" component={AddNewPatient} />
                   <Route path="/AddNewPharmacist" component={AddNewPharmacist} />
                   <Route path="/graph" component={Graph} />
+                  <Route path="/contactus" component={ContactUs} />
+                  <Route path="/aboutus" component={AboutUs} />
                 </Switch>
               
             </Segment>
