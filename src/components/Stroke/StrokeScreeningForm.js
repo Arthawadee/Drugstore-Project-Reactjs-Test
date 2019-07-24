@@ -17,29 +17,29 @@ export default class StrokeScreeningForm extends Component {
     // console.log(this.props.store)
   }
 
-  setStrokeScreeningForm = () => {
-    this.props.store.setStrokeScreeningForm(
-      this.state.item1,
-      this.state.item2,
-      this.state.item3,
-      this.state.item4,
-      this.state.item5,
-      this.state.item6,
-      this.state.item7,
-      this.state.item8
-    );
-  };
+  // setStrokeScreeningForm = () => {
+  //   this.props.store.setStrokeScreeningForm(
+  //     this.state.item1,
+  //     this.state.item2,
+  //     this.state.item3,
+  //     this.state.item4,
+  //     this.state.item5,
+  //     this.state.item6,
+  //     this.state.item7,
+  //     this.state.item8
+  //   );
+  // };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
-    // console.log(nextProps)
-    console.log(nextState);
-    return true;
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log("shouldComponentUpdate");
+  //   // console.log(nextProps)
+  //   console.log(nextState);
+  //   return true;
+  // }
 
-  componentDidUpdate(prevProps) {
-    this.setStrokeScreeningForm();
-  }
+  // componentDidUpdate(prevProps) {
+  //   this.setStrokeScreeningForm();
+  // }
 
   render() {
     return (

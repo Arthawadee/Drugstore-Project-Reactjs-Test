@@ -12,7 +12,7 @@ const StrokeForm = observer( class StrokeForm extends Component {
       active1: true,
       active2: false
     };
-    console.log(this.props.store)
+    // console.log(this.props.store)
   }
 
   // shouldComponentUpdate(nextProps, nextState) {
@@ -53,8 +53,8 @@ const StrokeForm = observer( class StrokeForm extends Component {
           <Step
             active={this.state.active1}
             onClick={this.showStrokeScreeningForm}
-            completed = {this.props.store.strokeComplete.complete1}
-            disabled = {this.props.store.StrokeDisable.disable1}
+            // completed = {this.props.store.strokeComplete.complete1}
+            // disabled = {this.props.store.StrokeDisable.disable1}
           >
             <Step.Content>
               <Step.Title>แบบคัดกรองโรคหลอดเลือดสมอง</Step.Title>
@@ -63,8 +63,9 @@ const StrokeForm = observer( class StrokeForm extends Component {
           </Step>
 
           <Step active={this.state.active2} onClick={this.showStrokeEducation}
-            completed = {this.props.store.strokeComplete.complete2}
-            disabled = {this.props.store.StrokeDisable.disable2}>
+            // completed = {this.props.store.strokeComplete.complete2}
+            // disabled = {this.props.store.StrokeDisable.disable2}
+            >
             <Step.Content>
               <Step.Title>การให้ความรู้</Step.Title>
               <Step.Description>Choose your shipping options</Step.Description>
@@ -73,10 +74,10 @@ const StrokeForm = observer( class StrokeForm extends Component {
         </Step.Group>
         <Segment attached>
           <div id="StrokeScreeningForm" style={{ display: "block" }}>
-            <StrokeScreeningForm store = {this.props.store} />
+            <StrokeScreeningForm  />
           </div>
           <div id="StrokeEducation" style={{ display: "none" }}>
-            <StrokeEducation store = {this.props.store} />
+            <StrokeEducation  />
           </div>
         </Segment>
       </div>

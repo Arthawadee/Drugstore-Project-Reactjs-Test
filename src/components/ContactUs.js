@@ -4,7 +4,7 @@ import { Grid, Image, Header, List, Button } from "semantic-ui-react";
 //import ContactUsSmall from "./ContactUs/ContactUsSmall";
 // import ContactUsLarge from "./ContactUs/ContactUsLarge";
 import { observer } from "mobx-react";
-import store from "./stores/TodoStore";
+// import store from "./Smoking/stores/TodoStore";
 
 import TopButton from "./TopButton";
 
@@ -12,7 +12,7 @@ const TodoView = observer(
   class ContactUs extends Component {
     constructor(props) {
       super(props);
-      console.log(store);
+      console.log(this.props);
     }
     render() {
       return (

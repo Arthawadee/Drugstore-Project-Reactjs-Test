@@ -11,13 +11,13 @@ export default class StrokeEducation extends Component {
     };
   }
 
-  setStrokeEducation = () => {
-    this.props.store.setStrokeEducation(
-      this.state.value,
-      this.state.disable,
-      this.state.valueOther
-    );
-  };
+  // setStrokeEducation = () => {
+  //   this.props.store.setStrokeEducation(
+  //     this.state.value,
+  //     this.state.disable,
+  //     this.state.valueOther
+  //   );
+  // };
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log("shouldComponentUpdate");
@@ -27,7 +27,7 @@ export default class StrokeEducation extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    this.setStrokeEducation();
+    // this.setStrokeEducation();
   }
 
   render() {

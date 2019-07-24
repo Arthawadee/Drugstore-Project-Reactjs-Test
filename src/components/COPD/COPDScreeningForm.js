@@ -13,26 +13,26 @@ export default class COPDScreeningForm extends Component {
     };
   }
 
-  setCOPDScreeningForm = () => {
-    this.props.store.setCOPDScreeningForm(
-      this.state.value1,
-      this.state.value2,
-      this.state.value3,
-      this.state.value4,
-      this.state.value5
-    );
-  };
+  // setCOPDScreeningForm = () => {
+  //   this.props.store.setCOPDScreeningForm(
+  //     this.state.value1,
+  //     this.state.value2,
+  //     this.state.value3,
+  //     this.state.value4,
+  //     this.state.value5
+  //   );
+  // };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
-    // console.log(nextProps)
-    console.log(nextState);
-    return true;
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log("shouldComponentUpdate");
+  //   // console.log(nextProps)
+  //   console.log(nextState);
+  //   return true;
+  // }
 
-  componentDidUpdate(prevProps) {
-    this.setCOPDScreeningForm();
-  }
+  // componentDidUpdate(prevProps) {
+  //   this.setCOPDScreeningForm();
+  // }
 
   render() {
     return (

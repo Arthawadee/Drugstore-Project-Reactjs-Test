@@ -1,75 +1,15 @@
 import React, { Component } from "react";
 import { Form, Radio, Select, Input, Button } from "semantic-ui-react";
-import { observer } from "mobx-react";
+import { inject, observer } from "mobx-react";
 // import SmokingCessationPlan from './SmokingCessationPlan';
-
-const SmokingCessationForm = observer(
-  class SmokingCessationForm extends Component {
+@inject('store')
+@observer
+class SmokingCessationForm extends Component {
     constructor(props) {
       super(props);
-      this.state = {
-        disable1_1: true,
-        disable2_1: true,
-        disable2_2: true,
-        disable14: true,
-        item1: 0,
-        item2: 0,
-        item2Select: [],
-        item2Other: "",
-        item3: 0,
-        item4: 0,
-        item5: 0,
-        item6: 0,
-        item7: 0,
-        item8: 0,
-        item9: 0,
-        item10: 0,
-        item11: 0,
-        item12: 0,
-        item13: 0,
-        item14: 0,
-        item14Other: ""
-      };
-      console.log(this.props.store);
     }
-
-    setSmokingCessationForm = () => {
-      this.props.store.setSmokingCessationForm(
-        this.state.item1,
-        this.state.disable1_1,
-        this.state.item2,
-        this.state.disable2_1,
-        this.state.disable2_2,
-        this.state.item2Select,
-        this.state.item2Other,
-        this.state.item3,
-        this.state.item4,
-        this.state.item5,
-        this.state.item6,
-        this.state.item7,
-        this.state.item8,
-        this.state.item9,
-        this.state.item10,
-        this.state.item11,
-        this.state.item12,
-        this.state.item13,
-        this.state.item14,
-        this.state.item14Other
-      );
-    };
-    componentDidUpdate(prevProps) {
-      this.setSmokingCessationForm();
-    }
-
-    // shouldComponentUpdate(nextProps, nextState) {
-    //   console.log("shouldComponentUpdate");
-    //   // console.log(nextProps)
-    //   console.log(nextState);
-    //   return true;
-    // }
 
     render() {
-      const { value } = this.state;
       return (
         <div className="SmokingCessationFormPage">
           <h2 className="ui icon aligned header">แบบคัดกรองการสูบบุหรี่</h2>
@@ -87,17 +27,12 @@ const SmokingCessationForm = observer(
                 ]}
                 placeholder="ในอดีตเคยพยายามเลิกสูบบุหรี่หรือไม่"
                 onChange={(e, { value }) => {
-                  // console.log("1. " + value);
-                  this.setState({ item1: value });
-
-                  if (value === 2) {
-                    this.setState({ disable1_1: false });
-                  } else this.setState({ disable1_1: true });
+                  this.props.store.smoking.updateSmokingCessationForm(value, "value1");
                 }}
               />
               <Form.Field
                 control={Input}
-                disabled={this.state.disable1_1}
+                // disabled={this.state.disable1_1}
                 label="จำนวน"
                 type="number"
                 onChange={(e, { value }) => {
@@ -110,44 +45,24 @@ const SmokingCessationForm = observer(
                   control={Radio}
                   label="วัน"
                   value="1"
-                  checked={value === "1"}
+                  // checked={value === "1"}
                   onChange={this.handleChange}
                 />
                 <Form.Field
                   control={Radio}
                   label="เดือน"
                   value="2"
-                  checked={value === "2"}
+                  // checked={value === "2"}
                   onChange={this.handleChange}
                 />
                 <Form.Field
                   control={Radio}
                   label="ปี"
                   value="3"
-                  checked={value === "3"}
+                  // checked={value === "3"}
                   onChange={this.handleChange}
                 />
               </Form.Group>
-              {/* <Dropdown
-                options={[
-                  { key: 1, text: "Choice 1", value: 1 },
-                  { key: 2, text: "Choice 2", value: 2 },
-                  { key: 3, text: "Choice 3", value: 3 }
-                ]}
-                selection
-              /> */}
-              {/* <Form.Input
-                required
-                icon="mail"
-                iconPosition="left"
-                label="อีเมล"
-                type="email"
-                placeholder="กรุณากรอกอีเมล"
-                onChange={(e, { value }) => {
-                  this.setState({ email: value });
-                  console.log("email: " + this.state.email);
-                }}
-              /> */}
             </Form.Group>
 
             <Form.Group widths="equal">
@@ -164,61 +79,44 @@ const SmokingCessationForm = observer(
                 ]}
                 placeholder="เคยเลิิกโดยวิธี"
                 onChange={(e, { value }) => {
-                  console.log("2. " + value);
-                  this.setState({ item2: value });
-                  console.log(value.includes(3));
-                  if (value.includes(3)) {
-                    this.setState({ disable2_1: false });
-                  } else {
-                    this.setState({ disable2_1: true });
-                    this.setState({ item2Select: [] });
-                  }
+                  this.props.store.smoking.updateSmokingCessationForm(value, "value2");
                 }}
               />
               <Form.Field
-                disabled={this.state.disable2_1}
+                disabled={this.props.store.smoking.SmokingCessationForm.disable2_1}
                 label="ใช้ยา"
                 control={Select}
                 required
                 multiple
                 clearable
-                value={this.state.item2Select}
+                value={this.props.store.smoking.SmokingCessationForm.value2Select}
                 options={[
-                  { key: 1, text: "Nicotine", value: "Nicotine" },
-                  { key: 2, text: "Nicotin patch", value: "Nicotin patch" },
-                  { key: 3, text: "Nortripyline", value: "Nortripyline" },
-                  { key: 4, text: "Bupropion", value: "Bupropion" },
-                  { key: 5, text: "Varenicline", value: "Varenicline" },
+                  { key: 1, text: "Nicotine", value: 1 },
+                  { key: 2, text: "Nicotin patch", value: 2 },
+                  { key: 3, text: "Nortripyline", value: 3 },
+                  { key: 4, text: "Bupropion", value: 4 },
+                  { key: 5, text: "Varenicline", value: 5 },
                   {
                     key: 6,
                     text: "สมุนไพรชงหญ้าดอกขาว",
                     value: "สมุนไพรชงหญ้าดอกขาว"
                   },
-                  { key: 7, text: "อื่นๆ", value: "อื่นๆ" }
+                  { key: 7, text: "อื่นๆ", value: 6 }
                 ]}
                 placeholder="ใช้ยา"
                 onChange={(e, { value }) => {
-                  console.log("ใช้ยา: " + value);
-                  this.setState({ item2Select: value });
-                  console.log(value.includes("อื่นๆ"));
-                  if (value.includes("อื่นๆ")) {
-                    this.setState({ disable2_2: false });
-                  } else {
-                    this.setState({ disable2_2: true });
-                    this.setState({ item2Other: "" });
-                  }
+                  this.props.store.smoking.updateSmokingCessationForm(value, "value2Select");
                 }}
               />
 
               <Form.Field
                 control={Input}
-                disabled={this.state.disable2_2}
-                value={this.state.item2Other}
+                disabled={this.props.store.smoking.SmokingCessationForm.disable2_2}
+                value={this.props.store.smoking.SmokingCessationForm.value2Other}
                 label="ระบุ"
                 placeholder="ระบุ..."
                 onChange={(e, { value }) => {
-                  // console.log("item2Other:  " + value);
-                  this.setState({ item2Other: value });
+                  this.props.store.smoking.updateSmokingCessationForm(value, "value2Other");
                 }}
               />
             </Form.Group>
@@ -242,8 +140,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="ปัญหาและอุปสรรคในการเลิกครั้งที่ผ่านมา / เหตุผลที่ทำให้กลับมาสูบใหม่"
               onChange={(e, { value }) => {
-                // console.log("3. " + value);
-                this.setState({ item3: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value3");
               }}
             />
 
@@ -285,8 +182,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="ครั้งนี้มีความตั้งใจเลิกบุหรี่ี่ระดับ"
               onChange={(e, { value }) => {
-                // console.log("4. " + value);
-                this.setState({ item4: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value4");
               }}
             />
 
@@ -329,8 +225,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="คุณสูบบุหรี่มวนแรกหลังตื่นนอนตอนเช้าเมื่อใด"
               onChange={(e, { value }) => {
-                // console.log("5. " + value);
-                this.setState({ item5: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value5");
               }}
             />
 
@@ -353,8 +248,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="คุณรู้สึกอย่างไร หากไม่สามารถสูบบุหรี่ได้ในที่ที่ห้ามสูบบุหรี่เป็นระยะเวลานาน เช่น ในห้องสมุด หรือ โรงภาพยนตร์"
               onChange={(e, { value }) => {
-                // console.log("6. " + value);
-                this.setState({ item6: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value6");
               }}
             />
 
@@ -377,8 +271,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="ในแต่ละวัน บุหรี่มวนใดที่คุณคิดว่าไม่ได้สูบแล้วจะหงุดหงิดมากที่สุด"
               onChange={(e, { value }) => {
-                // console.log("7. " + value);
-                this.setState({ item7: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value7");
               }}
             />
 
@@ -411,8 +304,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="โดยปกติท่านสูบบุหรี่/ยาสูบวันละกี่มวน"
               onChange={(e, { value }) => {
-                // console.log("8. " + value);
-                this.setState({ item8: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value8");
               }}
             />
 
@@ -435,8 +327,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="โดยเฉลี่ยคุณสูบบุหรี่มากที่สุดในช่วง 2-3 ชั่วโมงแรกหลังตื่นนอนมากกว่าช่วงอื่นๆของวันใช่หรือไม่"
               onChange={(e, { value }) => {
-                // console.log("9. " + value);
-                this.setState({ item9: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value9");
               }}
             />
 
@@ -459,8 +350,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="ขณะที่คุณป่วยต้องนอนอยู่บนเตียงเกือบตลอดเวลา คุณต้องการสูบบุหรี่หรือไม่"
               onChange={(e, { value }) => {
-                // console.log("10. " + value);
-                this.setState({ item10: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value10");
               }}
             />
 
@@ -488,8 +378,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="ประเมินภาวะติดนิโคติน โดย Fagerstrom test for Nicotine Dependence"
               onChange={(e, { value }) => {
-                // console.log("11. " + value);
-                this.setState({ item11: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value11");
               }}
             />
 
@@ -517,8 +406,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="ประเมินภาวะติดด้านความเคยชิน/ด้านสังคม"
               onChange={(e, { value }) => {
-                // console.log("12. " + value);
-                this.setState({ item12: value });
+                this.props.store.smoking.updateSmokingCessationForm(value, "value12");
               }}
             />
 
@@ -546,10 +434,7 @@ const SmokingCessationForm = observer(
               ]}
               placeholder="ประเมินภาวะติดด้านจิตใจ"
               onChange={(e, { value }) => {
-                // console.log("13. " + value);
-                this.setState({ item13: value });
-                console.log(this.state.item13);
-                // console.log(typeof(this.state.item13))
+                this.props.store.smoking.updateSmokingCessationForm(value, "value13");
               }}
             />
             <Form.Group widths="equal">
@@ -588,42 +473,32 @@ const SmokingCessationForm = observer(
                 ]}
                 placeholder="แรงจูงใจในการเลิกบุหรี่"
                 onChange={(e, { value }) => {
-                  // console.log("14. " + value);
-                  this.setState({ item14: value });
-                  console.log(value.includes(5));
-                  if (value.includes(5)) {
-                    this.setState({ disable14: false });
-                  } else {
-                    this.setState({ disable14: true });
-                    this.setState({ item14Other: "" });
-                  }
+                  this.props.store.smoking.updateSmokingCessationForm(value, "value14");
                 }}
               />
               <Form.Field
                 control={Input}
-                disabled={this.state.disable14}
-                value={this.state.item14Other}
+                disabled={this.props.store.smoking.SmokingCessationForm.disable14}
+                value={this.props.store.smoking.SmokingCessationForm.value14Other}
                 label="ระบุ"
                 placeholder="ระบุ..."
                 onChange={(e, { value }) => {
-                  console.log("14. " + value);
-                  this.setState({ item14Other: value });
+                  this.props.store.smoking.updateSmokingCessationForm(value, "value14Other");
                 }}
               />
             </Form.Group>
           </Form>
 
-          <Button
+          {/* <Button
             circular
             content="เพิ่ม"
             color="blue"
             onClick={this.setSmokingCessationForm}
-          />
+          /> */}
 
           {/* <SmokingCessationPlan/> */}
         </div>
       );
     }
   }
-);
 export default SmokingCessationForm;

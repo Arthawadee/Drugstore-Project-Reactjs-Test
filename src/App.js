@@ -12,16 +12,22 @@ import Graph from './components/graph'
 import AboutUs from './components/AboutUs'
 import { Menu, Icon, Segment, Sidebar } from "semantic-ui-react";
 import { withCookies } from 'react-cookie';
-
+import { Provider } from "mobx-react";
+import { inject, observer } from 'mobx-react';
 import "./scss/style.scss";
 
+@inject('store')
+@observer
 class App extends Component {
 
-  // constructor(props){
-  //   super(props)
-  //   // console.log(this.props.store.todos)
-  // }
-
+  constructor(props){
+    super(props)
+    // console.log(this.props.store.todos)
+    // console.log(this.props)
+  }
+// componentDidMount(){
+//   console.log(this.props)
+// }
 
   handleHideClick = () => this.setState({ visible: false });
   handleShowClick = () => this.setState({ visible: true });
@@ -33,12 +39,20 @@ class App extends Component {
   };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
   componentDidMount(){
-    console.log(this.props)
+    // console.log('App',this.props.store.count);
+    // this.props.store.increment();
+    // console.log('App',this.props.store.count);
+    // console.log('disease',this.props.store.disease.disease)
+    // console.log('smoking',this.props.store)
+    console.log('smoking',this.props.store.smoking)
   }
+
   render() {
     var { visible, activeItem } = this.state;
     return (
+      // <Provider >
       <div className="Layout">
         <Menu stackable color="blue" inverted fluid>
           {/* <Menu.Item >
@@ -194,6 +208,7 @@ class App extends Component {
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </div>
+      // </Provider>
     );
   }
 }

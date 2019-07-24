@@ -55,7 +55,7 @@ const COPDForm = observer(
             <Step
               active={this.state.active1}
               onClick={this.showLungHealth}
-              completed={this.props.store.COPDComplete.complete1}
+              // completed={this.props.store.COPDComplete.complete1}
             >
               <Step.Content>
                 <Step.Title>แบบประเมินสมรรถภาพปอด</Step.Title>
@@ -68,7 +68,7 @@ const COPDForm = observer(
             <Step
               active={this.state.active2}
               onClick={this.showCOPDScreeningForm}
-              completed={this.props.store.COPDComplete.complete2}
+              // completed={this.props.store.COPDComplete.complete2}
             >
               <Step.Content>
                 <Step.Title>แบบคัดกรองโรคปอดอุดกั้นเรื้อรัง</Step.Title>
@@ -81,10 +81,10 @@ const COPDForm = observer(
 
           <Segment attached>
             <div id="LungHealth" style={{ display: "block" }}>
-              <LungHealth store={this.props.store} />
+              <LungHealth  />
             </div>
             <div id="COPDScreeningForm" style={{ display: "none" }}>
-              <COPDScreeningForm store={this.props.store} />
+              <COPDScreeningForm  />
             </div>
           </Segment>
         </div>

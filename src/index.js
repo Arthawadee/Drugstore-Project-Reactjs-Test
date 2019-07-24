@@ -9,16 +9,21 @@ import { BrowserRouter } from "react-router-dom";
 // import AppEx4State from './App_Ex4_State';
 // import HomePage from './HomePage';
 import * as serviceWorker from "./serviceWorker";
-import store from "./components/stores/TodoStore";
+// import store from "./components/stores/TodoStore";
+import { store } from "./stores";
+import { Provider } from "mobx-react";
+
 import { CookiesProvider } from "react-cookie";
 
 // console.log(store.todos)
 ReactDOM.render(
-  <CookiesProvider>
-    <BrowserRouter>
-      <App store={store} />
-    </BrowserRouter>
-  </CookiesProvider>,
+  <Provider store={store}>
+    <CookiesProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </CookiesProvider>
+  </Provider>,
   document.getElementById("root")
 );
 

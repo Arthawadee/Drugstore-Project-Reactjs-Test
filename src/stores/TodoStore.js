@@ -1,4 +1,4 @@
-import { autorun, observable, action } from "mobx";
+import { autorun, observable, action, extendObservable } from "mobx";
 // import { observer } from "mobx-react";
 var weight = 60,
   height = 160;
@@ -6,8 +6,18 @@ class TodoStore {
   //   @observable todos = ["buy milk", "buy eggs"];
   //   @observable filter = "por";
 
-
   
+  extendObservable(this, {
+    patient = {
+      patientFirstname: "มานะ",
+      patientLastname: "มานี",
+      id: "1142578459684"
+    },
+    lastName: lastName
+});
+
+
+
   @observable RecommendMedicine = [
     {
       image: "https://5.imimg.com/data5/TQ/RH/MY-18174683/pradaxa-debigatran-capsule-250x250.jpg",
@@ -232,11 +242,11 @@ class TodoStore {
     }
   ];
 
-  @observable patient = {
-    patientFirstname: "มานะ",
-    patientLastname: "มานี",
-    id: "1142578459684"
-  };
+  // @observable patient = {
+  //   patientFirstname: "มานะ",
+  //   patientLastname: "มานี",
+  //   id: "1142578459684"
+  // };
 
   @observable PatientInfo = {
     weight: weight,

@@ -31,7 +31,7 @@ export default class SmokingFollowUpA5 extends Component {
     //   disable6: true,
     //   followUpDate: ""
     // };
-    console.log('store',this.props.store)
+    // console.log('store',this.props.store)
     // console.log(this.state.followUpDate)
   }
 
@@ -84,8 +84,8 @@ export default class SmokingFollowUpA5 extends Component {
         <Button fluid icon='redo' content='ดูแบบคัดกรองการติดตามผลที่ทำไปแล้ว' onClick={this.showOldA5Form}/>
         <Button fluid icon='add' content='เพิ่มแบบคัดกรองการติดตามผลใหม่' onClick={this.showCreateNewA5Form}/>
 
-        <div id='CreateNewA5Form' style={{display: 'none',marginTop: '50px'}}><CreateNewA5Form store={this.props.store}/></div>
-        <div id='OldA5Form' style={{display: 'none',marginTop: '50px'}}><OldA5Form store={this.props.store}/></div>
+        <div id='CreateNewA5Form' style={{display: 'none',marginTop: '50px'}}><CreateNewA5Form /></div>
+        <div id='OldA5Form' style={{display: 'none',marginTop: '50px'}}><OldA5Form /></div>
         
       </div>
     );

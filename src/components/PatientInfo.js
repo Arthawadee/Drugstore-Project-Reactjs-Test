@@ -16,14 +16,14 @@ const PatientInfo = observer(class PatientInfo extends Component {
             DrugAllergy: ''
         };
         console.log('PatientInfo');
-        console.log(this.props.store.PatientInfo);
+        // console.log(this.props.store.PatientInfo);
       }
 
 
-      setPatientInfo = () => {
-        this.props.store.setPatientInfo(this.state.weight, this.state.height, this.state.HR, this.state.RR
-            , this.state.BP, this.state.UnderlyDisease, this.state.DrugAllergy);
-    }
+    //   setPatientInfo = () => {
+    //     this.props.store.setPatientInfo(this.state.weight, this.state.height, this.state.HR, this.state.RR
+    //         , this.state.BP, this.state.UnderlyDisease, this.state.DrugAllergy);
+    // }
 
 
     
@@ -63,7 +63,7 @@ const PatientInfo = observer(class PatientInfo extends Component {
                         // console.log('BMI: '+ {BMI}))
                         }}
                     />
-                    <Header as = 'h2'>BMI: {this.props.store.PatientInfo.BMI} kg/m*m</Header>
+                    {/* <Header as = 'h2'>BMI: {this.props.store.PatientInfo.BMI} kg/m*m</Header> */}
                     <Form.Input
                         required
                         icon="heartbeat"

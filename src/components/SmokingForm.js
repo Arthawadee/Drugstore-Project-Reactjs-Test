@@ -220,9 +220,9 @@ const SmokingForm = observer(
           <Step.Group ordered attached="top" size="large">
             <Step
               active={this.state.active1}
-              completed={this.props.store.smokingComplete.complete1}
+              // completed={this.props.store.smokingComplete.complete1}
               onClick={this.showFamilyInfo}
-              disabled = {this.props.store.SmokingDisable.disable1}
+              // disabled = {this.props.store.SmokingDisable.disable1}
             >
               <Step.Content>
                 <Step.Title>ประวัติครอบครัว</Step.Title>
@@ -235,8 +235,8 @@ const SmokingForm = observer(
             <Step
               active={this.state.active2}
               onClick={this.showHealthBehavior}
-              completed={this.props.store.smokingComplete.complete2}
-              disabled = {this.props.store.SmokingDisable.disable2}
+              // completed={this.props.store.smokingComplete.complete2}
+              // disabled = {this.props.store.SmokingDisable.disable2}
             >
               <Step.Content>
                 <Step.Title>พฤติกรรมสุขภาพ</Step.Title>
@@ -249,8 +249,8 @@ const SmokingForm = observer(
             <Step
               active={this.state.active3}
               onClick={this.showSmokingCessationForm}
-              completed={this.props.store.smokingComplete.complete3}
-              disabled = {this.props.store.SmokingDisable.disable3}
+              // completed={this.props.store.smokingComplete.complete3}
+              // disabled = {this.props.store.SmokingDisable.disable3}
             >
               <Step.Content>
                 <Step.Title>แบบคัดกรองการสูบบุหรี่ (A1-A4)</Step.Title>
@@ -263,8 +263,8 @@ const SmokingForm = observer(
             <Step
               active={this.state.active4}
               onClick={this.showSmokingCessationPlan}
-              completed={this.props.store.smokingComplete.complete4}
-              disabled = {this.props.store.SmokingDisable.disable4}
+              // completed={this.props.store.smokingComplete.complete4}
+              // disabled = {this.props.store.SmokingDisable.disable4}
             >
               <Step.Content>
                 <Step.Title>แผนการเลิกบุหรี่</Step.Title>
@@ -277,8 +277,8 @@ const SmokingForm = observer(
             <Step
               active={this.state.active5}
               onClick={this.showSmokingCessationMedicine}
-              completed={this.props.store.smokingComplete.complete5}
-              disabled = {this.props.store.SmokingDisable.disable5}
+              // completed={this.props.store.smokingComplete.complete5}
+              // disabled = {this.props.store.SmokingDisable.disable5}
             >
               <Step.Content>
                 <Step.Title>ยาช่วยเลิกบุหรี่</Step.Title>
@@ -289,8 +289,8 @@ const SmokingForm = observer(
             <Step
               active={this.state.active6}
               onClick={this.showSmokingFollowUpA5}
-              completed={this.props.store.smokingComplete.complete6}
-              disabled = {this.props.store.SmokingDisable.disable6}
+              // completed={this.props.store.smokingComplete.complete6}
+              // disabled = {this.props.store.SmokingDisable.disable6}
             >
               <Step.Content>
                 <Step.Title>ติดตามผล (A5)</Step.Title>
@@ -303,22 +303,22 @@ const SmokingForm = observer(
 
           <Segment attached>
             <div id="FamilyInfo" style={{ display: "block" }}>
-              <FamilyInfo store={this.props.store} />
+              <FamilyInfo />
             </div>
             <div id="HealthBehavior" style={{ display: "none" }}>
-              <HealthBehavior store={this.props.store} />
+              <HealthBehavior />
             </div>
             <div id="SmokingCessationForm" style={{ display: "none" }}>
-              <SmokingCessationForm store={this.props.store} />
+              <SmokingCessationForm  />
             </div>
             <div id="SmokingCessationPlan" style={{ display: "none" }}>
-              <SmokingCessationPlan store={this.props.store} />
+              <SmokingCessationPlan  />
             </div>
             <div id="SmokingCessationMedicine" style={{ display: "none" }}>
-              <SmokingCessationMedicine store={this.props.store} />
+              <SmokingCessationMedicine />
             </div>
             <div id="SmokingFollowUpA5" style={{ display: "none" }}>
-              <SmokingFollowUpA5 store={this.props.store} />
+              <SmokingFollowUpA5  />
             </div>
           </Segment>
           <TopButton />

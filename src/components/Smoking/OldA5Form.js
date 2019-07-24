@@ -13,8 +13,11 @@ import {
   Icon,
   Radio
 } from "semantic-ui-react";
+import { inject, observer } from "mobx-react";
 
-export default class OldA5Form extends Component {
+@inject("store")
+@observer
+class OldA5Form extends Component {
   constructor(props) {
     super(props);
     // this.state = {
@@ -43,12 +46,12 @@ export default class OldA5Form extends Component {
   //     console.log(this.props.store.SmokingFollowUpA5)
   // }
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.store.SmokingFollowUpA5);
+    // console.log(this.props.store.SmokingFollowUpA5);
   }
 
   componentDidUpdate() {
-    console.log('UPDATE',this.props.store.SmokingFollowUpA5.value1)
-    console.log('BOOLEAN',this.props.store.SmokingFollowUpA5.value1 === "อื่นๆ")
+    // console.log('UPDATE',this.props.store.SmokingFollowUpA5.value1)
+    // console.log('BOOLEAN',this.props.store.SmokingFollowUpA5.value1 === "อื่นๆ")
   }
   render() {
     return (
@@ -64,11 +67,10 @@ export default class OldA5Form extends Component {
           header={
             <p className="header">
               {" "}
-              ติดตามผลครั้งที่ {this.props.store.SmokingFollowUpA5.amount} (A5-
-              {this.props.store.SmokingFollowUpA5.amount})
+              ติดตามผลครั้งที่ {this.props.store.smoking.A5.amount} (A5-
+              {this.props.store.smoking.A5.amount})
             </p>
           }
-          //   content='Fill out the form below to sign-up for a new account'
         />
         <Form>
           <Form.Group inline>
@@ -77,50 +79,39 @@ export default class OldA5Form extends Component {
               control={Radio}
               label="วิธีการติดตาม"
               checked={
-                this.props.store.SmokingFollowUpA5.value1 === "วิธีการติดตาม"
+                this.props.store.smoking.A5.value1 === "วิธีการติดตาม"
               }
-              onChange={(e, { value }) => {
-                console.log(this.props.store.SmokingFollowUpA5.value1);
-                console.log(this.props.store.SmokingFollowUpA5.disable1);
-              }}
+              
             />
             <Form.Field
               control={Radio}
               label="โทรศัพท์"
-              checked={this.props.store.SmokingFollowUpA5.value1 === "โทรศัพท์"}
-              onChange={(e, { value }) => {
-                console.log(this.props.store.SmokingFollowUpA5.value1);
-              }}
+              checked={this.props.store.smoking.A5.value1 === "โทรศัพท์"}
+              
             />
             <Form.Field
               control={Radio}
               label="ที่ร้าน"
-              checked={this.props.store.SmokingFollowUpA5.value1 === "ที่ร้าน"}
-              onChange={(e, { value }) => {
-                console.log(this.props.store.SmokingFollowUpA5.value1);
-              }}
+              checked={this.props.store.smoking.A5.value1 === "ที่ร้าน"}
+              
             />
             <Form.Field
               control={Radio}
               label="อื่นๆ"
-              checked={this.props.store.SmokingFollowUpA5.value1 === "อื่นๆ"}
-              onChange={(e, { value }) => {
-                // console.log(this.props.store.SmokingFollowUpA5.value1);
-                // console.log(this.props.store.SmokingFollowUpA5.disable1);
-                console.log(this.props.store.SmokingFollowUpA5.value1 === "อื่นๆ")
-              }}
+              checked={this.props.store.smoking.A5.value1 === "อื่นๆ"}
+              
             />
           </Form.Group>
 
           <Form.Field
             control={Input}
-            disabled={this.props.store.SmokingFollowUpA5.disable1}
-            value={this.props.store.SmokingFollowUpA5.value1Other}
+            // disabled={this.props.store.SmokingFollowUpA5.disable1}
+            value={this.props.store.smoking.A5.value1Other}
             label="ระบุ"
-            placeholder={this.props.store.SmokingFollowUpA5.value1Other}
+            placeholder={this.props.store.smoking.A5.value1Other}
           />
 
-          <Form.Group widths="equal">
+          {/* <Form.Group widths="equal">
             <Form.Field
               control={Select}
               label="1.วิธีติดตาม"
@@ -132,10 +123,6 @@ export default class OldA5Form extends Component {
                 { key: 3, text: "ที่ร้าน", value: "ที่ร้าน" },
                 { key: 4, text: "อื่นๆ", value: "อื่นๆ" }
               ]}
-              onChange={(e, { value }) => {
-                console.log(value);
-                console.log(this.props.store.SmokingFollowUpA5.value1);
-              }}
             />
             <Form.Field
               control={Input}
@@ -144,12 +131,12 @@ export default class OldA5Form extends Component {
               label="ระบุ"
               placeholder={this.props.store.SmokingFollowUpA5.value1Other}
             />
-          </Form.Group>
+          </Form.Group> */}
 
           <Form.Group widths="equal">
             <Form.Field
               control={Select}
-              value={this.props.store.SmokingFollowUpA5.value3}
+              value={this.props.store.smoking.A5.value3}
               label="3.อาการถอนนิโคติน"
               placeholder="อาการถอนนิโคติน"
               options={[
@@ -159,8 +146,8 @@ export default class OldA5Form extends Component {
             />
             <Form.Field
               control={TextArea}
-              disabled={this.props.store.SmokingFollowUpA5.disable3}
-              value={this.props.store.SmokingFollowUpA5.value3Advice}
+              // disabled={this.props.store.SmokingFollowUpA5.disable3}
+              value={this.props.store.smoking.A5.value3Advice}
               label="อาการที่พบและคำแนะนำ"
               placeholder="อาการที่พบและคำแนะนำ"
             />
@@ -169,7 +156,7 @@ export default class OldA5Form extends Component {
           <Form.Group widths="equal">
             <Form.Field
               control={Select}
-              value={this.props.store.SmokingFollowUpA5.value4}
+              value={this.props.store.smoking.A5.value4}
               label="4.กรณีการใช้ยาช่วยเลิกบุหรี่ อาการข้างเคียงจากยาช่วยเลิกบุหรี"
               placeholder="กรณีการใช้ยาช่วยเลิกบุหรี่ อาการข้างเคียงจากยาช่วยเลิกบุหรี"
               options={[
@@ -179,8 +166,8 @@ export default class OldA5Form extends Component {
             />
             <Form.Field
               control={TextArea}
-              disabled={this.props.store.SmokingFollowUpA5.disable4}
-              value={this.props.store.SmokingFollowUpA5.value4Advice}
+              // disabled={this.props.store.SmokingFollowUpA5.disable4}
+              value={this.props.store.smoking.A5.value4Advice}
               label="อาการที่พบและคำแนะนำ"
               placeholder="อาการที่พบและคำแนะนำ"
             />
@@ -189,7 +176,7 @@ export default class OldA5Form extends Component {
           <Form.Group widths="equal">
             <Form.Field
               control={Select}
-              value={this.props.store.SmokingFollowUpA5.value5}
+              value={this.props.store.smoking.A5.value5}
               label="5.ปัญหาเชิงพฤติกรรม สังคมและความเคยชิน หรือความเชื่อ"
               placeholder="ปัญหาเชิงพฤติกรรม สังคมและความเคยชิน หรือความเชื่อ"
               options={[
@@ -199,8 +186,8 @@ export default class OldA5Form extends Component {
             />
             <Form.Field
               control={TextArea}
-              disabled={this.props.store.SmokingFollowUpA5.disable5}
-              value={this.props.store.SmokingFollowUpA5.value4Advice}
+              // disabled={this.props.store.SmokingFollowUpA5.disable5}
+              value={this.props.store.smoking.A5.value5Advice}
               label="ปัญหาที่พบและคำแนะนำ"
               placeholder="ปัญหาที่พบและคำแนะนำ"
             />
@@ -208,7 +195,7 @@ export default class OldA5Form extends Component {
 
           <Form.Field
             control={TextArea}
-            value={this.props.store.SmokingFollowUpA5.value6}
+            value={this.props.store.smoking.A5.value6}
             label="6.คำแนะนำอื่นๆ เช่น การเสริมแรง การให้กำลังใจผู้ป่วย"
             placeholder="คำแนะนำ"
           />
@@ -217,9 +204,21 @@ export default class OldA5Form extends Component {
             control={Input}
             type="date"
             label="นัดครั้งต่อไป วันที่"
-            value={this.props.store.SmokingFollowUpA5.followUpDate}
+            value={this.props.store.smoking.A5.followUpDate}
           />
         </Form>
+
+
+
+
+
+
+
+
+
+
+
+
 
         {/* <p>1.วิธีติดตาม: {this.state.value1}</p> */}
 
@@ -263,3 +262,4 @@ export default class OldA5Form extends Component {
     );
   }
 }
+export default OldA5Form;

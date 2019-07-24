@@ -1,27 +1,21 @@
 import React, { Component } from "react";
 import { Form, Select, Input, Button } from "semantic-ui-react";
-import { observer } from "mobx-react";
+import { inject, observer } from "mobx-react";
 
-const SmokingCessationPlan = observer(
-  class SmokingCessationPlan extends Component {
+@inject('store')
+@observer
+class SmokingCessationPlan extends Component {
     constructor(props) {
       super(props);
       this.state = {
         item17: "",
         stopDate: ""
       };
-      console.log(this.props.store);
+      // console.log(this.props.store);
     }
 
-    setSmokingCessationPlan = () => {
-      this.props.store.setSmokingCessationPlan(
-        this.state.item17,
-        this.state.stopDate
-      );
-    };
-
-    componentDidUpdate(prevProps) {
-      this.setSmokingCessationPlan();
+    componentDidMount(){
+      console.log('SmokingCessationPlan',this.props.store.smoking.SmokingCessationPlan)
     }
 
     render() {
@@ -48,8 +42,7 @@ const SmokingCessationPlan = observer(
               ]}
               placeholder="แผนการเลิกบุหรี่"
               onChange={(e, { value }) => {
-                this.setState({ item17: value });
-                console.log(value);
+                this.props.store.smoking.updateSmokingCessationPlan(value, "value17");
               }}
             />
 
@@ -59,16 +52,14 @@ const SmokingCessationPlan = observer(
               type="date"
               label="กำหนดวันหยุดบุหรี่ (0 มวน) วันที่"
               onChange={(e, { value }) => {
-                this.setState({ stopDate: value });
-                console.log(value);
+                this.props.store.smoking.updateSmokingCessationPlan(value, "stopDate");
               }}
             />
           </Form>
 
-          <Button onClick={this.setSmokingCessationPlan}>บันทึก</Button>
+          {/* <Button onClick={this.setSmokingCessationPlan}>บันทึก</Button> */}
         </div>
       );
     }
   }
-);
 export default SmokingCessationPlan;

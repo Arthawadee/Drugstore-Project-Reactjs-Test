@@ -7,8 +7,11 @@ import {
   TextArea,
   Button
 } from "semantic-ui-react";
+import { inject, observer } from "mobx-react";
 
-export default class CreateNewA5Form extends Component {
+@inject("store")
+@observer
+class CreateNewA5Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,52 +32,18 @@ export default class CreateNewA5Form extends Component {
       disable6: true,
       followUpDate: ""
     };
-    console.log(this.props.store)
+    // console.log(this.props.store)
     // console.log(this.state.followUpDate)
   }
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log("shouldComponentUpdate");
-  //   // console.log(nextProps)
-  //   console.log(nextState);
-  //   return true;
-  // }
-
-  setSmokingFollowUpA5 = () => {
-    this.props.store.setSmokingFollowUpA5(
-      this.state.amount,
-      this.state.value1,
-      this.state.disable1,
-      this.state.value1Other,
-      this.state.value3,
-      this.state.disable3,
-      this.state.value3Advice,
-      this.state.value4,
-      this.state.disable4,
-      this.state.value4Advice,
-      this.state.value5,
-      this.state.disable5,
-      this.state.value5Advice,
-      this.state.value6,
-      this.state.disable6,
-      this.state.value6,
-      this.state.followUpDate
-    );
-  };
-
-  componentDidUpdate(prevProps) {
-    this.setSmokingFollowUpA5();
-    // console.log(this.state)
-  }
-
   render() {
+    // const { updateItem } = this.props.store;
     return (
       <div className="CreateNewA5FormPage">
         <Header as="h2">
-          ติดตามผลครั้งที่ {this.props.store.SmokingFollowUpA5.amount+1} (A5-
-          {this.props.store.SmokingFollowUpA5.amount+1})
+          ติดตามผลครั้งที่ {this.props.store.smoking.A5.amount+1} (A5-
+          {this.props.store.smoking.A5.amount+1})
         </Header>
-
+        {/* <h1>{this.props.store.A5.value1}</h1> */}
         <Form>
           {/* <Form.Group inline>
             <label>1.วิธีติดตาม</label>
@@ -146,26 +115,15 @@ export default class CreateNewA5Form extends Component {
                 { key: 3, text: "ที่ร้าน", value: "ที่ร้าน" },
                 { key: 4, text: "อื่นๆ", value: "อื่นๆ" }
               ]}
-              onChange={(e, { value }) => {
-                this.setState({ value1: value });
-                if (value === "อื่นๆ") {
-                  this.setState({ disable1: false });
-                } else {
-                  this.setState({ disable1: true });
-                  this.setState({ value1Other: "" });
-                }
-              }}
+              onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value1")}}
             />
             <Form.Field
               control={Input}
-              disabled={this.state.disable1}
-              value={this.state.value1Other}
+              // disabled={this.state.disable1}
+              // value={this.state.value1Other}
               label="ระบุ"
               placeholder="ระบุ..."
-              onChange={(e, { value }) => {
-                this.setState({ value1Other: value });
-                // console.log("ระบุ" + value);
-              }}
+              onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value1Other")}}
             />
           </Form.Group>
 
@@ -179,25 +137,15 @@ export default class CreateNewA5Form extends Component {
                 { key: 1, text: "พบ", value: 1 },
                 { key: 2, text: "ไม่พบ", value: 2 }
               ]}
-              onChange={(e, { value }) => {
-                this.setState({ value3: value });
-                if (value === 1) {
-                  this.setState({ disable3: false });
-                } else {
-                  this.setState({ disable3: true });
-                  this.setState({ value3Advice: "" });
-                }
-              }}
+              onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value3")}}
             />
             <Form.Field
               control={TextArea}
-              disabled={this.state.disable3}
-              value={this.state.value3Advice}
+              // disabled={this.state.disable3}
+              value={this.props.store.smoking.A5.value3Advice}
               label="อาการที่พบและคำแนะนำ"
               placeholder="อาการที่พบและคำแนะนำ"
-              onChange={(e, { value }) => {
-                this.setState({ value3Advice: value });
-              }}
+              onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value3Advice")}}
             />
           </Form.Group>
 
@@ -211,25 +159,15 @@ export default class CreateNewA5Form extends Component {
                 { key: 1, text: "พบ", value: 1 },
                 { key: 2, text: "ไม่พบ", value: 2 }
               ]}
-              onChange={(e, { value }) => {
-                this.setState({ value4: value });
-                if (value === 1) {
-                  this.setState({ disable4: false });
-                } else {
-                  this.setState({ disable4: true });
-                  this.setState({ value4Advice: "" });
-                }
-              }}
+              onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value4")}}
             />
             <Form.Field
               control={TextArea}
-              disabled={this.state.disable4}
-              value={this.state.value4Advice}
+              // disabled={this.state.disable4}
+              value={this.props.store.smoking.A5.alue4Advice}
               label="อาการที่พบและคำแนะนำ"
               placeholder="อาการที่พบและคำแนะนำ"
-              onChange={(e, { value }) => {
-                this.setState({ value4Advice: value });
-              }}
+              onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value4Advice")}}
             />
           </Form.Group>
 
@@ -243,39 +181,24 @@ export default class CreateNewA5Form extends Component {
                 { key: 1, text: "พบ", value: 1 },
                 { key: 2, text: "ไม่พบ", value: 2 }
               ]}
-              onChange={(e, { value }) => {
-                this.setState({ value5: value });
-                if (value === 1) {
-                  this.setState({ disable5: false });
-                } else {
-                  this.setState({ disable5: true });
-                  this.setState({ value5Advice: "" });
-                }
-              }}
+              onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value5")}}
             />
             <Form.Field
               control={TextArea}
-              disabled={this.state.disable5}
-              value={this.state.value4Advice}
+              // disabled={this.state.disable5}
+              value={this.props.store.smoking.A5.value5Advice}
               label="ปัญหาที่พบและคำแนะนำ"
               placeholder="ปัญหาที่พบและคำแนะนำ"
-              onChange={(e, { value }) => {
-                this.setState({ value5Advice: value });
-              }}
+              onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value5Advice")}}
             />
           </Form.Group>
 
           <Form.Field
             control={TextArea}
-            value={this.state.value6}
+            value={this.props.store.smoking.value6}
             label="6.คำแนะนำอื่นๆ เช่น การเสริมแรง การให้กำลังใจผู้ป่วย"
             placeholder="คำแนะนำ"
-            onChange={(e, { value }) => {
-              this.setState({ value6: value });
-              // console.log(this.state.value6)
-              // console.log(typeof(this.state.value6))
-              // console.log(this.state.value6.length)
-            }}
+            onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "value6")}}
           />
 
           <Form.Field
@@ -284,14 +207,12 @@ export default class CreateNewA5Form extends Component {
             type="date"
             label="นัดครั้งต่อไป วันที่"
             placeholder="วันที่"
-            onChange={(e, { value }) => {
-              this.setState({ followUpDate: value });
-              console.log(this.state.followUpDate);
-            }}
+            onChange={(e, {value}) => {this.props.store.smoking.updateNewA5(value, "followUpDate")}}
           />
         </Form>
-        <Button onClick={this.setSmokingFollowUpA5}>บันทึก</Button>
+        {/* <Button onClick={this.setSmokingFollowUpA5}>บันทึก</Button> */}
       </div>
     );
   }
 }
+export default CreateNewA5Form;

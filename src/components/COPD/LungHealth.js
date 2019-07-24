@@ -13,18 +13,18 @@ const LungHealth = observer(
         value4: "",
         value5: ""
       };
-      console.log(this.props.store);
+      // console.log(this.props.store);
     }
 
-    setLungHealth = () => {
-      this.props.store.setLungHealth(
-        this.state.value1,
-        this.state.value2,
-        this.state.value3,
-        this.state.value4,
-        this.state.value5
-      );
-    };
+    // setLungHealth = () => {
+    //   this.props.store.setLungHealth(
+    //     this.state.value1,
+    //     this.state.value2,
+    //     this.state.value3,
+    //     this.state.value4,
+    //     this.state.value5
+    //   );
+    // };
 
     // shouldComponentUpdate(nextProps, nextState) {
     //   console.log("shouldComponentUpdate");
@@ -33,9 +33,9 @@ const LungHealth = observer(
     //   return true;
     // }
 
-    componentDidUpdate(prevProps) {
-      this.setLungHealth();
-    }
+    // componentDidUpdate(prevProps) {
+    //   this.setLungHealth();
+    // }
 
     render() {
       return (
