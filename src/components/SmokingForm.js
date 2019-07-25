@@ -7,7 +7,7 @@ import SmokingCessationPlan from "./Smoking/SmokingCessationPlan";
 import SmokingFollowUpA5 from "./Smoking/SmokingFollowUpA5";
 import SmokingCessationMedicine from "./Smoking/SmokingCessationMedicine";
 import TopButton from "./TopButton";
-import { observer } from "mobx-react";
+import { inject,observer } from "mobx-react";
 
 // const panes = [
 //   {
@@ -60,8 +60,9 @@ import { observer } from "mobx-react";
 //   }
 // ];
 
-const SmokingForm = observer(
-  class SmokingForm extends Component {
+@inject('store')
+@observer
+class SmokingForm extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -220,7 +221,7 @@ const SmokingForm = observer(
           <Step.Group ordered attached="top" size="large">
             <Step
               active={this.state.active1}
-              // completed={this.props.store.smokingComplete.complete1}
+              completed={this.props.store.smoking.complete.complete1}
               onClick={this.showFamilyInfo}
               // disabled = {this.props.store.SmokingDisable.disable1}
             >
@@ -235,7 +236,7 @@ const SmokingForm = observer(
             <Step
               active={this.state.active2}
               onClick={this.showHealthBehavior}
-              // completed={this.props.store.smokingComplete.complete2}
+              completed={this.props.store.smoking.complete.complete2}
               // disabled = {this.props.store.SmokingDisable.disable2}
             >
               <Step.Content>
@@ -249,7 +250,7 @@ const SmokingForm = observer(
             <Step
               active={this.state.active3}
               onClick={this.showSmokingCessationForm}
-              // completed={this.props.store.smokingComplete.complete3}
+              completed={this.props.store.smoking.complete.complete3}
               // disabled = {this.props.store.SmokingDisable.disable3}
             >
               <Step.Content>
@@ -326,6 +327,5 @@ const SmokingForm = observer(
       );
     }
   }
-);
 
 export default SmokingForm;

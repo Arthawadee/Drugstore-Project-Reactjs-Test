@@ -22,7 +22,7 @@ export default class HomepageSmall extends Component {
   }
 
   componentDidMount(){
-    console.log('props',cookies)
+    console.log('cookies = ',cookies)
   }
 
   showHide(e) {

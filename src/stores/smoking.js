@@ -38,7 +38,7 @@ class SmokingStore {
         value5: "",
         value6: ""
       },
-      SmokingCessationForm: {
+      screening: {
         disable1_1: true,
         disable2_1: true,
         disable2_2: true,
@@ -64,7 +64,31 @@ class SmokingStore {
       SmokingCessationPlan: {
         value17: "",
         stopDate: ""
-      }
+      },
+      complete: {
+        complete1: false,
+        complete2: false,
+        complete3: false,
+        complete4: false,
+        complete5: false,
+        complete6: false
+      },
+      disable: {
+        disable1: false,
+        disable2: true,
+        disable3: true,
+        disable4: true,
+        disable5: true,
+        disable6: false
+      },
+      medicine: [
+        {
+          value1: "",
+          value2: "",
+          value3: ""
+        }
+      ],
+      noMedicine: false
     });
   }
 
@@ -138,6 +162,12 @@ class SmokingStore {
         break;
       }
     }
+    if (
+      this.FamilyInfo.value1.length !== 0 &&
+      this.FamilyInfo.value2.length !== 0
+    ) {
+      this.complete.complete1 = true;
+    } else this.complete.complete1 = false;
   }
 
   @action
@@ -189,117 +219,148 @@ class SmokingStore {
         break;
       }
     }
+    if (
+      this.HealthBehavior.value1 &&
+      this.HealthBehavior.value2 &&
+      this.HealthBehavior.value3 &&
+      this.HealthBehavior.value3month &&
+      this.HealthBehavior.value3year &&
+      this.HealthBehavior.value4 &&
+      this.HealthBehavior.value4Amount &&
+      this.HealthBehavior.value5 &&
+      this.HealthBehavior.value6
+    ) {
+      this.complete.complete2 = true;
+    } else this.complete.complete2 = false;
   }
 
   @action
   updateSmokingCessationForm(value, id) {
     switch (id) {
       case "value1": {
-        this.SmokingCessationForm.value1 = value;
-        console.log("value1 = ", this.SmokingCessationForm.value1);
+        this.screening.value1 = value;
+        console.log("value1 = ", this.screening.value1);
         break;
       }
       case "value2": {
-        this.SmokingCessationForm.value2 = value;
+        this.screening.value2 = value;
         if (value.includes(3)) {
-          this.SmokingCessationForm.disable2_1 = false;
+          this.screening.disable2_1 = false;
         } else {
-          this.SmokingCessationForm.disable2_1 = true;
-          this.SmokingCessationForm.value2Select = [];
-          this.SmokingCessationForm.disable2_2 = true;
-          this.SmokingCessationForm.value2Other = "";
+          this.screening.disable2_1 = true;
+          this.screening.value2Select = [];
+          this.screening.disable2_2 = true;
+          this.screening.value2Other = "";
         }
-        console.log("value2 = ", this.SmokingCessationForm.value2);
+        console.log("value2 = ", this.screening.value2);
         break;
       }
       case "value2Select": {
-        this.SmokingCessationForm.value2Select = value;
+        this.screening.value2Select = value;
         if (value.includes(6)) {
-          this.SmokingCessationForm.disable2_2 = false;
+          this.screening.disable2_2 = false;
         } else {
-          this.SmokingCessationForm.disable2_2 = true;
-          this.SmokingCessationForm.value2Other = "";
+          this.screening.disable2_2 = true;
+          this.screening.value2Other = "";
         }
-        console.log("value2Select = ", this.SmokingCessationForm.value2Select);
+        console.log("value2Select = ", this.screening.value2Select);
         break;
       }
       case "value2Other": {
-        this.SmokingCessationForm.value2Other = value;
-        console.log("value2Other = ", this.SmokingCessationForm.value2Other);
+        this.screening.value2Other = value;
+        console.log("value2Other = ", this.screening.value2Other);
         break;
       }
       case "value3": {
-        this.SmokingCessationForm.value3 = value;
-        console.log("value3 = ", this.SmokingCessationForm.value3);
+        this.screening.value3 = value;
+        console.log("value3 = ", this.screening.value3);
         break;
       }
       case "value4": {
-        this.SmokingCessationForm.value4 = value;
-        console.log("value4 = ", this.SmokingCessationForm.value4);
+        this.screening.value4 = value;
+        console.log("value4 = ", this.screening.value4);
         break;
       }
       case "value5": {
-        this.SmokingCessationForm.value5 = value;
-        console.log("value5 = ", this.SmokingCessationForm.value5);
+        this.screening.value5 = value;
+        console.log("value5 = ", this.screening.value5);
         break;
       }
       case "value6": {
-        this.SmokingCessationForm.value6 = value;
-        console.log("value6 = ", this.SmokingCessationForm.value6);
+        this.screening.value6 = value;
+        console.log("value6 = ", this.screening.value6);
         break;
       }
       case "value7": {
-        this.SmokingCessationForm.value7 = value;
-        console.log("value7 = ", this.SmokingCessationForm.value7);
+        this.screening.value7 = value;
+        console.log("value7 = ", this.screening.value7);
         break;
       }
       case "value8": {
-        this.SmokingCessationForm.value8 = value;
-        console.log("value8 = ", this.SmokingCessationForm.value8);
+        this.screening.value8 = value;
+        console.log("value8 = ", this.screening.value8);
         break;
       }
       case "value9": {
-        this.SmokingCessationForm.value9 = value;
-        console.log("value9 = ", this.SmokingCessationForm.value9);
+        this.screening.value9 = value;
+        console.log("value9 = ", this.screening.value9);
         break;
       }
       case "value10": {
-        this.SmokingCessationForm.value10 = value;
-        console.log("value10 = ", this.SmokingCessationForm.value10);
+        this.screening.value10 = value;
+        console.log("value10 = ", this.screening.value10);
         break;
       }
       case "value11": {
-        this.SmokingCessationForm.value11 = value;
-        console.log("value11 = ", this.SmokingCessationForm.value11);
+        this.screening.value11 = value;
+        console.log("value11 = ", this.screening.value11);
         break;
       }
       case "value12": {
-        this.SmokingCessationForm.value12 = value;
-        console.log("value12 = ", this.SmokingCessationForm.value12);
+        this.screening.value12 = value;
+        console.log("value12 = ", this.screening.value12);
         break;
       }
       case "value13": {
-        this.SmokingCessationForm.value13 = value;
-        console.log("value13 = ", this.SmokingCessationForm.value13);
+        this.screening.value13 = value;
+        console.log("value13 = ", this.screening.value13);
         break;
       }
       case "value14": {
-        this.SmokingCessationForm.value14 = value;
+        this.screening.value14 = value;
         if (value.includes(5)) {
-          this.SmokingCessationForm.disable14 = false;
+          this.screening.disable14 = false;
         } else {
-          this.SmokingCessationForm.disable14 = true;
-          this.SmokingCessationForm.value14Other = "";
+          this.screening.disable14 = true;
+          this.screening.value14Other = "";
         }
-        console.log("value14 = ", this.SmokingCessationForm.value14);
+        console.log("value14 = ", this.screening.value14);
         break;
       }
       case "value14Other": {
-        this.SmokingCessationForm.value14Other = value;
-        console.log("value14Other = ", this.SmokingCessationForm.value14Other);
+        this.screening.value14Other = value;
+        console.log("value14Other = ", this.screening.value14Other);
         break;
       }
     }
+    if (
+      this.screening.value1 &&
+      this.screening.value2.length !== 0 &&
+      this.screening.value3 &&
+      this.screening.value4 &&
+      this.screening.value5 &&
+      this.screening.value6 &&
+      this.screening.value7 &&
+      this.screening.value8 &&
+      this.screening.value9 &&
+      this.screening.value10 &&
+      this.screening.value11 &&
+      this.screening.value12 &&
+      this.screening.value13 &&
+      this.screening.value14.length !== 0
+    ) {
+      this.complete.complete3 = true;
+    } else this.complete.complete3 = false;
   }
 
   @action
@@ -317,5 +378,57 @@ class SmokingStore {
       }
     }
   }
+
+  @action
+  addMedicine = () => {
+    var obj = {
+      value1: "",
+      value2: "",
+      value3: ""
+    };
+    // console.log(this.medicine);
+    var newData = [...this.medicine, obj];
+    // console.log('newData', newData);
+    this.medicine = newData;
+    console.log("newMedicine = ", this.medicine);
+    console.log(this.medicine[2]);
+  };
+
+  @action
+  updateAddMedicine(value, id, i) {
+    switch (id) {
+      case "value1": {
+        this.medicine[i].value1 = value;
+        console.log("medicine[", i, "].value1 = ", this.medicine[i].value1);
+        break;
+      }
+      case "value2": {
+        this.medicine[i].value2 = value;
+        console.log("medicine[", i, "].value2 = ", this.medicine[i].value2);
+        break;
+      }
+      case "value3": {
+        this.medicine[i].value3 = value;
+        console.log("medicine[", i, "].value3 = ", this.medicine[i].value3);
+        break;
+      }
+    }
+  }
+
+  @action
+  updateNoMedicine = () => {
+    console.log("noMedicine-before = ", this.noMedicine);
+    this.noMedicine = !this.noMedicine;
+    console.log("noMedicine-after = ", this.noMedicine);
+    if (this.noMedicine) {
+      for (let i = 0; i < this.medicine.length; i++) {
+        this.medicine[i].value1 = "";
+        this.medicine[i].value2 = "";
+        this.medicine[i].value3 = "";
+      }
+      this.medicine.length = 1;
+      
+    }
+  };
 }
 export default SmokingStore;

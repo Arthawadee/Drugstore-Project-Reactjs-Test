@@ -1,45 +1,29 @@
 import React, { Component } from "react";
 import { Form, Select, Button } from "semantic-ui-react";
+import { inject, observer } from "mobx-react";
 
-export default class StrokeScreeningForm extends Component {
+@inject("store")
+@observer
+class StrokeScreeningForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item1: "",
-      item2: "",
-      item3: "",
-      item4: "",
-      item5: "",
-      item6: "",
-      item7: "",
-      item8: ""
+      value1: "",
+      value2: "",
+      value3: "",
+      value4: "",
+      value5: "",
+      value6: "",
+      value7: "",
+      value8: ""
     };
-    // console.log(this.props.store)
   }
-
-  // setStrokeScreeningForm = () => {
-  //   this.props.store.setStrokeScreeningForm(
-  //     this.state.item1,
-  //     this.state.item2,
-  //     this.state.item3,
-  //     this.state.item4,
-  //     this.state.item5,
-  //     this.state.item6,
-  //     this.state.item7,
-  //     this.state.item8
-  //   );
-  // };
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log("shouldComponentUpdate");
-  //   // console.log(nextProps)
-  //   console.log(nextState);
-  //   return true;
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   this.setStrokeScreeningForm();
-  // }
+  componentDidMount() {
+    console.log(
+      "screening = ",
+      this.props.store.stroke.screening
+    );
+  }
 
   render() {
     return (
@@ -69,8 +53,10 @@ export default class StrokeScreeningForm extends Component {
             ]}
             placeholder="ท่านมีญาติสายตรง ( พ่อ หรือแม่ หรือพี่ หรือน้อง ) เป็นโรคหัวใจขาดเลือดหรืออัมพาตใช่หรือไม่"
             onChange={(e, { value }) => {
-              // console.log("1. " + value);
-              this.setState({ item1: value });
+              this.props.store.stroke.updateStrokeScreeningForm(
+                value,
+                "value1"
+              );
             }}
           />
           <Form.Field
@@ -97,8 +83,10 @@ export default class StrokeScreeningForm extends Component {
             ]}
             placeholder="ในระยะ 6 เดือนที่ผ่านมา จนถึงปัจจุบัน ท่านสูบบุหรี่ใช่หรือไม่"
             onChange={(e, { value }) => {
-              // console.log("2. " + value);
-              this.setState({ item2: value });
+              this.props.store.stroke.updateStrokeScreeningForm(
+                value,
+                "value2"
+              );
             }}
           />
           <Form.Field
@@ -125,8 +113,10 @@ export default class StrokeScreeningForm extends Component {
             ]}
             placeholder="ท่านมีระดับความดันโลหิตที่วัดได้ มากกว่า หรือเท่ากับ 140 /90 mmHg หรือเคยได้รับการวินิจฉัยว่าเป็นโรคความดันโลหิตสูง"
             onChange={(e, { value }) => {
-              // console.log("3. " + value);
-              this.setState({ item3: value });
+              this.props.store.stroke.updateStrokeScreeningForm(
+                value,
+                "value3"
+              );
             }}
           />
           <Form.Field
@@ -153,8 +143,10 @@ export default class StrokeScreeningForm extends Component {
             ]}
             placeholder="ท่านมีระดับน้ำตาลในเลือดจากหลอดเลื่อดฝอย มากกว่า 120 มิลลิกรัมเปอร์เซ็นต์ หรือเคยได้รับการวินิจฉัยว่าเป็นเบาหวาน"
             onChange={(e, { value }) => {
-              // console.log("4. " + value);
-              this.setState({ item4: value });
+              this.props.store.stroke.updateStrokeScreeningForm(
+                value,
+                "value4"
+              );
             }}
           />
           <Form.Field
@@ -181,8 +173,10 @@ export default class StrokeScreeningForm extends Component {
             ]}
             placeholder="ท่านเคยได้รับการบอกจากแพทย์หรือพยาบาลว่ามีไขมันในเลือดผิดปกติ"
             onChange={(e, { value }) => {
-              // console.log("5. " + value);
-              this.setState({ item5: value });
+              this.props.store.stroke.updateStrokeScreeningForm(
+                value,
+                "value5"
+              );
             }}
           />
           <Form.Field
@@ -209,8 +203,10 @@ export default class StrokeScreeningForm extends Component {
             ]}
             placeholder="ท่านมีดัชนีมวลกาย (BMI) 25 กิโลกรัมต่อตารางเมตร(kg/m*m) หรือขนาดรอบเอวที่วัดได้ ชาย มากกว่า 90 ซม. หญิง มากกว่า 80 ซม."
             onChange={(e, { value }) => {
-              // console.log("6. " + value);
-              this.setState({ item6: value });
+              this.props.store.stroke.updateStrokeScreeningForm(
+                value,
+                "value6"
+              );
             }}
           />
           <Form.Field
@@ -232,8 +228,10 @@ export default class StrokeScreeningForm extends Component {
             ]}
             placeholder="ท่านเป็นโรคหลอดเลือดสมองหรือไม่"
             onChange={(e, { value }) => {
-              // console.log("7. " + value);
-              this.setState({ item7: value });
+              this.props.store.stroke.updateStrokeScreeningForm(
+                value,
+                "value7"
+              );
             }}
           />
           <Form.Field
@@ -255,13 +253,16 @@ export default class StrokeScreeningForm extends Component {
             ]}
             placeholder="ท่านเป็นโรคหัวใจหรือไม่"
             onChange={(e, { value }) => {
-              // console.log("8. " + value);
-              this.setState({ item8: value });
+              this.props.store.stroke.updateStrokeScreeningForm(
+                value,
+                "value8"
+              );
             }}
           />
         </Form>
-        <Button content="บันทึก" onClick={this.setStrokeScreeningForm} />
+        {/* <Button content="บันทึก" onClick={this.setStrokeScreeningForm} /> */}
       </div>
     );
   }
 }
+export default StrokeScreeningForm;

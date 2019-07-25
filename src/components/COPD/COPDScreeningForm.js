@@ -1,39 +1,17 @@
 import React, { Component } from "react";
 import { Form, Select, Button } from "semantic-ui-react";
+import { inject, observer } from "mobx-react";
 
-export default class COPDScreeningForm extends Component {
+@inject("store")
+@observer
+class COPDScreeningForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value1: "",
-      value2: "",
-      value3: "",
-      value4: "",
-      value5: ""
-    };
   }
 
-  // setCOPDScreeningForm = () => {
-  //   this.props.store.setCOPDScreeningForm(
-  //     this.state.value1,
-  //     this.state.value2,
-  //     this.state.value3,
-  //     this.state.value4,
-  //     this.state.value5
-  //   );
-  // };
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log("shouldComponentUpdate");
-  //   // console.log(nextProps)
-  //   console.log(nextState);
-  //   return true;
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   this.setCOPDScreeningForm();
-  // }
-
+  componentDidMount() {
+    console.log("COPDScreeningForm = ", this.props.store.copd.screening);
+  }
   render() {
     return (
       <div className="COPDScreeningForm">
@@ -50,8 +28,7 @@ export default class COPDScreeningForm extends Component {
             ]}
             placeholder="อายุ"
             onChange={(e, { value }) => {
-              console.log("1.: " + value);
-              this.setState({ value1: value });
+              this.props.store.copd.updateCOPDScreeningForm(value, "value1");
             }}
           />
           <Form.Field
@@ -67,8 +44,7 @@ export default class COPDScreeningForm extends Component {
             ]}
             placeholder="ช่วง 4 สัปดาห์ที่ผ่านมา คุณเคยรู้สึกหอบหรือต้องหายใจถี่ๆ บ่อยหรือไม่"
             onChange={(e, { value }) => {
-              console.log("2.: " + value);
-              this.setState({ value2: value });
+              this.props.store.copd.updateCOPDScreeningForm(value, "value2");
             }}
           />
           <Form.Field
@@ -85,8 +61,7 @@ export default class COPDScreeningForm extends Component {
             ]}
             placeholder="คุณเคยไอ มีเสมหะ"
             onChange={(e, { value }) => {
-              console.log("3.: " + value);
-              this.setState({ value3: value });
+              this.props.store.copd.updateCOPDScreeningForm(value, "value3");
             }}
           />
 
@@ -102,8 +77,7 @@ export default class COPDScreeningForm extends Component {
             ]}
             placeholder="ในช่วงเวลา 1 ปีที่ผ่านมาคุณมีความสามารถในการทำกิจกรรมต่างๆลดลงเพราะมีปัญหาเรื่องระบบหายใจ"
             onChange={(e, { value }) => {
-              console.log("4.: " + value);
-              this.setState({ value4: value });
+              this.props.store.copd.updateCOPDScreeningForm(value, "value4");
             }}
           />
 
@@ -118,18 +92,12 @@ export default class COPDScreeningForm extends Component {
             ]}
             placeholder="ในช่วงเวลา 1 ปีที่ผ่านมาคุณมีความสามารถในการทำกิจกรรมต่างๆลดลงเพราะมีปัญหาเรื่องระบบหายใจ"
             onChange={(e, { value }) => {
-              console.log("5.: " + value);
-              this.setState({ value5: value });
+              this.props.store.copd.updateCOPDScreeningForm(value, "value5");
             }}
           />
         </Form>
-        <Button
-          circular
-          content="บันทึก"
-          color="blue"
-          onClick={this.setCOPDScreeningForm}
-        />
       </div>
     );
   }
 }
+export default COPDScreeningForm;

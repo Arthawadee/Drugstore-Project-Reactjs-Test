@@ -599,6 +599,7 @@ $form-color: #98d8e3;
   .ui.checkbox label {
     font-family: THSarabunNew;
     font-size: 20px;
+    width: 100%;
   }
   .ui.medium.image {
     // border: rgb(0, 62, 143) solid 5px;
@@ -701,7 +702,7 @@ $form-color: #98d8e3;
   }
 }
 ul {
-  padding: 0;
+  // padding: 0;
 }
 
 h2 {
@@ -719,6 +720,7 @@ h2 {
 }
 .ui.modal > .content > .image:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  transform: scale(1.1)
 }
 .ui.modal > .content > .description {
   height: 100%;
@@ -845,5 +847,21 @@ display: block; /* Fallback for non-webkit */
     font-family: THSarabunNewBd;
     font-size: 30px;
     text-align: center;
+  }
+}
+
+
+.SmokingCessationMedicinePage{
+  .ui.form textarea {
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  h3{
+    font-family: THSarabunNewBd;
+    font-size: 20px;
+  }
+  .addMedicineForm{
+    padding: 10px 20px;
+    background-color: burlywood;
   }
 }

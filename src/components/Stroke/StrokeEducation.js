@@ -1,33 +1,16 @@
 import React, { Component } from "react";
 import { Header, Form, Select, Input, Button } from "semantic-ui-react";
+import { inject, observer } from "mobx-react";
 
-export default class StrokeEducation extends Component {
+@inject("store")
+@observer
+class StrokeEducation extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: "",
-      disable: true,
-      valueOther: ""
-    };
   }
 
-  // setStrokeEducation = () => {
-  //   this.props.store.setStrokeEducation(
-  //     this.state.value,
-  //     this.state.disable,
-  //     this.state.valueOther
-  //   );
-  // };
-
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
-    // console.log(nextProps)
-    console.log(nextState);
-    return true;
-  }
-
-  componentDidUpdate(prevProps) {
-    // this.setStrokeEducation();
+  componentDidMount() {
+    console.log("education = ", this.props.store.stroke.education);
   }
 
   render() {
@@ -61,29 +44,28 @@ export default class StrokeEducation extends Component {
               { key: 5, text: "อื่นๆ", value: 5, score: 5 }
             ]}
             onChange={(e, { value }) => {
-              this.setState({ value: value });
-              if (value.includes(5)) {
-                this.setState({ disable: false });
-              } else {
-                this.setState({ disable: true, valueOther: "" });
-              }
+              this.props.store.stroke.updateStrokeEducation(value, "value");
             }}
           />
           <Form.Field
-            disabled={this.state.disable}
-            value={this.state.valueOther}
+            disabled={this.props.store.stroke.education.disable}
+            value={this.props.store.stroke.education.valueOther}
             required
             control={Input}
             type="text"
             label="ระบุ"
             placeholder="ระบุ..."
             onChange={(e, { value }) => {
-              this.setState({ valueOther: value });
+              this.props.store.stroke.updateStrokeEducation(
+                value,
+                "valueOther"
+              );
             }}
           />
         </Form>
-        <Button content="บันทึก" onClick={this.setStrokeEducation} />
+        {/* <Button content="บันทึก" onClick={this.setStrokeEducation} /> */}
       </div>
     );
   }
 }
+export default StrokeEducation;
