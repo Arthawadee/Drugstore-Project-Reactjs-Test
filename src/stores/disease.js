@@ -1,4 +1,4 @@
-import { extendObservable, action } from "mobx";
+import { extendObservable } from "mobx";
 class DiseaseDataStore {
   constructor(store) {
       this.store = store;

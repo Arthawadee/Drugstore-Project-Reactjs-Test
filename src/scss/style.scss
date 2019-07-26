@@ -639,6 +639,12 @@ $form-color: #98d8e3;
   }
 }
 .SmokingFollowUpA5Page {
+  text-align: center;
+  .ui.buttons .or,.ui.buttons .button{
+    font-family: THSarabunNew;
+      font-size: 20px;
+  }
+  
   .ui.form textarea {
     font-family: THSarabunNew;
     font-size: 20px;
@@ -720,7 +726,7 @@ h2 {
 }
 .ui.modal > .content > .image:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 .ui.modal > .content > .description {
   height: 100%;
@@ -767,25 +773,23 @@ h2 {
   }
 
   .ui.card > .content > .description {
-
-    width:100%;
+    width: 100%;
     overflow: hidden;
     height: 50px;
     font-size: 20px;
     // white-space: nowrap;
-// text-overflow: ellipsis;
+    // text-overflow: ellipsis;
 
-
-display: block; /* Fallback for non-webkit */
-  display: -webkit-box;
-  // max-width: 400px;
-  // height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
-  margin: 0 auto;
-  font-size: 20px;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;  
-  text-overflow: ellipsis;
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    // max-width: 400px;
+    // height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+    margin: 0 auto;
+    font-size: 20px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .card-cover {
@@ -822,46 +826,64 @@ display: block; /* Fallback for non-webkit */
   }
 }
 
-
-
-
-
-
-.AboutUsPage{
-  .pageContent{
+.AboutUsPage {
+  .pageContent {
     background-color: white;
     width: 90%;
     margin: auto;
     padding: 20px;
-    p{
+    p {
       font-family: THSarabunNew;
-    font-size: 20px;
-    text-indent: 50px;
+      font-size: 20px;
+      text-indent: 50px;
     }
   }
 }
 
-
-.OldA5FormPage{
-  .ui.message .header{
+.OldA5FormPage {
+  .ui.message .header {
     font-family: THSarabunNewBd;
     font-size: 30px;
     text-align: center;
   }
 }
 
-
-.SmokingCessationMedicinePage{
+.SmokingCessationMedicinePage {
   .ui.form textarea {
     font-family: THSarabunNew;
     font-size: 20px;
   }
-  h3{
+  h3 {
     font-family: THSarabunNewBd;
     font-size: 20px;
   }
-  .addMedicineForm{
-    padding: 10px 20px;
-    background-color: burlywood;
+  .addMedicineForm {
+    padding: 30px 20px 5px 20px;
+    background-color: white;
   }
+}
+.ui.button.FPW{
+  background-color: transparent;
+  padding: 5px;
+}
+.ui.button.FPW:hover{
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.StrokeScreeningForm{
+  label,.ui.checkbox label{
+    font-family: THSarabunNew;
+    font-size: 20px;
+  }
+  label{
+    font-weight: bold;
+  }
+  .ui.checkbox label{
+    font-weight: normal;
+  }
+}
+.ui.form textarea {
+  font-family: THSarabunNew;
+  font-size: 20px;
 }

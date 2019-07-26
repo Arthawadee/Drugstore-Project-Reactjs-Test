@@ -1,25 +1,11 @@
 import React, { Component } from "react";
-import { Form, Header, Icon, Button, Card } from "semantic-ui-react";
+import { Form, Header, Icon } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 
 @inject("store")
 @observer
 class PatientInfo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      weight: 0,
-      height: 0,
-      HR: 0,
-      RR: 0,
-      BP: 0,
-      UnderlyDisease: "",
-      DrugAllergy: ""
-    };
-    // console.log("PatientInfo");
-    // console.log(this.props.store.PatientInfo);
-  }
-
+  
   componentDidMount() {
     console.log("PatientInfo = ", this.props.store.patientInfo.PatientInfo);
   }

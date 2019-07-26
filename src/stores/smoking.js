@@ -1,4 +1,4 @@
-import { extendObservable, action, autorun } from "mobx";
+import { extendObservable, action } from "mobx";
 class SmokingStore {
   constructor(store) {
     this.store = store;
@@ -97,6 +97,12 @@ class SmokingStore {
     switch (id) {
       case "value1": {
         this.A5.value1 = value;
+        if(this.A5.value1 === 4){
+          this.A5.disable1 = false;
+        }else{
+          this.A5.disable1 = true;
+          this.A5.value1Other = ''
+        }
         console.log("value1 = ", this.A5.value1);
         break;
       }
@@ -107,6 +113,12 @@ class SmokingStore {
       }
       case "value3": {
         this.A5.value3 = value;
+        if(this.A5.value3 === 1){
+          this.A5.disable3 = false;
+        }else{
+          this.A5.disable3 = true;
+          this.A5.value3Advice = ''
+        }
         console.log("value3 = ", this.A5.value3);
         break;
       }
@@ -117,6 +129,12 @@ class SmokingStore {
       }
       case "value4": {
         this.A5.value4 = value;
+        if(this.A5.value4 === 1){
+          this.A5.disable4 = false;
+        }else{
+          this.A5.disable4 = true;
+          this.A5.value4Advice = ''
+        }
         console.log("value4 = ", this.A5.value4);
         break;
       }
@@ -127,6 +145,12 @@ class SmokingStore {
       }
       case "value5": {
         this.A5.value5 = value;
+        if(this.A5.value5 === 1){
+          this.A5.disable5 = false;
+        }else{
+          this.A5.disable5 = true;
+          this.A5.value5Advice = ''
+        }
         console.log("value5 = ", this.A5.value5);
         break;
       }
@@ -145,7 +169,13 @@ class SmokingStore {
         console.log("followUpDate = ", this.A5.followUpDate);
         break;
       }
+      default : break;
     }
+    if( this.A5.value1 !== '' && this.A5.value2 !== '' && this.A5.value3 !== '' 
+    && this.A5.value4 !== '' && this.A5.value5 !== '' && this.A5.value6 !== '' 
+    && this.A5.followUpDate !== ''){
+        this.complete.complete6 = true;
+     }else this.complete.complete6 = false;
   }
 
   @action
@@ -161,6 +191,7 @@ class SmokingStore {
         console.log("value2 = ", this.FamilyInfo.value2);
         break;
       }
+      default : break;
     }
     if (
       this.FamilyInfo.value1.length !== 0 &&
@@ -218,6 +249,7 @@ class SmokingStore {
         console.log("value6 = ", this.HealthBehavior.value6);
         break;
       }
+      default : break;
     }
     if (
       this.HealthBehavior.value1 &&
@@ -342,6 +374,7 @@ class SmokingStore {
         console.log("value14Other = ", this.screening.value14Other);
         break;
       }
+      default : break;
     }
     if (
       this.screening.value1 &&
@@ -376,7 +409,11 @@ class SmokingStore {
         console.log("stopDate = ", this.SmokingCessationPlan.stopDate);
         break;
       }
+      default : break;
     }
+    if(this.SmokingCessationPlan.value17 !== '' && this.SmokingCessationPlan.stopDate !== ''){
+      this.complete.complete4 = true;
+    } else this.complete.complete4 = false;
   }
 
   @action
@@ -412,6 +449,7 @@ class SmokingStore {
         console.log("medicine[", i, "].value3 = ", this.medicine[i].value3);
         break;
       }
+      default : break;
     }
   }
 
@@ -426,9 +464,38 @@ class SmokingStore {
         this.medicine[i].value2 = "";
         this.medicine[i].value3 = "";
       }
-      this.medicine.length = 1;
-      
+      this.medicine.length = 0;
+    }else{
+      this.medicine = [{
+        value1: "",
+        value2: "",
+        value3: ""
+      }]
     }
+    console.log('medicine-after-disable',this.medicine)
   };
+
+
+  @action
+  checkComplete = () => {
+    const result1 = this.medicine.filter((member) => {
+      return member.value1 === ''
+    })
+    const result2 = this.medicine.filter((member) => {
+      return member.value2 === ''
+    })
+    const result3 = this.medicine.filter((member) => {
+      return member.value3 === ''
+    })
+    // console.log('result1 = ',result1)
+    // console.log('result2 = ',result2)
+    // console.log('result3 = ',result3)
+    
+    if((result1.length === 0 && result2.length === 0 && result3.length === 0) || this.noMedicine){
+      this.complete.complete5 = true;
+    }else{
+      this.complete.complete5 = false;
+    }
+  }
 }
 export default SmokingStore;

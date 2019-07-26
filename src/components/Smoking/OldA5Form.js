@@ -1,16 +1,10 @@
 import React, { Component } from "react";
 import {
-  Header,
   Form,
   Input,
   Select,
   TextArea,
-  Button,
-  Grid,
-  Segment,
-  Image,
   Message,
-  Icon,
   Radio
 } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
@@ -79,26 +73,26 @@ class OldA5Form extends Component {
               control={Radio}
               label="วิธีการติดตาม"
               checked={
-                this.props.store.smoking.A5.value1 === "วิธีการติดตาม"
+                this.props.store.smoking.A5.value1 === 1
               }
               
             />
             <Form.Field
               control={Radio}
               label="โทรศัพท์"
-              checked={this.props.store.smoking.A5.value1 === "โทรศัพท์"}
+              checked={this.props.store.smoking.A5.value1 === 2}
               
             />
             <Form.Field
               control={Radio}
               label="ที่ร้าน"
-              checked={this.props.store.smoking.A5.value1 === "ที่ร้าน"}
+              checked={this.props.store.smoking.A5.value1 === 3}
               
             />
             <Form.Field
               control={Radio}
               label="อื่นๆ"
-              checked={this.props.store.smoking.A5.value1 === "อื่นๆ"}
+              checked={this.props.store.smoking.A5.value1 === 4}
               
             />
           </Form.Group>

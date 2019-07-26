@@ -1,23 +1,34 @@
 import React, { Component } from "react";
-import { Header, Button, Form, Divider, Radio, Grid } from "semantic-ui-react";
+import {
+  Header,
+  Button,
+  Form,
+  Divider,
+  Radio,
+  Grid
+} from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 
 @inject("store")
 @observer
 class SmokingCessationMedicine extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   componentDidMount() {
     console.log("medicine", this.props.store.smoking.medicine);
+  }
+  componentDidUpdate() {
+    if (this.props.store.smoking.noMedicine) {
+      document.getElementById("addBtn").style.display = "none";
+    } else document.getElementById("addBtn").style.display = "block";
+
+    this.props.store.smoking.checkComplete();
   }
 
   showMedicine() {
     let ncard = [];
     for (let i = 0; i < this.props.store.smoking.medicine.length; i++) {
       ncard.push(
-        <div key={i} className='addMedicineForm'>
+        <div key={i} className="addMedicineForm">
           <Grid>
             <Grid.Row columns={2}>
               <Grid.Column width={1}>
@@ -87,7 +98,6 @@ class SmokingCessationMedicine extends Component {
     return ncard;
   }
   render() {
-    var i = 0;
     return (
       <div className="SmokingCessationMedicinePage">
         <Header as="h2">ยาช่วยเลิกบุหรี่</Header>
@@ -101,14 +111,28 @@ class SmokingCessationMedicine extends Component {
             onChange={this.props.store.smoking.updateNoMedicine}
           />
           {this.showMedicine()}
-          <Button
-            icon="add"
-            labelPosition="left"
-            primary
-            disabled={this.props.store.smoking.noMedicine}
-            content="เพิ่ม"
-            onClick={this.props.store.smoking.addMedicine}
-          />
+          <div id="addBtn" style={{ display: "block" }}>
+            <Button
+              fluid
+              icon="add"
+              // labelPosition="left"
+              // primary
+              color="red"
+              disabled={this.props.store.smoking.noMedicine}
+              content="เพิ่ม"
+              onClick={this.props.store.smoking.addMedicine}
+            />
+            {/* <Button
+              circular
+              animated="vertical"
+              onClick={this.props.store.smoking.addMedicine}
+            >
+              <Button.Content hidden>เพิ่ม</Button.Content>
+              <Button.Content visible>
+                <Icon name="add" />
+              </Button.Content>
+            </Button> */}
+          </div>
         </Form>
       </div>
     );

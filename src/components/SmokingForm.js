@@ -66,26 +66,14 @@ class SmokingForm extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        step1Complete: true,
         active1: true,
         active2: false,
         active3: false,
         active4: false,
         active5: false,
-        active6: false,
-        store: this.props.store
+        active6: false
       };
-      // console.log(props);
-      // let store = this.props.store;
-      // console.log(this.state.store);
     }
-
-    // shouldComponentUpdate(nextProps, nextState) {
-    //   console.log("shouldComponentUpdate");
-    //   // console.log(nextProps)
-    //   console.log(nextState);
-    //   return true;
-    // }
 
     showFamilyInfo = () => {
       document.getElementById("FamilyInfo").style.display = "block";
@@ -208,16 +196,7 @@ class SmokingForm extends Component {
           <Header as="h1" textAlign="center">
             แบบคัดกรองการสูบบุหรี่
           </Header>
-          {/* <h2 className="ui icon aligned header">
-          <i aria-hidden="true" className="user plus circular icon" />
-          <div className="content">แบบคัดกรองการสูบบุหรี่</div>
-        </h2> */}
-
-          {/* <Tab
-          menu={{ color: "blue", secondary: true, pointing: true }}
-          panes={panes}
-        /> */}
-
+          
           <Step.Group ordered attached="top" size="large">
             <Step
               active={this.state.active1}
@@ -264,7 +243,7 @@ class SmokingForm extends Component {
             <Step
               active={this.state.active4}
               onClick={this.showSmokingCessationPlan}
-              // completed={this.props.store.smokingComplete.complete4}
+              completed={this.props.store.smoking.complete.complete4}
               // disabled = {this.props.store.SmokingDisable.disable4}
             >
               <Step.Content>
@@ -278,7 +257,7 @@ class SmokingForm extends Component {
             <Step
               active={this.state.active5}
               onClick={this.showSmokingCessationMedicine}
-              // completed={this.props.store.smokingComplete.complete5}
+              completed={this.props.store.smoking.complete.complete5}
               // disabled = {this.props.store.SmokingDisable.disable5}
             >
               <Step.Content>
@@ -290,7 +269,7 @@ class SmokingForm extends Component {
             <Step
               active={this.state.active6}
               onClick={this.showSmokingFollowUpA5}
-              // completed={this.props.store.smokingComplete.complete6}
+              completed={this.props.store.smoking.complete.complete6}
               // disabled = {this.props.store.SmokingDisable.disable6}
             >
               <Step.Content>

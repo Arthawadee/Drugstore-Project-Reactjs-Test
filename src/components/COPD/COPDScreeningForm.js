@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { Form, Select, Button } from "semantic-ui-react";
+import { Form, Select } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 
 @inject("store")
 @observer
 class COPDScreeningForm extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   componentDidMount() {
     console.log("COPDScreeningForm = ", this.props.store.copd.screening);
   }

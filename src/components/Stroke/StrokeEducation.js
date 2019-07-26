@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { Header, Form, Select, Input, Button } from "semantic-ui-react";
+import { Header, Form, Select, Input } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 
 @inject("store")
 @observer
 class StrokeEducation extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+ 
   componentDidMount() {
     console.log("education = ", this.props.store.stroke.education);
   }

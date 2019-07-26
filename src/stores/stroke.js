@@ -1,4 +1,4 @@
-import { extendObservable, action, autorun } from "mobx";
+import { extendObservable, action } from "mobx";
 class StrokeStore {
   constructor(store) {
     this.store = store;
@@ -17,6 +17,10 @@ class StrokeStore {
         value: "",
         disable: true,
         valueOther: ""
+      },
+      complete: {
+        complete1: false,
+        complete2: false
       }
     });
   }
@@ -64,7 +68,13 @@ class StrokeStore {
         console.log("value8 = ", this.screening.value8);
         break;
       }
+      default : break;
     }
+    if( this.screening.value1 !== '' && this.screening.value2 !== '' && this.screening.value3 !== '' 
+    && this.screening.value4 !== '' && this.screening.value5 !== '' && this.screening.value6 !== '' 
+    && this.screening.value7 !== '' && this.screening.value8 !== '' ){
+      this.complete.complete1 = true;
+    } else this.complete.complete1 = false;
   }
 
   @action
@@ -86,7 +96,11 @@ class StrokeStore {
         console.log("valueOther = ", this.education.valueOther);
         break;
       }
+      default : break;
     }
+    if(this.education.value.length !== 0){
+      this.complete.complete2 = true;
+    }else this.complete.complete2 = false;
   }
 }
 export default StrokeStore;

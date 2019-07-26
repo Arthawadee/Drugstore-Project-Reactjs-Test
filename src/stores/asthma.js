@@ -37,6 +37,7 @@ class AsthmaStore {
         console.log("value2 = ", this.screening.value2);
         break;
       }
+      default : break;
     }
   }
 }

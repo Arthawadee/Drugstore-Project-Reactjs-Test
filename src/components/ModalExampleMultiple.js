@@ -54,7 +54,7 @@ var ForgotPSWEmail= "";
 const ModalExampleMultiple = () => (
   
   <Modal
-    trigger={<a>ลืมรหัสผ่าน?</a>}
+    trigger={<button className="ui button FPW">ลืมรหัสผ่าน?</button>}
     size="tiny"
     closeIcon
     dimmer="blurring"

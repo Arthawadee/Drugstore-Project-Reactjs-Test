@@ -8,27 +8,17 @@ import AddNewPharmacist from "./components/AddNewPharmacist";
 // import SmokingForm from "./components/SmokingForm";
 import EditPatientData from "./components/EditPatientData";
 import ContactUs from "./components/ContactUs";
-import Graph from './components/graph'
-import AboutUs from './components/AboutUs'
+import Graph from "./components/graph";
+import AboutUs from "./components/AboutUs";
 import { Menu, Icon, Segment, Sidebar } from "semantic-ui-react";
-import { withCookies } from 'react-cookie';
-import { Provider } from "mobx-react";
-import { inject, observer } from 'mobx-react';
+import { withCookies } from "react-cookie";
+// import { Provider } from "mobx-react";
+import { inject, observer } from "mobx-react";
 import "./scss/style.scss";
 
-@inject('store')
+@inject("store")
 @observer
 class App extends Component {
-
-  constructor(props){
-    super(props)
-    // console.log(this.props.store.todos)
-    // console.log(this.props)
-  }
-// componentDidMount(){
-//   console.log(this.props)
-// }
-
   handleHideClick = () => this.setState({ visible: false });
   handleShowClick = () => this.setState({ visible: true });
   handleSidebarHide = () => this.setState({ visible: false });
@@ -40,13 +30,13 @@ class App extends Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
-  componentDidMount(){
+  componentDidMount() {
     // console.log('App',this.props.store.count);
     // this.props.store.increment();
     // console.log('App',this.props.store.count);
     // console.log('disease',this.props.store.disease.disease)
     // console.log('smoking',this.props.store)
-    console.log('smoking',this.props.store.smoking)
+    console.log("smoking", this.props.store.smoking);
   }
 
   render() {
@@ -95,7 +85,7 @@ class App extends Component {
           >
             การคัดกรองโรค
           </Menu.Item>
-          
+
           <Menu.Item
             as={Link}
             to="/AddNewDrugstore"
@@ -105,7 +95,7 @@ class App extends Component {
           >
             เพิ่มร้านยา
           </Menu.Item>
-          
+
           <Menu.Item
             as={Link}
             to="/AddNewPatient"
@@ -115,7 +105,7 @@ class App extends Component {
           >
             เพิ่มผู้ป่วยรายใหม่
           </Menu.Item>
-          
+
           <Menu.Item
             as={Link}
             to="/AddNewPharmacist"
@@ -125,7 +115,7 @@ class App extends Component {
           >
             เพิ่มเภสัชกร
           </Menu.Item>
-          
+
           <Menu.Item
             as={Link}
             to="/graph"
@@ -191,19 +181,20 @@ class App extends Component {
           </Sidebar>
 
           <Sidebar.Pusher dimmed={visible}>
-            <Segment basic style={{ backgroundColor: "#e3fbff", minHeight: 600 }}>
-              
-                <Switch>
-                  <Route exact path="/" component={HomePage} />
-                  <Route path="/screening" component={EditPatientData} />
-                  <Route path="/AddNewDrugstore" component={AddNewDrugstore} />
-                  <Route path="/AddNewPatient" component={AddNewPatient} />
-                  <Route path="/AddNewPharmacist" component={AddNewPharmacist} />
-                  <Route path="/graph" component={Graph} />
-                  <Route path="/contactus" component={ContactUs} />
-                  <Route path="/aboutus" component={AboutUs} />
-                </Switch>
-              
+            <Segment
+              basic
+              style={{ backgroundColor: "#e3fbff", minHeight: 600 }}
+            >
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/screening" component={EditPatientData} />
+                <Route path="/AddNewDrugstore" component={AddNewDrugstore} />
+                <Route path="/AddNewPatient" component={AddNewPatient} />
+                <Route path="/AddNewPharmacist" component={AddNewPharmacist} />
+                <Route path="/graph" component={Graph} />
+                <Route path="/contactus" component={ContactUs} />
+                <Route path="/aboutus" component={AboutUs} />
+              </Switch>
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
@@ -212,7 +203,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default withCookies(App);

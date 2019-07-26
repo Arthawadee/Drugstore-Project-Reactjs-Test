@@ -1,4 +1,4 @@
-import { extendObservable, action } from "mobx";
+import { extendObservable } from "mobx";
 import DiseaseDataStore from './disease'
 import PatientInfoStore from './PatientInfo'
 import SmokingStore from './smoking'

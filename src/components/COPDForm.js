@@ -2,25 +2,18 @@ import React, { Component } from "react";
 import { Header, Image, Step, Segment } from "semantic-ui-react";
 import LungHealth from "./COPD/LungHealth";
 import COPDScreeningForm from "./COPD/COPDScreeningForm";
-import { observer } from "mobx-react";
+import { inject, observer } from "mobx-react";
 
-const COPDForm = observer(
-  class COPDForm extends Component {
+@inject('store')
+@observer
+class COPDForm extends Component {
     constructor(props) {
       super(props);
       this.state = {
         active1: true,
         active2: false
       };
-      // console.log(this.props.store)
     }
-
-    // shouldComponentUpdate(nextProps, nextState) {
-    //   console.log("shouldComponentUpdate");
-    //   // console.log(nextProps)
-    //   console.log(nextState);
-    //   return true;
-    // }
 
     showLungHealth = () => {
       document.getElementById("LungHealth").style.display = "block";
@@ -55,7 +48,7 @@ const COPDForm = observer(
             <Step
               active={this.state.active1}
               onClick={this.showLungHealth}
-              // completed={this.props.store.COPDComplete.complete1}
+              completed={this.props.store.copd.complete.complete1}
             >
               <Step.Content>
                 <Step.Title>แบบประเมินสมรรถภาพปอด</Step.Title>
@@ -68,7 +61,7 @@ const COPDForm = observer(
             <Step
               active={this.state.active2}
               onClick={this.showCOPDScreeningForm}
-              // completed={this.props.store.COPDComplete.complete2}
+              completed={this.props.store.copd.complete.complete2}
             >
               <Step.Content>
                 <Step.Title>แบบคัดกรองโรคปอดอุดกั้นเรื้อรัง</Step.Title>
@@ -91,5 +84,4 @@ const COPDForm = observer(
       );
     }
   }
-);
 export default COPDForm;

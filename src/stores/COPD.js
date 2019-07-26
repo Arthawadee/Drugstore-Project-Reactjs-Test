@@ -16,6 +16,10 @@ class COPDStore {
         value3: "",
         value4: "",
         value5: ""
+      },
+      complete: {
+        complete1: false,
+        complete2: false
       }
     });
   }
@@ -47,7 +51,12 @@ class COPDStore {
         console.log("value5 = ", this.LungHealth.value5);
         break;
       }
+      default : break;
     }
+    if( this.LungHealth.value1 !== '' && this.LungHealth.value2 !== '' && this.LungHealth.value3 !== '' 
+    && this.LungHealth.value4 !== '' && this.LungHealth.value5 !== '' ){
+      this.complete.complete1 = true;
+    } else this.complete.complete1 = false;
   }
 
   @action
@@ -78,7 +87,13 @@ class COPDStore {
         console.log("value5 = ", this.screening.value5);
         break;
       }
+      default : break;
     }
+    
+    if( this.screening.value1 !== '' && this.screening.value2 !== '' && this.screening.value3 !== '' 
+    && this.screening.value4 !== '' && this.screening.value5 !== '' ){
+      this.complete.complete2 = true;
+    } else this.complete.complete2 = false;
   }
 }
 export default COPDStore;

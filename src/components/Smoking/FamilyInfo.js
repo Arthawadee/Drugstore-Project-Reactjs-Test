@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Form, Select, Button } from "semantic-ui-react";
+import { Header, Form, Select } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 
 @inject("store")

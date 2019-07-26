@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { Form, Select, Radio, Button } from "semantic-ui-react";
+import { Form, Radio } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 
 @inject("store")
 @observer
 class LungHealth extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   componentDidMount() {
     console.log("LungHealth = ", this.props.store.copd);
   }

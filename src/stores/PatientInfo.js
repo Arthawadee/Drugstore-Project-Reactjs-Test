@@ -1,5 +1,5 @@
 import { extendObservable, action } from "mobx";
-import { updateExpression } from "@babel/types";
+// import { updateExpression } from "@babel/types";
 class PatientInfoStore {
   constructor(store) {
     this.store = store;
@@ -72,6 +72,7 @@ class PatientInfoStore {
         console.log("DrugAllergy = ", this.PatientInfo.DrugAllergy);
         break;
       }
+      default : break;
     }
   }
 }

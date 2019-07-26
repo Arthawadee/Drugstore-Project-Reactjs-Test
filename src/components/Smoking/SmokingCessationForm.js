@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { Form, Radio, Select, Input, Button } from "semantic-ui-react";
+import { Form, Radio, Select, Input } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 // import SmokingCessationPlan from './SmokingCessationPlan';
 @inject("store")
 @observer
 class SmokingCessationForm extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   render() {
     return (
       <div className="SmokingCessationFormPage">

@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { Header, Image, Step, Segment } from "semantic-ui-react";
 import StrokeScreeningForm from "./Stroke/StrokeScreeningForm";
 import StrokeEducation from "./Stroke/StrokeEducation";
-import { observer } from "mobx-react";
+import { inject,observer } from "mobx-react";
 
+@inject('store')
 
-const StrokeForm = observer( class StrokeForm extends Component {
+@observer
+class StrokeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +55,7 @@ const StrokeForm = observer( class StrokeForm extends Component {
           <Step
             active={this.state.active1}
             onClick={this.showStrokeScreeningForm}
-            // completed = {this.props.store.strokeComplete.complete1}
+            completed = {this.props.store.stroke.complete.complete1}
             // disabled = {this.props.store.StrokeDisable.disable1}
           >
             <Step.Content>
@@ -63,7 +65,7 @@ const StrokeForm = observer( class StrokeForm extends Component {
           </Step>
 
           <Step active={this.state.active2} onClick={this.showStrokeEducation}
-            // completed = {this.props.store.strokeComplete.complete2}
+            completed = {this.props.store.stroke.complete.complete2}
             // disabled = {this.props.store.StrokeDisable.disable2}
             >
             <Step.Content>
@@ -83,5 +85,5 @@ const StrokeForm = observer( class StrokeForm extends Component {
       </div>
     );
   }
-})
+}
 export default StrokeForm;
